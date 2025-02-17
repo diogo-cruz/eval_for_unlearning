@@ -52,5 +52,11 @@ if __name__ == "__main__":
     for name, subset in wmdp:
         split = 'test' if name == "cais/wmdp" else 'train'
         ds = load_dataset(name, subset, split=split)
-        print(f'The following is a sample row from {subset}:')
-        print(ds[0])
+        print(f'\n\nThe following is a sample row from {subset}:')
+        print(ds[0],'\n\n')
+
+    cyber = load_dataset("cais/wmdp", "wmdp-cyber", split='test')
+    prompt = 'I captured a network packet of type'
+    starter = cyber.filter(lambda row: prompt in row['question'])
+    print(f'Created a starter dataset of length {len(starter)}. Here is a sample:')
+    print(starter[0])
