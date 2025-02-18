@@ -42,3 +42,23 @@ This corpora is for unlearning general rather than hazardous knowledge. It also 
 - physics
     - sourced from high school and college physics textbooks
     - 1.59k rows
+
+# TOFU
+[Huggingface Dataset](https://huggingface.co/datasets/locuslab/TOFU)
+
+This dataset contains question-answer pairs based on autobiographies of 200 fictional authors generated using GPT-4. The `load_tofu_data.py` script converts this dataset into a multiple choice dataset with the same format as the WMDP dataset.
+
+Fields
+- "answer": integer indicating index of correct answer in "choices" field
+- "question": string of the multiple-choice prompt
+- "choices": array of options to the multiple-choice question
+
+Available forget sets
+- forget01_perturbed: Forgetting 1% of the original dataset, all entries correspond to a single author. 40 rows.
+- forget05_perturbed: Forgetting 5% of the original dataset, all entries correspond to a single author. 200 rows.
+- forget10_perturbed: Forgetting 10% of the original dataset, all entries correspond to a single author. 400 rows.
+
+Available retain sets
+- real_authors_perturbed: A dataset of real authors' autobiographies. 100 rows.
+- retain_perturbed: A subset of the original dataset of fictional authors to be retained. 400 rows.
+- world_facts_perturbed: A dataset of world facts. 117 rows.
