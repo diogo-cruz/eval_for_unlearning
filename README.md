@@ -17,6 +17,14 @@ Currently supports:
 pip install -r eval/requirements.txt
 ```
 
+### Install lm-eval-harness
+
+```bash
+git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
+cd lm-evaluation-harness
+pip install -e .
+```
+
 ## Usage
 
 Basic usage:
