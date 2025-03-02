@@ -1,5 +1,22 @@
-# eval_for_unlearning
+## How to run the script
+To set up the environment, run:
+```bash
+source setup.sh
+```
 
-[Original project proposal](https://docs.google.com/document/d/1yEJBxb2VlDS6fXd9ImUNrtmfQlSOgRqmLnJ4BjGhfJI/edit?usp=sharing)
+Some example commands:
+```python
+python3 wmdp.py --mode "base" --task "wmdp-bio"
+python3 wmdp.py --mode "unlearned" --task "wmdp-bio"
 
-[Project notes](https://docs.google.com/document/d/1A2cGQmdcoHTeGyQdph_G7dugGvsadflqtrCxaHd1_2Y/edit?usp=sharing)
+python3 wmdp.py --mode "base" --task "wmdp-chem"
+python3 wmdp.py --mode "unlearned" --task "wmdp-chem"
+
+python3 wmdp.py --mode "base" --task "wmdp-cyber"
+python3 wmdp.py --mode "unlearned" --task "wmdp-cyber"
+```
+
+To look at the eval logs:
+```bash
+inspect view --log-dir "./log"
+```
