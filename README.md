@@ -41,6 +41,9 @@ python -m eval.eval --model llama2_7b --tasks tinyMMLU --hf_token "your_hf_token
 
 # Customize batch size and few-shot examples
 python -m eval.eval --model llama3_tar_bio --tasks wmdp_bio --batch_size 8 --num_fewshot 2
+
+# Reproduce results from RMU paper
+python -m eval.eval --model zephyr_7b_rmu --tasks wmdp_bio wmdp_cyber wmdp_chem tinyMMLU
 ```
 
 ## Adding New Models
