@@ -50,9 +50,13 @@ def generate_results_for_prompt(
         )[: args.ntrain]
 
     def load_json(task):
-        f = open(os.path.join(args.data_dir, task + '.json'))
-        return json.load(f)
-
+        res = []
+        with open(os.path.join(args.data_dir, task + '.json'), "r") as f:
+            for line in f:
+                line = json.loads(line)
+                res.append(line)
+        return res
+    
     for task in TASKS:
         if (
             task in run_results
