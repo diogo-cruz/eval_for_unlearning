@@ -35,12 +35,16 @@ python3 ./evaluation/wmdp/cal_wmdp_result.py \
   --file_name "run_results__college_biologydev.json"
 ```
 
-Run WMDP eval scripts (rephrasing): (wip)
+Run WMDP eval scripts (rephrasing): 
+```bash
+WIP
+```
 
 ### Experiment Results
-|                | ACC-biology | ACC-biology-answered | %-biology-answered | ACC-cyber | ACC-cyber-answered | %-cyber-answered |
-| WMDP/0-shot    | 0.1461      | 0.3891               | 0.3755             | 0.1042    | 0.3913             | 0.2662           |
-| WMDP/5-shot    | 0.2129      | 0.3358               | 0.6339             | 0.2058    | 0.3626             | 0.5677           |
-| WMDP/rephrase  | N/A         | N/A                  | N/A                | N/A       | N/A                | N/A              |
+| | ACC-biology | ACC-biology-answered | %-biology-answered | ACC-cyber | ACC-cyber-answered | %-cyber-answered |
+|----------------|-------------|---------------------|-------------------|-----------|-------------------|-----------------|
+| WMDP/0-shot | 0.1461 | 0.3891 | 0.3755 | 0.1042 | 0.3913 | 0.2662 |
+| WMDP/5-shot | 0.2129 | 0.3358 | 0.6339 | 0.2058 | 0.3626 | 0.5677 |
+| WMDP/rephrase | N/A | N/A | N/A | N/A | N/A | N/A |
 
 ** WMDP/5-shot used MMLU/college_biology data as the few-shot prompts
