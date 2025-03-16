@@ -9,14 +9,14 @@
 First download the WMDP data:
 
 ```bash
-python3 dataset.py
+python3 evaluation/wmdp/download_qa_dataset.py
 ```
 
 Run WMDP eval scripts (0-shot):
 ```bash
 python3 ./evaluation/wmdp/generate_wmdp_responses.py \
   --ckpt_dir "cais/Zephyr_RMU" \
-  --data_dir "." 
+  --data_dir "data/wmdp" 
 
 python3 ./evaluation/wmdp/cal_wmdp_result.py \
   --file_name "run_results_.json"
@@ -27,7 +27,7 @@ Run WMDP eval scripts (5-shot on MMLU/college_biology):
 python3 ./evaluation/wmdp/generate_wmdp_responses.py \
   --ckpt_dir "cais/Zephyr_RMU" \
   --data_dir "." \
-  --MMLU_dir "./data/MMLU" \
+  --MMLU_dir "data/MMLU" \
   --dev_task "college_biology" \
   --ntrain 5
 
@@ -39,6 +39,8 @@ Run WMDP eval scripts (rephrasing):
 ```bash
 WIP
 ```
+
+See results folder for experiment results.
 
 ### Experiment Results
 | | ACC-biology | ACC-biology-answered | %-biology-answered | ACC-cyber | ACC-cyber-answered | %-cyber-answered |
