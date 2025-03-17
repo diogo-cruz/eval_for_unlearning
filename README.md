@@ -5,7 +5,7 @@
 [Project notes](https://docs.google.com/document/d/1A2cGQmdcoHTeGyQdph_G7dugGvsadflqtrCxaHd1_2Y/edit?usp=sharing)
 
 ### TODO
-[ ] rephrase_prompts.py -> save folder structure
+- [ ] rephrase_prompts.py -> save folder structure
 
 
 ### How to run WMDP evals
@@ -34,7 +34,12 @@ python3 ./evaluation/wmdp/cal_wmdp_result.py \
 
 Run WMDP eval scripts (rephrasing): 
 ```bash
-WIP
+python3 ./evaluation/wmdp/generate_wmdp_responses_rephrasing.py \
+  --ckpt_dir "cais/Zephyr_RMU" \
+  --data_dir "data/wmdp-rephrased" \
+
+python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
+  --file_name "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"# 
 ```
 
 See results folder for experiment results.
@@ -51,6 +56,7 @@ See results folder for experiment results.
 | WMDP/5-shot (RMU) | 0.2129 | 0.3358 | 0.6339 | 0.2058 | 0.3626 | 0.5677 | N/A |  N/A | N/A | N/A | N/A | N/A |
 | WMDP/translated_korean | 0.1037 | 0.3367 | 0.3079 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 
-** RMU = Zephyr-RMU
-** base = Zephyr-7b-beta
-** WMDP/5-shot (RMU) used MMLU/college_biology data as the few-shot prompts
+Notes:
+- RMU = Zephyr-RMU
+- base = Zephyr-7b-beta
+- WMDP/5-shot (RMU) used MMLU/college_biology data as the few-shot prompts
