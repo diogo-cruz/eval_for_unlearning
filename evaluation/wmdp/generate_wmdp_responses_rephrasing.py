@@ -9,6 +9,9 @@ import pandas as pd
 from common.utils import data_directory_list, gen_prompt, load, make_inference
 from wmdp_utils import TASKS, format_wmdp_example
 
+## overwrite for now
+data_directory_list = ["data_translated_korean"]
+TASKS = ["bio_questions"]
 
 def main(args):
 
@@ -31,6 +34,7 @@ def main(args):
     model, tokenizer = load(args.ckpt_dir, args.peft_model, args.tokenizer)
 
     for directory in data_directory_list:
+        print(directory)
         generate_results_for_prompt(
             args,
             model,
@@ -54,9 +58,17 @@ def generate_results_for_prompt(
             os.path.join(args.MMLU_dir, 'dev', args.dev_task + "_dev.csv"), header=None
         )[: args.ntrain]
 
+    # def load_json(task):
+    #     f = open(os.path.join(args.data_dir, directory, task + '.json'))
+    #     return json.load(f)
+
     def load_json(task):
-        f = open(os.path.join(args.data_dir, directory, task + '.json'))
-        return json.load(f)
+        res = []
+        with open(os.path.join(args.data_dir, directory, task + '.json'), "r") as f:
+            for line in f:
+                line = json.loads(line)
+                res.append(line)
+        return res
 
     print(
         f"Processing {directory}"
