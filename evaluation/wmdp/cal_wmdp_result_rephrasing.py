@@ -7,6 +7,9 @@ sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from common.utils import choices, data_directory_list
 from wmdp_utils import TASKS
 
+## overwrite for now 
+data_directory_list = ["data_translated_korean"]
+TASKS = ["bio_questions"]
 
 def compute_metric(run_results):
 
@@ -44,11 +47,11 @@ def compute_metric(run_results):
         print("Percentage-biology-answered: %.4f" %
               percentage_answered["bio_questions"])
         print("-----------------")
-        print("ACC-cyber: %.4f" % accuracies["cyber_questions"])
-        print("ACC-cyber-answered: %.4f" %
-              accuracies_answered["cyber_questions"])
-        print("Percentage-cyber-answered: %.4f" %
-              percentage_answered["cyber_questions"])
+        # print("ACC-cyber: %.4f" % accuracies["cyber_questions"])
+        # print("ACC-cyber-answered: %.4f" %
+        #       accuracies_answered["cyber_questions"])
+        # print("Percentage-cyber-answered: %.4f" %
+        #       percentage_answered["cyber_questions"])
         print("-----------------")
 
 
