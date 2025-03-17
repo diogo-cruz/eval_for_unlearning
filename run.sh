@@ -1,3 +1,4 @@
+## 0-shot
 # python3 ./evaluation/wmdp/generate_wmdp_responses.py \
 #   --ckpt_dir "cais/Zephyr_RMU" \
 #   --data_dir "." 
@@ -66,3 +67,74 @@
 # ACC-all_subjects: 0.5888
 # ACC-all_subjects-answered: 0.6041
 # Percentage-all_subjects-answered: 0.9741
+
+## 5-shot
+### by default uses the dev set of subject being evaluated
+# python3 ./evaluation/MMLU/generate_mmlu_responses.py \
+#   --ckpt_dir "cais/Zephyr_RMU" \
+#   --data_dir "data/MMLU" \
+#   --ntrain 5
+
+# mv "run_results_.json" "results/mmlu_5_shot_zephyr_rmu_run_results_.json"
+# mv "run_breakpoint_.json" "results/mmlu_5_shot_zephyr_rmu_run_breakpoint_.json"
+
+# python3 ./evaluation/MMLU/cal_mmlu_result.py \
+#   --file_name "results/mmlu_5_shot_zephyr_rmu_run_results_.json"
+
+# ACC-biology: 0.5555
+# ACC-biology-answered: 0.5607
+# Percentage-biology-answered: 0.8932
+# -----------------
+# ACC-other: 0.5792
+# ACC-other-answered: 0.5841
+# Percentage-other-answered: 0.9821
+# -----------------
+# ACC-all_subjects: 0.5750
+# ACC-all_subjects-answered: 0.5800
+# Percentage-all_subjects-answered: 0.9665
+
+# python3 ./evaluation/MMLU/generate_mmlu_responses.py \
+#   --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" \
+#   --data_dir "data/MMLU" \
+#   --ntrain 5
+
+# mv "run_results_.json" "results/mmlu_5_shot_zephyr_7b_beta_run_results_.json"
+# mv "run_breakpoint_.json" "results/mmlu_5_shot_zephyr_7b_beta_run_breakpoint_.json"
+
+# python3 ./evaluation/MMLU/cal_mmlu_result.py \
+#   --file_name "results/mmlu_5_shot_zephyr_7b_beta_run_results_.json"
+
+# ACC-biology: 0.6517
+# ACC-biology-answered: 0.6545
+# Percentage-biology-answered: 0.9958
+# -----------------
+# ACC-other: 0.6020
+# ACC-other-answered: 0.6037
+# Percentage-other-answered: 0.9972
+# -----------------
+# ACC-all_subjects: 0.6107
+# ACC-all_subjects-answered: 0.6126
+# Percentage-all_subjects-answered: 0.9970
+
+## rephrasing + 0-shot
+# python3 ./evaluation/MMLU/generate_mmlu_responses_rephrasing.py \
+#   --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" \
+#   --data_dir "data/MMLU-rephrased" \
+
+# mv "run_results_.json" "results/mmlu_rephrased_0_shot_zephyr_7b_beta_run_results_.json"
+# mv "run_breakpoint_.json" "results/mmlu_rephrased_0_shot_zephyr_7b_beta_run_breakpoint_.json"
+
+
+# python3 ./evaluation/wmdp/generate_wmdp_responses_rephrasing.py \
+#   --ckpt_dir "cais/Zephyr_RMU" \
+#   --data_dir "data/wmdp-rephrased" \
+
+# mv "run_results__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
+# mv "run_breakpoint__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_breakpoint__rephrasing.json"
+
+# python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
+#   --file_name "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
+
+# ACC-biology: 0.1037
+# ACC-biology-answered: 0.3367
+# Percentage-biology-answered: 0.3079
