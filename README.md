@@ -45,8 +45,8 @@ python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
 See results folder for experiment results.
 
 ### Experiment Results
-| ACC-biology | ACC-biology-answered | %-biology-answered |
-|----------------|-------------|---------------------|
+| Dataset | ACC-biology | ACC-biology-answered | %-biology-answered |
+|----------------|-------------|---------------------|--|
 | MMLU/0-shot (RMU) | 0.5882 | 0.6316 | 0.9251 |
 | MMLU/0-shot (base) | 0.6448 | 0.6505 | 0.9913 |
 | WMDP/0-shot (RMU) | 0.1461 | 0.3891 | 0.3755 |
