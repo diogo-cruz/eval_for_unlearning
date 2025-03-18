@@ -71,7 +71,7 @@ def generate_rephrased_wmdp_data(task: str, prompt_technique_name: str, verbose:
   assert task in ["bio", "cyber"], f"invalid task: {task}"
 
   lines = load_wmdp_data(task)
-  for i, line in tqdm(enumerate(lines)):
+  for i, line in tqdm(enumerate(lines), total=len(lines)):
     question = line["question"]
     if verbose: print("original question:", question)
     rephrased_question = generate_rephrased_prompt(prompt_technique_name, question, **kwargs)
@@ -81,6 +81,11 @@ def generate_rephrased_wmdp_data(task: str, prompt_technique_name: str, verbose:
     lines[i]["question"] = rephrased_question
     lines[i]["original_question"] = question
 
+    if i == 0:
+      print(question)
+      print(rephrased_question)
+
+  ## save the original questions
   wmdp_rephrased_data_dir = DATA_PATH / "wmdp-rephrased"
   Path(wmdp_rephrased_data_dir).mkdir(parents=True, exist_ok=True)
   with open(wmdp_rephrased_data_dir / f"{task}_questions_{prompt_technique_name}.json", "w") as f:
@@ -89,8 +94,17 @@ def generate_rephrased_wmdp_data(task: str, prompt_technique_name: str, verbose:
 
 
 if __name__ == "__main__":
-  rephrase_settings = get_prompt_technique_names()
-  generate_rephrased_wmdp_data(task="bio", prompt_technique_name="translating_to_language", language="Korean")
-  # for prompt_technique_name in rephrase_settings:
-  #   print(f"Generating rephrases for {prompt_technique_name}")
-  #   generate_rephrased_wmdp_data(task="bio", prompt_technique_name=prompt_technique_name) 
+  
+  import argparse
+  parser = argparse.ArgumentParser()
+  parser.add_argument("--task", type=str, required=True)
+  parser.add_argument("--prompt_technique_name", type=str, required=True)
+  parser.add_argument("--language", type=str)
+  args = parser.parse_args()
+
+  print(f"Generating rephrases for {args.prompt_technique_name}")
+  
+  if args.language:
+    generate_rephrased_wmdp_data(task=args.task, prompt_technique_name=args.prompt_technique_name, language=args.language) 
+  else:
+    generate_rephrased_wmdp_data(task=args.task, prompt_technique_name=args.prompt_technique_name) 
