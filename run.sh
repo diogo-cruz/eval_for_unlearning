@@ -138,3 +138,25 @@
 # ACC-biology: 0.1037
 # ACC-biology-answered: 0.3367
 # Percentage-biology-answered: 0.3079
+
+# python3 ./evaluation/MMLU/generate_mmlu_responses_rephrasing.py \
+#   --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" \
+#   --data_dir "data/MMLU-rephrased" \
+
+# mv "run_results__rephrasing.json" "results/mmlu_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
+# mv "run_breakpoint__rephrasing.json" "results/mmlu_0_shot_zephyr_7b_beta_run_breakpoint__rephrasing.json"
+
+# python3 ./evaluation/MMLU/cal_mmlu_result_rephrasing.py \
+#   --file_name "results/mmlu_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
+
+
+python3 ./evaluation/MMLU/generate_mmlu_responses_rephrasing.py \
+  --ckpt_dir "cais/Zephyr_RMU" \
+  --data_dir "data/MMLU-rephrased" \
+
+mv "run_results__rephrasing.json" "results/mmlu_0_shot_zephyr_rmu_run_results__rephrasing.json"
+mv "run_breakpoint__rephrasing.json" "results/mmlu_0_shot_zephyr_rmu_run_breakpoint__rephrasing.json"
+
+python3 ./evaluation/MMLU/cal_mmlu_result_rephrasing.py \
+  --file_name "results/mmlu_0_shot_zephyr_rmu_run_results__rephrasing.json"
+
