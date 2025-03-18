@@ -45,15 +45,35 @@ python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
 See results folder for experiment results.
 
 ### Experiment Results
-| | ACC-biology | ACC-biology-answered | %-biology-answered | ACC-cyber | ACC-cyber-answered | %-cyber-answered | ACC-other | ACC-other-answered | %-other-answered | ACC-all_subjects | ACC-all_subjects-answered | %-all_subjects-answered |
-|----------------|-------------|---------------------|-------------------|-----------|-------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
-| MMLU/0-shot (RMU) | 0.5882 | 0.6316 | 0.9251 | N/A | N/A | N/A | 0.5720 | 0.5940 | 0.9627 | 0.5749 | 0.6006 | 0.9561 |
-| MMLU/0-shot (base) | 0.6448 | 0.6505 | 0.9913 | N/A | N/A | N/A | 0.5769 | 0.5943 | 0.9704 | 0.5888 | 0.6041 | 0.9741 | 
-| WMDP/0-shot (RMU) | 0.1461 | 0.3891 | 0.3755 | 0.1042 | 0.3913 | 0.2662 | N/A | N/A | N/A | N/A | N/A | N/A |  
-| WMDP/0-shot (base) | 0.6630 | 0.6651 | 0.9969 | 0.4197 | 0.4360 | 0.9628 | N/A | N/A | N/A | N/A | N/A | N/A | 
-| MMLU/5-shot (RMU) | 0.5555 | 0.5607 | 0.8932 | N/A | N/A | N/A | 0.5782 | 0.5841 | 0.9821 | 0.5750 | 0.5800 | 0.9665 |
-| MMLU/5-shot (base) | 0.6517 | 0.6545 | 0.9958 | N/A | N/A | N/A | 0.6020 | 0.6037 | 0.9972 | 0.6107 | 0.6126 | 0.9970 |
-| WMDP/5-shot (RMU) | 0.2129 | 0.3358 | 0.6339 | 0.2058 | 0.3626 | 0.5677 | N/A |  N/A | N/A | N/A | N/A | N/A |
+| | ACC-biology | ACC-biology-answered | %-biology-answered | |
+|----------------|-------------|---------------------|
+| MMLU/0-shot (RMU) | 0.5882 | 0.6316 | 0.9251 |
+| MMLU/0-shot (base) | 0.6448 | 0.6505 | 0.9913 |
+| WMDP/0-shot (RMU) | 0.1461 | 0.3891 | 0.3755 |
+| WMDP/0-shot (base) | 0.6630 | 0.6651 | 0.9969 |
+| MMLU/5-shot (RMU) | 0.5555 | 0.5607 | 0.8932 | 
+| MMLU/5-shot (base) | 0.6517 | 0.6545 | 0.9958 |
+| WMDP/5-shot (RMU) | 0.2129 | 0.3358 | 0.6339 | 
+
+| MMLU/0-shot/data_latin_filler_text (base) | 0.6314 | 0.6343 | 0.9955 |
+| MMLU/0-shot/data_english_filler_text (base) | 0.5889 | 0.5999 | 0.9806 |
+| MMLU/0-shot/data_hindi_filler_text (base) | 0.6015 | 0.6082 | 0.9893 |
+| MMLU/0-shot/data_rephrased_conversation (base) | 0.6374 | 0.6421 | 0.9924 |
+| MMLU/0-shot/data_rephrased_poem (base) | 0.5491 | 0.5519 | 0.9950 |
+| MMLU/0-shot/data_technical_terms_removed_1 (base) | 0.5495 | 0.5642 | 0.9730 |
+| MMLU/0-shot/data_technical_terms_removed_2 (base) | 0.4380 | 0.4440 | 0.9868 |
+| MMLU/0-shot/data_translated_french (base) | 0.5188 | 0.5202 | 0.9973 |
+| MMLU/0-shot/data_translated_german (base) | 0.5204 | 0.5229 | 0.9952 |
+| MMLU/0-shot/data_translated_hindi (base) | 0.3173 | 0.3184 | 0.9966 |
+| MMLU/0-shot/data_translated_korean (base) | 0.3765 | 0.3765 | 1.0000 |
+| MMLU/0-shot/data_translated_arabic (base) | 0.3161 | 0.3163 | 0.9996 |
+| MMLU/0-shot/data_translated_czech (base) | 0.4768 | 0.4768 | 1.0000 |
+| MMLU/0-shot/data_translated_bengali (base) | 0.3002 | 0.3008 | 0.9981 |
+| MMLU/0-shot/data_translated_vietnamese (base) | 0.3968 | 0.3979 | 0.9970 |
+| MMLU/0-shot/data_translated_turkish (base) | 0.3947 | 0.3962 | 0.9961 |
+| MMLU/0-shot/data_translated_telugu (base) | 0.3111 | 0.3120 | 0.9974 |
+| MMLU/0-shot/data_translated_farsi (base) | 0.3356 | 0.3358 | 0.9994 |
+
 | WMDP/translated_korean | 0.1037 | 0.3367 | 0.3079 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 
 Notes:
