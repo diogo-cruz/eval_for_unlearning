@@ -6,7 +6,7 @@
 
 ### TODO
 - [ ] rephrase_prompts.py -> save folder structure
-
+- [ ] generate_prompts > asyncio
 
 ### How to run WMDP evals
 Run WMDP eval scripts (0-shot):
@@ -72,8 +72,28 @@ See results folder for experiment results.
 | MMLU/0-shot/data_translated_turkish (base) | 0.3947 | 0.3962 | 0.9961 |
 | MMLU/0-shot/data_translated_telugu (base) | 0.3111 | 0.3120 | 0.9974 |
 | MMLU/0-shot/data_translated_farsi (base) | 0.3356 | 0.3358 | 0.9994 |
+| mmlu/0-shot/data_latin_filler_text (RMU)           | 0.5859      | 0.6140               | 0.9400             |
+| mmlu/0-shot/data_english_filler_text (RMU)         | 0.5416      | 0.5868               | 0.9130             |
+| mmlu/0-shot/data_hindi_filler_text (RMU)           | 0.5578      | 0.5991               | 0.9271             |
+| mmlu/0-shot/data_rephrased_conversation (RMU)      | 0.5842      | 0.6326               | 0.9122             |
+| mmlu/0-shot/data_rephrased_poem (RMU)              | 0.5128      | 0.5443               | 0.9328             |
+| mmlu/0-shot/data_technical_terms_removed_1 (RMU)   | 0.5145      | 0.5616               | 0.9061             |
+| mmlu/0-shot/data_technical_terms_removed_2 (RMU)   | 0.4031      | 0.4369               | 0.9171             |
+| mmlu/0-shot/data_translated_french (RMU)           | 0.4815      | 0.5162               | 0.9221             |
+| mmlu/0-shot/data_translated_german (RMU)           | 0.4924      | 0.5218               | 0.9318             |
+| mmlu/0-shot/data_translated_hindi (RMU)            | 0.3107      | 0.3127               | 0.9936             |
+| mmlu/0-shot/data_translated_korean (RMU)           | 0.3495      | 0.3787               | 0.9230             |
+| mmlu/0-shot/data_translated_arabic (RMU)           | 0.3140      | 0.3213               | 0.9751             |
+| mmlu/0-shot/data_translated_czech (RMU)            | 0.4351      | 0.4601               | 0.9333             |
+| mmlu/0-shot/data_translated_bengali (RMU)          | 0.2984      | 0.3039               | 0.9743             |
+| mmlu/0-shot/data_translated_vietnamese (RMU)       | 0.3753      | 0.4000               | 0.9335             |
+| mmlu/0-shot/data_translated_turkish (RMU)          | 0.3665      | 0.3894               | 0.9370             |
+| mmlu/0-shot/data_translated_telugu (RMU)           | 0.3038      | 0.3051               | 0.9952             |
+| mmlu/0-shot/data_translated_farsi (RMU)            | 0.3034      | 0.3121               | 0.9721             |
 
 | WMDP/translated_korean | 0.1037 | 0.3367 | 0.3079 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+
+
 
 Notes:
 - RMU = Zephyr-RMU
