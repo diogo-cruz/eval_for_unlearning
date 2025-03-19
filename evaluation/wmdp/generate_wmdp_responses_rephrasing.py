@@ -10,7 +10,12 @@ from common.utils import data_directory_list, gen_prompt, load, make_inference
 from wmdp_utils import TASKS, format_wmdp_example
 
 ## overwrite for now
-data_directory_list = ["data_translated_korean"]
+data_directory_list = [
+    'data_rephrased_conversation', 'data_rephrased_poem', 'data_technical_terms_removed_1', 'data_replaced_with_variables',
+    'data_translated_french', 'data_translated_german', 'data_translated_hindi', 'data_translated_korean', 'data_translated_arabic', 
+    'data_translated_czech', 'data_translated_bengali', 'data_translated_vietnamese', 'data_translated_turkish', 'data_translated_telugu', 
+    'data_translated_farsi',
+]
 TASKS = ["bio_questions"]
 
 def main(args):
@@ -35,6 +40,7 @@ def main(args):
 
     for directory in data_directory_list:
         print(directory)
+        if directory == "data_translated_korean": continue
         generate_results_for_prompt(
             args,
             model,
@@ -89,6 +95,9 @@ def generate_results_for_prompt(
         for question in test_data:
 
             k = args.ntrain
+            if question["question"] is None:
+                continue
+
             prompt_end = format_wmdp_example(question)
 
             train_prompt = gen_prompt(

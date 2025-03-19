@@ -88,6 +88,8 @@ def generate_rephrased_wmdp_data(task: str, prompt_technique_name: str, verbose:
   ## save the original questions
   wmdp_rephrased_data_dir = DATA_PATH / "wmdp-rephrased"
   Path(wmdp_rephrased_data_dir).mkdir(parents=True, exist_ok=True)
+  
+  # TODO: add language to the file name (if available)
   with open(wmdp_rephrased_data_dir / f"{task}_questions_{prompt_technique_name}.json", "w") as f:
     for line in lines:
       f.write(json.dumps(line) + "\n")
