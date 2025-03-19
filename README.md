@@ -90,10 +90,36 @@ See results folder for experiment results.
 | mmlu/0-shot/data_translated_turkish (RMU)          | 0.3665      | 0.3894               | 0.9370             |
 | mmlu/0-shot/data_translated_telugu (RMU)           | 0.3038      | 0.3051               | 0.9952             |
 | mmlu/0-shot/data_translated_farsi (RMU)            | 0.3034      | 0.3121               | 0.9721             |
-
-| WMDP/translated_korean | 0.1037 | 0.3367 | 0.3079 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-
-
+| wmdp/0-shot/data_rephrased_conversation (base)    | 0.6410      | 0.6451               | 0.9937                       |
+| wmdp/0-shot/data_rephrased_poem (base)            | 0.6501      | 0.6553               | 0.9921                       |
+| wmdp/0-shot/data_technical_terms_removed_1 (base) | 0.5821      | 0.5862               | 0.9929                       |
+| wmdp/0-shot/data_replaced_with_variables (base)   | 0.6072      | 0.6087               | 0.9976                       |
+| wmdp/0-shot/data_translated_french (base)         | 0.6200      | 0.6209               | 0.9984                       |
+| wmdp/0-shot/data_translated_german (base)         | 0.6017      | 0.6027               | 0.9984                       |
+| wmdp/0-shot/data_translated_hindi (base)          | 0.4674      | 0.4707               | 0.9929                       |
+| wmdp/0-shot/data_translated_arabic (base)         | 0.4831      | 0.4843               | 0.9976                       |
+| wmdp/0-shot/data_translated_czech (base)          | 0.5907      | 0.5917               | 0.9984                       |
+| wmdp/0-shot/data_translated_bengali (base)        | 0.4721      | 0.4732               | 0.9976                       |
+| wmdp/0-shot/data_translated_vietnamese (base)     | 0.5294      | 0.5303               | 0.9983                       |
+| wmdp/0-shot/data_translated_turkish (base)        | 0.5577      | 0.5582               | 0.9992                       |
+| wmdp/0-shot/data_translated_telugu (base)         | 0.4446      | 0.4457               | 0.9976                       |
+| wmdp/0-shot/data_translated_farsi (base)          | 0.4957      | 0.4961               | 0.9992                       |
+| wmdp/0-shot/data_translated_korean (base)         | 0.5428      | 0.5428               | 1.0000                       |
+| wmdp/0-shot/data_rephrased_conversation (RMU)    | 0.0935      | 0.4048               | 0.2310                       |
+| wmdp/0-shot/data_rephrased_poem (RMU)            | 0.1300      | 0.4342               | 0.2994                       |
+| wmdp/0-shot/data_technical_terms_removed_1 (RMU) | 0.1225      | 0.3949               | 0.3103                       |
+| wmdp/0-shot/data_replaced_with_variables (RMU)   | 0.1233      | 0.3668               | 0.3362                       |
+| wmdp/0-shot/data_translated_french (RMU)         | 0.1259      | 0.4218               | 0.2985                       |
+| wmdp/0-shot/data_translated_german (RMU)         | 0.1163      | 0.3654               | 0.3181                       |
+| wmdp/0-shot/data_translated_hindi (RMU)          | 0.1618      | 0.3145               | 0.5145                       |
+| wmdp/0-shot/data_translated_arabic (RMU)         | 0.1508      | 0.3636               | 0.4148                       |
+| wmdp/0-shot/data_translated_czech (RMU)          | 0.1225      | 0.4000               | 0.3064                       |
+| wmdp/0-shot/data_translated_bengali (RMU)        | 0.1477      | 0.3456               | 0.4273                       |
+| wmdp/0-shot/data_translated_vietnamese (RMU)     | 0.1253      | 0.3492               | 0.3589                       |
+| wmdp/0-shot/data_translated_turkish (RMU)        | 0.1123      | 0.3548               | 0.3166                       |
+| wmdp/0-shot/data_translated_telugu (RMU)         | 0.1485      | 0.3073               | 0.4831                       |
+| wmdp/0-shot/data_translated_farsi (RMU)          | 0.1477      | 0.3574               | 0.4132                       |
+| wmdp/0-shot/data_translated_korean (RMU)         | 0.1037      | 0.3367               | 0.3079                       |
 
 Notes:
 - RMU = Zephyr-RMU
