@@ -163,13 +163,22 @@ set -xe
 #   --file_name "results/mmlu_0_shot_zephyr_rmu_run_results__rephrasing.json"
 
 ## need to do below on both base and rmu
+# python3 ./evaluation/wmdp/generate_wmdp_responses_rephrasing.py \
+#   --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" \
+#   --data_dir "data/wmdp-rephrased" \
+
+# mv "run_results__rephrasing.json" "results/wmdp_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
+# mv "run_breakpoint__rephrasing.json" "results/wmdp_0_shot_zephyr_7b_beta_run_breakpoint__rephrasing.json"
+
+# python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
+#   --file_name "results/wmdp_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
+
 python3 ./evaluation/wmdp/generate_wmdp_responses_rephrasing.py \
-  --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" \
+  --ckpt_dir "cais/Zephyr_RMU" \
   --data_dir "data/wmdp-rephrased" \
 
-mv "run_results__rephrasing.json" "results/wmdp_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
-mv "run_breakpoint__rephrasing.json" "results/wmdp_0_shot_zephyr_7b_beta_run_breakpoint__rephrasing.json"
+mv "run_results__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
+mv "run_breakpoint__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_breakpoint__rephrasing.json"
 
 python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
-  --file_name "results/wmdp_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
-
+  --file_name "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
