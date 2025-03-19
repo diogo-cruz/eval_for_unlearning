@@ -8,11 +8,12 @@ from common.utils import choices, data_directory_list
 from wmdp_utils import TASKS
 
 ## overwrite for now 
-data_directory_list = ['data_rephrased_conversation',
-                       'data_rephrased_poem', 'data_technical_terms_removed_1', 'data_technical_terms_removed_2', 'data_translated_french',
-                       'data_translated_german', 'data_translated_hindi', 'data_translated_korean', 'data_translated_arabic', 'data_translated_czech',
-                       'data_translated_bengali', 'data_translated_vietnamese', 'data_translated_turkish', 'data_translated_telugu', 'data_translated_farsi'
-                       ]
+data_directory_list = [
+    'data_rephrased_conversation', 'data_rephrased_poem', 'data_technical_terms_removed_1', 'data_replaced_with_variables',
+    'data_translated_french', 'data_translated_german', 'data_translated_hindi', 'data_translated_arabic',
+    'data_translated_czech', 'data_translated_bengali', 'data_translated_vietnamese', 'data_translated_turkish',
+    'data_translated_telugu', 'data_translated_farsi', 'data_translated_korean',
+]
 TASKS = ["bio_questions"]
 
 def compute_metric(run_results):
@@ -56,7 +57,7 @@ def compute_metric(run_results):
         #       accuracies_answered["cyber_questions"])
         # print("Percentage-cyber-answered: %.4f" %
         #       percentage_answered["cyber_questions"])
-        print("-----------------")
+        # print("-----------------")
 
 
 def main(args):
