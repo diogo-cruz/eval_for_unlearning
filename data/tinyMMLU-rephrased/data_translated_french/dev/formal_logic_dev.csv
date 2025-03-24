@@ -1,0 +1,9 @@
+Aucune personne ne conduit sur Mars.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+Sélectionnez la meilleure traduction en logique des prédicats. George emprunte la tondeuse à gazon de Hector.,Blgh,Bhlg,Bglh,Bghl,C
+"Sélectionnez la meilleure interprétation en anglais des arguments donnés en logique des prédicats.
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"Construisez une table de vérité complète pour les paires de propositions suivantes. Puis, en utilisant les tables de vérité, déterminez si les énoncés sont logiquement équivalents ou contradictoires. Si ce n'est ni l'un ni l'autre, déterminez s'ils sont cohérents ou incohérents. Justifiez vos réponses.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"Laquelle des formules de PL données est la meilleure symbolisation de la phrase suivante ?
+Les tortues vivent longtemps et sont des créatures heureuses, à moins qu'elles ne soient blessées.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

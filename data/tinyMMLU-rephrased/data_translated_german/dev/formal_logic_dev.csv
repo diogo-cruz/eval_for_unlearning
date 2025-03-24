@@ -1,0 +1,9 @@
+Keine Menschen fahren auf dem Mars.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+Wählen Sie die beste Übersetzung in die Prädikatenlogik. George leiht Hectors Rasenmäher. (g: George; h: Hector; l: Hectors Rasenmäher; Bxyx: x leiht y von z),Blgh,Bhlg,Bglh,Bghl,C
+"Wählen Sie die beste englische Interpretation der gegebenen Argumente in der Prädikatenlogik.
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"Konstruieren Sie eine vollständige Wahrheitstabelle für die folgenden Propositionen. Bestimmen Sie dann anhand der Wahrheitstabellen, ob die Aussagen logisch äquivalent oder widersprüchlich sind. Wenn keines von beiden, stellen Sie fest, ob sie konsistent oder inkonsistent sind. Begründen Sie Ihre Antworten.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"Welche der gegebenen Formeln der PL ist die beste Symbolisierung des folgenden Satzes?
+Schildkröten leben lange und sind glückliche Geschöpfe, es sei denn, sie werden verletzt.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

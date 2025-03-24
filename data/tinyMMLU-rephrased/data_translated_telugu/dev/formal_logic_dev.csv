@@ -1,0 +1,6 @@
+యాక్సిమ్ లేదా మార్సులో ఎవరూ వాహనం నడపరు.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+జార్జ్ హెక్టర్ నుండి హెక్టర్ యొక్క లాన్ మోవర్ను అద్దెకు తీసుకుంటాడు.,Blgh,Bhlg,Bglh,Bghl,C
+తర్కపరమైన నిర్వచన తర్కంలో ఇచ్చిన వాదనల యొక్క అత్యుత్తమ ఆంగ్ల అర్ధాన్ని ఎంచుకోండి.,Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"సంపూర్ణ సత్యపట్టిక నిర్మించండి. ఆ తర్వాత, సత్యపట్టిక సహాయంతో, నిర్దిష్ట ప్రకటనలు తార్కిక సమానమా లేదా వ్యతిరేకమా అని నిర్ధారించండి. అవి అలా కాకపోతే, అవి సుసంగతమా లేదా అసుసంగతమా అని నిర్ధారించండి. మీ సమాధానాలకు కారణాలు చెప్పండి.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"ఇచ్చిన PL సూత్రాలలో ఏది కింది వాక్యం యొక్క అత్యుత్తమ సంకేతీకరణ?
+తాబేళ్ళు దీర్ఘ జీవితాలు జీవిస్తాయి మరియు సంతోషపు జీవులు, తాబేళ్ళు గాయపడకుంటే.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

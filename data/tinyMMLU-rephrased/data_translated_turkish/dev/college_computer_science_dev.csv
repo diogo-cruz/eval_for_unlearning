@@ -1,0 +1,13 @@
+Aşağıdaki düzenli ifadelerden hangisi (a* + b)*(c + d) ile eşdeğerdir (aynı dize kümesini tanımlar)?,a*(c + d)+ b(c + d),a*(c + d)* + b(c + d)*,a*(c + d)+ b*(c + d),(a + b)*c +(a + b)*d,D
+"Belirli bir ardışık RISC makinesi, 8 genel amaçlı R0, R1, . . . , R7 yazmacına sahiptir ve aşağıdaki işlemleri destekler.
+ADD Rs1, Rs2, Rd Rs1'i Rs2'ye ekle ve toplamı Rd'ye koy
+MUL Rs1, Rs2, Rd Rs1'i Rs2 ile çarp ve çarpımı Rd'ye koy
+Bir işlem normalde bir çevrim alır; ancak bir işlem, bir işlem dizisinde hemen ardından gelen işlem tarafından gerekli olan bir sonuç üretirse iki çevrim alır. AB + ABC + BC ifadesini düşünün, burada A, B, C değişkenleri R0, R1, R2 yazmacında bulunur. Bu üç yazmaçın içeriği değiştirilmemelidir, AB + ABC + BC değerini hesaplayan bir işlem dizisi için gerekli minimum saat çevrimi sayısı nedir?",5,6,7,8,B
+"Singleton tasarım deseni, bir sınıfın yalnızca tek bir örneğinin oluşturulmasını garanti etmek için kullanılır. Aşağıdakilerden hangisi/hangileri bu tasarım deseni için doğrudur?
+I. Singleton sınıfı, örneğini sağlamak için statik bir fabrika metodu vardır.
+II. Singleton sınıfı başka bir sınıfın alt sınıfı olabilir.
+III. Singleton sınıfının özel bir yapıcı metodu vardır.",I only,II only,III only,"I, II, and III",D
+"Bir derleyici aşağıdaki atama ifadesi için kod üretir.
+G := (A + B) * C - (D + E) * F
+Hedef makine, tek bir biriktiriciye ve yük, depolama, toplama, çıkarma ve çarpma talimatlarından oluşan tek adresli bir talimat kümesine sahiptir. Aritmetik işlemler için, sol operand biriktiriciden alınır ve sonuç biriktiricide görünür. Elde edilen kodda olası en küçük talimat sayısı",5,6,7,9,D
+"Birden fazla işlemcinin, her birinin özel bir önbellek belleği ile, tek bir bus kullanarak global belleği paylaştığı bir bilgisayar tasarımını düşünün. Bu bus kritik sistem kaynağıdır. Her işlemci, bellek referansları yerel önbelleği tarafından karşılandığı sürece her 500 nanosaniyede bir talimat yürütebilir. Bir önbellek isabetsizliği meydana geldiğinde, işlemci 2,000 nanosaniye daha gecikir. Bu ek gecikmenin yarısında, bus önbellek isabetsizliğini hizmet etmeye adanır. Diğer yarısında, işlemci devam edemez, ancak bus diğer işlemcilerden gelen isteklere hizmet etmekte serbesttir. Ortalama olarak, her talimat 2 bellek referansı gerektirir. Ortalama olarak, önbellek isabetsizlikleri referansların yüzde 1'inde meydana gelir. Diğer işlemcilerden gelen rekabetten kaynaklanan gecikmeleri göz ardı ederek, tek bir işlemcinin bus kapasitesinin hangi oranını tüketeceğini hesaplayın?",1/50,1/27,1/25,2/27,B

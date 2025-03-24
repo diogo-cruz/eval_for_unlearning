@@ -1,0 +1,9 @@
+화성에는 아무도 운전하지 않는다.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+조건에 맞는 술어 논리로의 최선의 번역을 선택하세요. 조지가 헥터의 잔디깎기를 빌린다. (g: 조지; h: 헥터; l: 헥터의 잔디깎기; Bxyx: x가 z로부터 y를 빌린다),Blgh,Bhlg,Bglh,Bghl,C
+"서술 논리에서 주어진 논증의 가장 좋은 영어 해석을 선택하세요.
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"다음 명제 쌍에 대한 완전한 진리표를 구성하시오. 그런 다음 진리표를 사용하여 이 문장들이 논리적으로 동치인지 모순인지 판단하시오. 둘 다 아니라면, 이 문장들이 일관성 있는지 또는 모순되는지 판단하시오. 답변을 정당화하시오.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"다음 문장을 가장 잘 기호화한 PL의 공식은 무엇입니까?
+거북이는 장수하고 행복한 생명체이며, 다치지 않는 한 그렇다.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

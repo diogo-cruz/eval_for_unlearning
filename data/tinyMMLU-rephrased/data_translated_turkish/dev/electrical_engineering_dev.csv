@@ -1,0 +1,5 @@
+"SR latch NOR kapılardan yapıldığında, hangi durum izin verilmez","S=0, R=0","S=0, R=1","S=1, R=0","S=1, R=1",D
+"İki kutuplu bir tambur sargılı doğru akım makinesinde, bir iletkenin direnci 2Ω ve toplam iletken sayısı 100'dür. Toplam direnci bulunuz.",200Ω,100Ω,50Ω,10Ω,C
+"Hareketli bobinli bir ölçerin bobini 100 sarıma sahiptir, 40 mm uzunluğunda ve 30 mm genişliğindedir. Kontrol torku tam ölçekte 240*10-6 N-m'dir. Manyetik akı yoğunluğu 1Wb/m2 ise ölçerin aralığı",1 mA.,2 mA.,3 mA.,4 mA.,B
+"İki uzun paralel iletken 100 A taşır. İletkenlerin arası 20 mm olarak ayrılırsa, her bir iletkenin uzunluk başına kuvveti şöyle olacaktır",100 N.,0.1 N.,1 N.,0.01 N.,B
+Bir nokta kutbun gücü 4π * 10^-4 weber'dir. Ondan 10 cm mesafede bulunan 4π * 1.5 * 10^-4 weber'lik bir nokta kutup üzerindeki kuvvet newton cinsinden olacaktır,15 N.,20 N.,7.5 N.,3.75 N.,A

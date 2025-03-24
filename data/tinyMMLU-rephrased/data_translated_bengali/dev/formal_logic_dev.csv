@@ -1,0 +1,9 @@
+কোনো মানুষ মঙ্গল গ্রহে গাড়ি চালায় না।,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+জর্জ হেক্টরের লন মোয়ার ধার করে। (g: জর্জ; h: হেক্টর; l: হেক্টরের লন মোয়ার; Bxyx: x z থেকে y ধার করে),Blgh,Bhlg,Bglh,Bghl,C
+"সর্বোত্তম ইংরেজি ব্যাখ্যা নির্বাচন করুন যেটি প্রিডিকেট লজিকের দেওয়া যুক্তিগুলির সাথে সঙ্গতিপূর্ণ।
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"নিম্নলিখিত প্রস্তাবনা যুগলের জন্য একটি সম্পূর্ণ সত্য সারণী তৈরি করুন। তারপর, সত্য সারণীগুলি ব্যবহার করে নির্ধারণ করুন যে বক্তব্যগুলি যৌগিকভাবে সমতুল্য কিনা বা বিরোধী কিনা। যদি কোনোটিই না হয়, তাহলে নির্ধারণ করুন যে তারা সামঞ্জস্যপূর্ণ কিনা বা অসামঞ্জস্যপূর্ণ কিনা। আপনার উত্তরগুলিকে যুক্তিসঙ্গত করুন।",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"নিম্নলিখিত বাক্যের জন্য PL-এর কোন সূত্রটি সর্বোত্তম প্রতীকীকরণ?
+কচ্ছপগুলি দীর্ঘ জীবন যাপন করে এবং সুখী প্রাণী, যদি না তারা আহত হয়।",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

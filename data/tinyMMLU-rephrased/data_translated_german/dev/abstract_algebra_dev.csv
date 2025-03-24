@@ -1,0 +1,9 @@
+"Finde alle c in Z_3, so dass Z_3[x]/(x^2 + c) ein Körper ist.",0,1,2,3,B
+"Aussage 1 | Wenn aH ein Element einer Faktorgruppe ist, dann teilt |aH| die Ordnung von |a|.
+
+Aussage 2 | Wenn H und K Untergruppen von G sind, dann ist HK eine Untergruppe von G.","True, True","False, False","True, False","False, True",B
+"Aussage 1 | Jedes Element einer Gruppe erzeugt eine zyklische Untergruppe der Gruppe.
+Aussage 2 | Die symmetrische Gruppe S_10 hat 10 Elemente.","True, True","False, False","True, False","False, True",C
+"Aussage 1 | Jede Funktion von einer endlichen Menge auf sich selbst muss eins zu eins sein.
+Aussage 2 | Jede Untergruppe einer abelschen Gruppe ist abelsch.","True, True","False, False","True, False","False, True",A
+Finde die Charakteristik des Rings 2Z.,0,3,12,30,A

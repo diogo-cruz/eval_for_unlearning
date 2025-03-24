@@ -1,0 +1,9 @@
+هیچ انسانی در مریخ رانندگی نمی‌کند.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+بهترین ترجمه به منطق محمولی را انتخاب کنید. جورج چمن‌زن هکتور را قرض می‌گیرد. (g: جورج؛ h: هکتور؛ l: چمن‌زن هکتور؛ Bxyx: x چیزی را از z قرض می‌گیرد),Blgh,Bhlg,Bglh,Bghl,C
+"بهترین تفسیر انگلیسی از استدلال‌های داده شده در منطق گزاره‌ای را انتخاب کنید.
+Dm
+(برای همه x)(Wx ⊃ ~Dx)
+(برای همه x)Wx ∨ Ag	/ (وجود دارد x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+جدول حقیقت کامل را برای جفت گزاره‌های زیر بسازید. سپس با استفاده از جدول‌های حقیقت، مشخص کنید که آیا عبارات از نظر منطقی معادل یا متناقض هستند. اگر هیچ کدام نیستند، مشخص کنید که آیا سازگار یا ناسازگار هستند. پاسخ‌های خود را توجیه کنید.,Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"کدام یک از فرمول‌های PL بهترین نمادسازی از جمله زیر است؟
+لاک‌پشت‌ها زندگی طولانی دارند و موجوداتی شاد هستند، مگر اینکه آسیب ببینند.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

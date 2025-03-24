@@ -1,0 +1,5 @@
+"Joe měl na starosti osvětlení pro tanec. Červené světlo bliká každé dvě sekundy, žluté světlo každé tři sekundy a modré světlo každých pět sekund. Pokud zahrneme úplný začátek a konec tance, kolikrát se během sedmiminutového tance rozsvítí všechna světla současně? (Předpokládejme, že všechna tři světla blikají současně na úplném začátku tance.)",3,15,6,5,B
+"Pět tisíc dolarů zhodnocených ročně při úrokové míře $x\%$ trvá šest let, než se zdvojnásobí. Při stejné úrokové míře, za kolik let poroste $300$ dolarů na $9600$ dolarů?",12,1,30,5,C
+"Proměnná $x$ je přímo úměrná druhé mocnině $y$ a $y$ je přímo úměrná třetí mocnině $z$. Jestliže $x$ se rovná $-16$, když $z$ se rovná 2, jaká je hodnota $x$, když $z$ se rovná $\frac{1}{2}$?",-1,16,-\\frac{1}{256},\\frac{1}{16},C
+Zjednodušte a výsledek napište s racionálním jmenovatelem: $$\sqrt{\sqrt[3]{\sqrt{\frac{1}{729}}}}$$,\\frac{3\\sqrt{3}}{3},\\frac{1}{3},\\sqrt{3},\\frac{\\sqrt{3}}{3},D
+"Deset studentů píše biologický test a dostává následující známky: 45, 55, 50, 70, 65, 80, 40, 90, 70, 85. Jaký je průměr známek studentů?",55,60,62,65,D

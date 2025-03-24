@@ -1,0 +1,8 @@
+Z_3에서 x^2 + c가 Z_3[x]/(x^2 + c)를 체로 만드는 모든 c를 찾으시오.,0,1,2,3,B
+"명제 1 | aH가 인수군의 원소이면, |aH|는 |a|를 나눈다.
+명제 2 | H와 K가 G의 부분군이면, HK는 G의 부분군이다.","True, True","False, False","True, False","False, True",B
+"명제 1 | 군의 모든 원소는 군의 순환 부분군을 생성한다.
+명제 2 | 대칭군 S_10은 10개의 원소를 가진다.","True, True","False, False","True, False","False, True",C
+"진술 1 | 유한 집합에서 자신으로 가는 모든 함수는 일대일 함수여야 한다.
+진술 2 | 아벨 군의 모든 부분군은 아벨 군이다.","True, True","False, False","True, False","False, True",A
+2Z의 특성을 찾으세요.,0,3,12,30,A

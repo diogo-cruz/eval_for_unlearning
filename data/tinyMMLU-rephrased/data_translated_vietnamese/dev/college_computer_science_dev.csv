@@ -1,0 +1,13 @@
+Biểu thức chính quy nào sau đây tương đương với (mô tả tập hợp các chuỗi giống nhau như) (a* + b)*(c + d)?,a*(c + d)+ b(c + d),a*(c + d)* + b(c + d)*,a*(c + d)+ b*(c + d),(a + b)*c +(a + b)*d,D
+"Một máy RISC có đường ống nhất định có 8 thanh ghi dùng chung R0, R1, ..., R7 và hỗ trợ các thao tác sau.
+ADD Rs1, Rs2, Rd Cộng Rs1 với Rs2 và đặt tổng vào Rd
+MUL Rs1, Rs2, Rd Nhân Rs1 với Rs2 và đặt tích vào Rd
+Một thao tác thường mất một chu kỳ; tuy nhiên, một thao tác mất hai chu kỳ nếu nó tạo ra một kết quả được yêu cầu bởi thao tác ngay sau nó trong một chuỗi thao tác. Xét biểu thức AB + ABC + BC, trong đó các biến A, B, C được đặt trong các thanh ghi R0, R1, R2. Nếu nội dung của ba thanh ghi này không được sửa đổi, số chu kỳ đồng hồ tối thiểu cần thiết để tính toán giá trị của AB + ABC + BC là bao nhiêu?",5,6,7,8,B
+"Mẫu thiết kế Singleton được sử dụng để đảm bảo rằng chỉ có một phiên bản duy nhất của một lớp có thể được khởi tạo. Những điều sau đây là đúng với mẫu thiết kế này:
+I. Lớp Singleton có một phương thức tạo tĩnh để cung cấp phiên bản của nó.
+II. Lớp Singleton có thể là lớp con của một lớp khác.
+III. Lớp Singleton có một hàm tạo riêng tư.",I only,II only,III only,"I, II, and III",D
+"Một trình biên dịch tạo mã cho câu lệnh gán sau.
+G := (A + B) * C - (D + E) * F
+Máy đích có một bộ tích lũy duy nhất và một tập lệnh một địa chỉ bao gồm các lệnh tải, lưu trữ, cộng, trừ và nhân. Đối với các phép toán số học, toán hạng bên trái được lấy từ bộ tích lũy và kết quả xuất hiện trong bộ tích lũy. Số lượng lệnh nhỏ nhất có thể trong mã kết quả là",5,6,7,9,D
+"Xem xét một thiết kế máy tính trong đó nhiều bộ xử lý, mỗi bộ có bộ nhớ cache riêng, chia sẻ bộ nhớ toàn cục bằng một bus duy nhất. Bus này là tài nguyên hệ thống then chốt. Mỗi bộ xử lý có thể thực thi một lệnh mỗi 500 nanosecgiây miễn là các tham chiếu bộ nhớ được đáp ứng bởi bộ nhớ cache cục bộ. Khi xảy ra lỗi cache, bộ xử lý bị trì hoãn thêm 2.000 nanosecgiây. Trong nửa thời gian trì hoãn bổ sung này, bus được dành riêng để phục vụ lỗi cache. Trong nửa còn lại, bộ xử lý không thể tiếp tục, nhưng bus rảnh để phục vụ các yêu cầu từ các bộ xử lý khác. Trung bình, mỗi lệnh yêu cầu 2 tham chiếu bộ nhớ. Trung bình, lỗi cache xảy ra trên 1 phần trăm các tham chiếu. Tỷ lệ nào của năng lực bus mà một bộ xử lý đơn lẻ sẽ tiêu thụ, bỏ qua các độ trễ do cạnh tranh từ các bộ xử lý khác?",1/50,1/27,1/25,2/27,B

@@ -1,0 +1,5 @@
+"V klopném obvodu SR vytvořeném z hradel NOR, která podmínka není povolena","S=0, R=0","S=0, R=1","S=1, R=0","S=1, R=1",D
+"V dvoupólové smyčkové vinutí stejnosměrného stroje, kde je odpor jednoho vodiče 2Ω a celkový počet vodičů je 100. Najděte celkový odpor",200Ω,100Ω,50Ω,10Ω,C
+"Cívka měřicího přístroje s pohyblivou cívkou má 100 závitů, je dlouhá 40 mm a široká 30 mm. Ovládací moment je 240*10-6 N-m v plném rozsahu. Pokud je magnetická hustota toku 1Wb/m2, rozsah měřicího přístroje je",1 mA.,2 mA.,3 mA.,4 mA.,B
+"Dva dlouhé rovnoběžné vodiče vedou 100 A. Pokud jsou vodiče odděleny 20 mm, bude síla na metr délky každého vodiče",100 N.,0.1 N.,1 N.,0.01 N.,B
+"Bodový pól má sílu 4π * 10^-4 weberů. Síla v newtonech na bodový pól o 4π * 1,5 * 10^-4 weberů umístěný ve vzdálenosti 10 cm od něj bude",15 N.,20 N.,7.5 N.,3.75 N.,A

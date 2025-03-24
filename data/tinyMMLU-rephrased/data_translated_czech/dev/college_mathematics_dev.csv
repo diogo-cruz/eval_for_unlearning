@@ -1,0 +1,8 @@
+"Nechť V je množina všech reálných polynomů p(x). Nechť transformace T, S jsou definovány na V jako T:p(x) -> xp(x) a S:p(x) -> p'(x) = d/dx p(x), a interpretujte (ST)(p(x)) jako S(T(p(x))). Která z následujících možností je pravdivá?",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"Nádrž zpočátku obsahuje solný roztok 3 gramů soli rozpuštěných ve 100 litrech vody. Do nádrže je postřikován solný roztok obsahující 0,02 gramů soli na litr vody rychlostí 4 litry za minutu. Postřikovaný roztok je nepřetržitě míchán se solným roztokem v nádrži a směs vytéká z nádrže rychlostí 4 litry za minutu. Pokud je míchání okamžité, kolik gramů soli je v nádrži po uplynutí 100 minut?",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"Nechť A je reálná matice 2x2. Které z následujících tvrzení musí být pravdivé?
+I. Všechny prvky A^2 jsou nezáporné.
+II. Determinant A^2 je nezáporný.
+III. Pokud A má dvě různé vlastní hodnoty, pak A^2 má také dvě různé vlastní hodnoty.",I only,II only,III only,II and III only,B
+"Předpokládejme, že f(1 + x) = f(x) pro všechna reálná x. Jestliže f je polynom a f(5) = 11, potom f(15/2)",-11,0,11,33/2,C
+"Nechť A je množina všech uspořádaných párů celých čísel (m, n) takových, že 7m + 12n = 22. Jaké je největší záporné číslo v množině B = {m + n : (m, n) ∈ A}?",-5,-4,-3,-2,B

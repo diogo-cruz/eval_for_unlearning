@@ -1,0 +1,8 @@
+"V, tüm reel polinomların kümesi olsun. T, S dönüşümleri V üzerinde T:p(x) -> xp(x) ve S:p(x) -> p'(x) = d/dx p(x) olarak tanımlansın ve (ST)(p(x)) ifadesi S(T(p(x))) olarak yorumlansın. Aşağıdakilerden hangisi doğrudur?",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"Bir tank başlangıçta 100 litre suda çözülmüş 3 gram tuz içeren bir tuz çözeltisi ile doludur. Litrede 0.02 gram tuz içeren bir tuz çözeltisi tankın içine dakikada 4 litre hızında püskürtülür. Püskürtülen çözelti tankdaki tuz çözeltisiyle anında karıştırılır ve karışım tanktan dakikada 4 litre hızında dışarı akar. Karıştırma anında gerçekleşiyorsa, 100 dakika sonra tanktaki tuz miktarı kaç gramdır?",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"A gerçek 2x2 bir matris olsun. Aşağıdaki ifadelerden hangisi mutlaka doğrudur?
+I. A^2'nin tüm elemanları negatif olmayan sayılardır.
+II. A^2'nin determinantı negatif olmayan bir sayıdır.
+III. Eğer A'nın iki farklı özdeğeri varsa, o zaman A^2'nin de iki farklı özdeğeri vardır.",I only,II only,III only,II and III only,B
+"Diyelim ki f(1 + x) = f(x) tüm reel x değerleri için geçerlidir. Eğer f bir polinom ise ve f(5) = 11 ise, o zaman f(15/2)",-11,0,11,33/2,C
+"A, 7m + 12n = 22 denklemini sağlayan tüm tam sayı ikililerinin (m, n) kümesi olsun. B = {m + n : (m, n) ∈ A} kümesindeki en büyük negatif sayı nedir?",-5,-4,-3,-2,B

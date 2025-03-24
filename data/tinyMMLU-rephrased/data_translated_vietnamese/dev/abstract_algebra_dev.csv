@@ -1,0 +1,7 @@
+Tìm tất cả các giá trị c trong Z_3 sao cho Z_3[x]/(x^2 + c) là một trường.,0,1,2,3,B
+"Nhận xét 1 | Nếu aH là một phần tử của nhóm thương, thì |aH| chia hết |a|. Nhận xét 2 | Nếu H và K là các nhóm con của G thì HK là một nhóm con của G.","True, True","False, False","True, False","False, True",B
+"Câu 1 | Mỗi phần tử của một nhóm đều sinh ra một nhóm con tuần hoàn của nhóm.
+Câu 2 | Nhóm đối xứng S_10 có 10 phần tử.","True, True","False, False","True, False","False, True",C
+"Câu 1 | Mọi hàm từ một tập hữu hạn ánh xạ lên chính nó đều phải là một-một.
+Câu 2 | Mọi nhóm con của một nhóm giao hoán đều là giao hoán.","True, True","False, False","True, False","False, True",A
+Tìm đặc trưng của vành 2Z.,0,3,12,30,A

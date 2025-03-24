@@ -1,0 +1,9 @@
+Mars'ta hiç kimse araba kullanmaz.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+"George, Hector'un çim biçme makinesini ödünç alır. (g: George; h: Hector; l: Hector'un çim biçme makinesi; Bxyx: x, y'yi z'den ödünç alır)",Blgh,Bhlg,Bglh,Bghl,C
+"Verilen mantıksal önermelerde en iyi İngilizce yorumu seçin.
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"Verilen önerme çiftleri için tam bir doğruluk tablosu oluşturun. Ardından, doğruluk tablolarını kullanarak, ifadelerin mantıksal olarak eşdeğer mi yoksa çelişkili mi olduğunu belirleyin. Eğer hiçbiri değilse, tutarlı mı yoksa tutarsız mı olduğunu belirleyin. Cevaplarınızı gerekçelendirin.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"Verilen PL formüllerinden hangisi aşağıdaki cümlenin en iyi sembolizasyonudur?
+Kaplumbağalar uzun ömürlü yaşarlar ve mutlu yaratıklardır, ancak yaralanmazlarsa.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

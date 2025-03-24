@@ -1,0 +1,8 @@
+다음 중 상관관계에 대한 올바른 진술은 무엇인가?,"If the slope of the regression line is exactly 1, then the correlation is exactly 1.","If the correlation is 0, then the slope of the regression line is undefined.",Switching which variable is called x and which is called y changes the sign of the correlation.,The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.,D
+"X와 Y가 E(X) = 37, var(X) = 5, E(Y) = 62, var(Y) = 12인 임의의 확률 변수라고 가정하자. X + Y의 기댓값과 분산은 얼마인가?","E(X + Y) = 99, var(X + Y) = 8.5","E(X + Y) = 99, var(X + Y) = 13","E(X + Y) = 99, var(X + Y) = 17",There is insufficient information to answer this question.,D
+"서리 경보가 발령된 후, 대규모 오렌지 과수원의 주인은 그의 근로자들에게 모든 나무에 물을 뿌리도록 요청했습니다. 물은 얼어붙어 오렌지 꽃 주변에 보호막 역할을 하는 얼음 층을 형성해야 했습니다. 그럼에도 불구하고, 주인은 일부 나무들이 서리로 인해 상당한 피해를 입었다고 의심했습니다. 서리로 인해 50퍼센트 이상의 피해를 입은 나무의 비율을 추정하기 위해, 그는 과수원에서 무작위로 100개의 나무를 표본으로 추출했습니다. 이 실험에서 응답 변수는 무엇입니까?",The proportion of trees that suffered more than 50 percent damage due to frost.,The number of trees affected by the frost.,The number of trees sampled from the grove.,"For each sampled tree, whether it suffered more than 50 percent damage or at most 50 percent damage.",D
+"새로운 스마트워치는 공장의 한 부분에서 제조되고, 그 후 공장의 다른 독립적인 부분에서 배송을 위해 고정됩니다. 스마트워치의 무게는 평균 62그램이고 표준 편차는 1.0그램입니다. 포장재(상자, 사용자 설명서, 버블 랩 등)의 무게는 평균 456그램이고 표준 편차는 6그램입니다. 스마트워치와 그 포장재의 무게 분포는 다음과 같은 평균과 표준 편차를 가질 것입니다:",Mean 518 grams; standard deviation 7.0 grams,Mean 518 grams; standard deviation 3.5 grams,Mean 518 grams; standard deviation 6.1 grams,Mean 394 grams; standard deviation 6.1 grams,C
+"다음 집합 중 표준 편차가 가장 작은 집합은 무엇입니까? 가장 큰 집합은 무엇입니까?
+I: {1,2,3}
+II: {-10,10}
+III: {100}","I, II","II, III","III, I","III, II",D

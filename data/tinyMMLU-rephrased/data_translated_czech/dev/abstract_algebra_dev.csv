@@ -1,0 +1,6 @@
+"Najdi všechna c v Z_3 taková, že Z_3[x]/(x^2 + c) je těleso.",0,1,2,3,B
+"Tvrzení 1 | Jestliže aH je prvek faktorové grupy, pak |aH| dělí |a|. Tvrzení 2 | Jestliže H a K jsou podgrupy grupy G, pak HK není podgrupou grupy G.","True, True","False, False","True, False","False, True",B
+Tvrzení 1 | Každý prvek grupy generuje cyklickou podgrupu grupy. Tvrzení 2 | Symetrická grupa S_10 má 10 prvků.,"True, True","False, False","True, False","False, True",C
+"Tvrzení 1 | Každá funkce z konečné množiny na sebe sama musí být prosté.
+Tvrzení 2 | Každá podgrupa abelovské grupy je abelovská.","True, True","False, False","True, False","False, True",A
+Najděte charakteristiku okruhu 2Z.,0,3,12,30,A

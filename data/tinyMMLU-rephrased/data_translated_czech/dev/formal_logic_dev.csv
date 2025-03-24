@@ -1,0 +1,9 @@
+Žádní lidé nejezdí na Marsu.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+Vyberte nejlepší překlad do predikátové logiky. George si půjčuje Hektorův sekací stroj. (g: George; h: Hector; l: Hektorův sekací stroj; Bxyx: x si půjčuje y od z),Blgh,Bhlg,Bglh,Bghl,C
+"Vyberte nejlepší anglický výklad daných argumentů v predikátové logice.
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"Sestrojte úplnou tabulku pravdivostních hodnot pro následující páry výroků. Poté pomocí pravdivostních tabulek určete, zda jsou výroky logicky ekvivalentní nebo kontradiktní. Pokud ne, určete, zda jsou konzistentní nebo nekonzistentní. Zdůvodněte své odpovědi.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"Která z daných formulí PL je nejlepší symbolizací následující věty?
+Želvy žijí dlouhé životy a jsou šťastné bytosti, pokud nejsou zraněné.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

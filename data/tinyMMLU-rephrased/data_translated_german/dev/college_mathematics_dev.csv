@@ -1,0 +1,8 @@
+"Sei V die Menge aller reellen Polynome p(x). Seien Transformationen T, S auf V definiert durch T:p(x) -> xp(x) und S:p(x) -> p'(x) = d/dx p(x), und interpretiere (ST)(p(x)) als S(T(p(x))). Welche der folgenden Aussagen ist wahr?",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"Ein Tank enthält zunächst eine Salzlösung von 3 Gramm Salz, die in 100 Litern Wasser gelöst ist. Eine Salzlösung, die 0,02 Gramm Salz pro Liter Wasser enthält, wird mit einer Rate von 4 Litern pro Minute in den Tank gesprüht. Die gesprühte Lösung wird sofort mit der Salzlösung im Tank vermischt, und die Mischung fließt mit einer Rate von 4 Litern pro Minute aus dem Tank. Wenn die Vermischung sofort erfolgt, wie viele Gramm Salz befinden sich nach 100 Minuten im Tank?",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"Sei A eine reelle 2x2-Matrix. Welche der folgenden Aussagen müssen wahr sein?
+I. Alle Einträge von A^2 sind nichtnegativ.
+II. Die Determinante von A^2 ist nichtnegativ.
+III. Wenn A zwei verschiedene Eigenwerte hat, dann hat A^2 zwei verschiedene Eigenwerte.",I only,II only,III only,II and III only,B
+"Angenommen, f(1 + x) = f(x) für alle reellen x. Wenn f ein Polynom ist und f(5) = 11, dann f(15/2)",-11,0,11,33/2,C
+"Sei A die Menge aller geordneten Paare von ganzen Zahlen (m, n), so dass 7m + 12n = 22. Was ist die größte negative Zahl in der Menge B = {m + n : (m, n) ∈ A}?",-5,-4,-3,-2,B

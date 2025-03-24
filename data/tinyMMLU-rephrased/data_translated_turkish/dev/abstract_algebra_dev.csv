@@ -1,0 +1,9 @@
+"Z_3'de, Z_3[x]/(x^2 + c) bir alan olacak şekilde tüm c değerlerini bulun.",0,1,2,3,B
+"İfade 1 | Eğer aH bir faktör grubu elemanı ise, o zaman |aH| |a|'yı böler.
+
+İfade 2 | Eğer H ve K, G'nin alt grupları ise, o zaman HK, G'nin bir alt grubudur.","True, True","False, False","True, False","False, True",B
+"İfade 1 | Bir grubun her elemanı grubun bir çevrimsel alt grubunu oluşturur.
+İfade 2 | Simetrik grup S_10, 10 elemana sahiptir.","True, True","False, False","True, False","False, True",C
+"İfade 1| Sonlu bir kümeden kendisine olan her fonksiyon bire bir olmalıdır.
+İfade 2| Bir Abel grubunun her alt grubu Abel'dir.","True, True","False, False","True, False","False, True",A
+2Z halkasının karakteristiğini bulun.,0,3,12,30,A

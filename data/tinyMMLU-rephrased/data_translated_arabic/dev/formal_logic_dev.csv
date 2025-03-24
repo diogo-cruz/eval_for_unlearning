@@ -1,0 +1,10 @@
+لا يوجد أشخاص يقودون على المريخ.,~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+"اختر الترجمة الأفضل إلى منطق المحمولات:
+يستعير جورج ماكينة قص العشب الخاصة بهيكتور. (g: جورج؛ h: هيكتور؛ l: ماكينة قص العشب الخاصة بهيكتور؛ Bxyx: x يستعير y من z)",Blgh,Bhlg,Bglh,Bghl,C
+"اختر أفضل تفسير إنجليزي للحجج المعطاة في المنطق المحمولي.
+Dm
+(∀x)(Wx ⊃ ~Dx)
+(∀x)Wx ∨ Ag	/ (∃x)Ax",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+قم بإنشاء جدول حقيقة كامل للأزواج التالية من القضايا. ثم، باستخدام جداول الحقيقة، حدد ما إذا كانت العبارات متكافئة منطقيًا أو متناقضة. وإذا لم يكن كذلك، حدد ما إذا كانت متسقة أو غير متسقة. برر إجاباتك.,Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"أي من صيغ المنطق الرمزي المعطاة هي الرمزية الأفضل للجملة التالية؟
+السلاحف تعيش حياة طويلة وهي مخلوقات سعيدة، ما لم يتم إيذاؤها.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B
