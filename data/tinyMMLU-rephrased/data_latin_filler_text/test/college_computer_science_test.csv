@@ -1,0 +1,27 @@
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Fusce eget mauris euismod, vestibulum ligula nec, rhoncus purus.
+In hac habitasse platea dictumst.
+Etiam ornare nulla sed libero varius, eget accumsan justo consectetur.
+Integer feugiat ipsum non justo tincidunt, ut fermentum est congue.
+Sed ultrices dolor vel justo convallis, vitae lacinia metus commodo.
+Nam eget magna sed enim ullamcorper tempor nec ac turpis.
+Proin in lorem sed magna fermentum efficitur nec id dui.
+Quisque porta lectus ac sem accumsan, sed aliquam justo convallis.
+Duis auctor justo sed dolor consectetur, sed bibendum eros placerat.
+
+Let A be a finite set with m elements, and let B be a finite set with n elements. The number of distinct functions mapping A into B is",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Fusce eget mauris euismod, vestibulum ligula nec, rhoncus purus.
+In hac habitasse platea dictumst.
+Etiam ornare nulla sed libero varius, eget accumsan justo consectetur.
+Integer feugiat ipsum non justo tincidunt, ut fermentum est congue.
+Sed ultrices dolor vel justo convallis, vitae lacinia metus commodo.
+Nam eget magna sed enim ullamcorper tempor nec ac turpis.
+Proin in lorem sed magna fermentum efficitur nec id dui.
+Quisque porta lectus ac sem accumsan, sed aliquam justo convallis.
+Duis auctor justo sed dolor consectetur, sed bibendum eros placerat.
+
+Let T be a depth-first search tree of a connected undirected graph G. For each vertex v of T, let pre(v) be the number of nodes visited up to and including v during a preorder traversal of T, and post(v) be the number of nodes visited up to and including v during a postorder traversal of T. The lowest common ancestor of vertices u and v in T is a vertex w of T such that w is an ancestor of both u and v, and no child of w is an ancestor of both u and v. Let (u, v) be an edge in G that is not in T, such that pre(u) < pre(v). Which of the following statements about u and v must be true?
+I. post(u) < post(v)
+II. u is an ancestor of v in T.
+III. If w is the lowest common ancestor of u and v in T, then w = u.",I only,II only,III only,II and III,D

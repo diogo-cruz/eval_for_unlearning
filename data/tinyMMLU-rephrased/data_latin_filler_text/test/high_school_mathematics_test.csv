@@ -1,0 +1,12 @@
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Fusce eget mauris euismod, vestibulum ligula nec, rhoncus purus.
+In hac habitasse platea dictumst.
+Etiam ornare nulla sed libero varius, eget accumsan justo consectetur.
+Integer feugiat ipsum non justo tincidunt, ut fermentum est congue.
+Sed ultrices dolor vel justo convallis, vitae lacinia metus commodo.
+Nam eget magna sed enim ullamcorper tempor nec ac turpis.
+Proin in lorem sed magna fermentum efficitur nec id dui.
+Quisque porta lectus ac sem accumsan, sed aliquam justo convallis.
+Duis auctor justo sed dolor consectetur, sed bibendum eros placerat.
+
+Rowena can paint a room in $14$ hours, while Ruby can paint it in $6$ hours. If Rowena paints for $x$ hours and Ruby paints for $y$ hours, they will finish half of the painting, while if Rowena paints for $y$ hours and Ruby paints for $x$ hours they will paint the whole room. Find the ordered pair $(x,y)$.","(\\frac{11}{10}, \\frac{11}{10})","(\\frac{231}{20}, \\frac{21}{20})","(\\frac{231}{40}, \\frac{21}{40})","(1,1)",C

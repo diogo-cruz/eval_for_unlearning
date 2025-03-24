@@ -1,0 +1,27 @@
+"The curious cat chased the fluttering butterfly through the sun-drenched meadow.
+A gentle breeze whispered secrets to the ancient oak tree standing tall in the tranquil forest.
+As the morning dew glistened on the petals, the sleepy flowers slowly opened their eyes to greet the dawn.
+Lost in the labyrinth of thoughts, she searched for the elusive thread of clarity in the depths of her mind.
+With a flick of his wand, the magician conjured a cascade of sparkling stars that danced across the velvet sky.
+The aroma of freshly baked bread wafted through the cozy kitchen, wrapping everyone in a warm embrace.
+Time stood still as they traced constellations in the infinite expanse of the night sky, lost in wonder.
+The laughter of children echoed through the playground, filling the air with pure, unbridled joy.
+In the library of dreams, she found solace among the pages of forgotten stories and whispered secrets.
+Beneath the canopy of twinkling lights, they shared stories and laughter around the crackling campfire, their spirits alight with camaraderie.
+
+Let A be a finite set with m elements, and let B be a finite set with n elements. The number of distinct functions mapping A into B is",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"The curious cat chased the fluttering butterfly through the sun-drenched meadow.
+A gentle breeze whispered secrets to the ancient oak tree standing tall in the tranquil forest.
+As the morning dew glistened on the petals, the sleepy flowers slowly opened their eyes to greet the dawn.
+Lost in the labyrinth of thoughts, she searched for the elusive thread of clarity in the depths of her mind.
+With a flick of his wand, the magician conjured a cascade of sparkling stars that danced across the velvet sky.
+The aroma of freshly baked bread wafted through the cozy kitchen, wrapping everyone in a warm embrace.
+Time stood still as they traced constellations in the infinite expanse of the night sky, lost in wonder.
+The laughter of children echoed through the playground, filling the air with pure, unbridled joy.
+In the library of dreams, she found solace among the pages of forgotten stories and whispered secrets.
+Beneath the canopy of twinkling lights, they shared stories and laughter around the crackling campfire, their spirits alight with camaraderie.
+
+Let T be a depth-first search tree of a connected undirected graph G. For each vertex v of T, let pre(v) be the number of nodes visited up to and including v during a preorder traversal of T, and post(v) be the number of nodes visited up to and including v during a postorder traversal of T. The lowest common ancestor of vertices u and v in T is a vertex w of T such that w is an ancestor of both u and v, and no child of w is an ancestor of both u and v. Let (u, v) be an edge in G that is not in T, such that pre(u) < pre(v). Which of the following statements about u and v must be true?
+I. post(u) < post(v)
+II. u is an ancestor of v in T.
+III. If w is the lowest common ancestor of u and v in T, then w = u.",I only,II only,III only,II and III,D
