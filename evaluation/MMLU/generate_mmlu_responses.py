@@ -7,7 +7,8 @@ sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 import pandas as pd
 from common.utils import format_example, gen_prompt, load, make_inference
-from MMLU_utils import TASKS, BIOLOGY_TASKS
+# from MMLU_utils import TASKS
+from tinyMMLU_utils import TASKS 
 
 
 def main(args):
@@ -63,8 +64,7 @@ def generate_results_for_prompt(
         f"Generating responses with {args.ntrain} few-shot examples for each task"
     )
 
-    # for task in TASKS:
-    for task in BIOLOGY_TASKS:
+    for task in TASKS:
         if (
             task in run_results
         ):

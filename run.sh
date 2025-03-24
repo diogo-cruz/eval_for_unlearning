@@ -34,7 +34,7 @@ set -xe
 
 # python3 ./evaluation/MMLU/generate_mmlu_responses.py \
 #   --ckpt_dir "cais/Zephyr_RMU" \
-#   --data_dir "data/MMLU"
+#   --data_dir "data/tinyMMLU" 
 
 # python3 ./evaluation/MMLU/cal_mmlu_result.py \
 #   --file_name "run_results_.json"
@@ -173,12 +173,71 @@ set -xe
 # python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
 #   --file_name "results/wmdp_0_shot_zephyr_7b_beta_run_results__rephrasing.json"
 
-python3 ./evaluation/wmdp/generate_wmdp_responses_rephrasing.py \
+# python3 ./evaluation/wmdp/generate_wmdp_responses_rephrasing.py \
+#   --ckpt_dir "cais/Zephyr_RMU" \
+#   --data_dir "data/wmdp-rephrased" \
+
+# mv "run_results__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
+# mv "run_breakpoint__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_breakpoint__rephrasing.json"
+
+# python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
+#   --file_name "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
+
+# ---
+echo "Running eval for Zephyr_RMU on tinyMMLU..."
+python3 ./evaluation/MMLU/generate_mmlu_responses.py \
   --ckpt_dir "cais/Zephyr_RMU" \
-  --data_dir "data/wmdp-rephrased" \
+  --data_dir "data/tinyMMLU" \
 
-mv "run_results__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
-mv "run_breakpoint__rephrasing.json" "results/wmdp_0_shot_zephyr_rmu_run_breakpoint__rephrasing.json"
+mv "run_results_.json" "results/tinyMMLU_0_shot_zephyr_rmu_run_results_.json"
+mv "run_breakpoint_.json" "results/tinyMMLU_0_shot_zephyr_rmu_run_breakpoint_.json"
 
-python3 ./evaluation/wmdp/cal_wmdp_result_rephrasing.py \
-  --file_name "results/wmdp_0_shot_zephyr_rmu_run_results__rephrasing.json"
+python3 ./evaluation/MMLU/cal_mmlu_result.py \
+  --file_name "results/tinyMMLU_0_shot_zephyr_rmu_run_results_.json"
+
+# ACC-biology: 0.6100
+# ACC-biology-answered: 0.6100
+# Percentage-biology-answered: 0.9000
+# -----------------
+# ACC-other: 0.5660
+# ACC-other-answered: 0.5938
+# Percentage-other-answered: 0.9074
+# -----------------
+# ACC-all_subjects: 0.5756
+# ACC-all_subjects-answered: 0.5973
+# Percentage-all_subjects-answered: 0.9058
+
+echo "Running eval for Zephyr_7b_beta on tinyMMLU..."
+python3 ./evaluation/MMLU/generate_mmlu_responses.py \
+  --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" \
+  --data_dir "data/tinyMMLU" \
+
+mv "run_results_.json" "results/tinyMMLU_0_shot_zephyr_7b_beta_run_results_.json"
+mv "run_breakpoint_.json" "results/tinyMMLU_0_shot_zephyr_7b_beta_run_breakpoint_.json"
+
+python3 ./evaluation/MMLU/cal_mmlu_result.py \
+  --file_name "results/tinyMMLU_0_shot_zephyr_7b_beta_run_results_.json"
+
+# ACC-biology: 0.7300
+# ACC-biology-answered: 0.7300
+# Percentage-biology-answered: 1.0000
+# -----------------
+# ACC-other: 0.5383
+# ACC-other-answered: 0.5660
+# Percentage-other-answered: 0.9352
+# -----------------
+# ACC-all_subjects: 0.5799
+# ACC-all_subjects-answered: 0.6017
+# Percentage-all_subjects-answered: 0.9493
+
+
+echo "Running eval for Zephyr_RMU on tinyMMLU-rephrased..."
+python3 ./evaluation/MMLU/generate_mmlu_responses_rephrasing.py \
+  --ckpt_dir "cais/Zephyr_RMU" \
+  --data_dir "data/tinyMMLU-rephrased" \
+
+mv "run_results_.json" "results/tinyMMLU_0_shot_zephyr_rmu_run_results__rephrased.json"
+mv "run_breakpoint_.json" "results/tinyMMLU_0_shot_zephyr_rmu_run_breakpoint__rephrased.json"
+
+python3 ./evaluation/MMLU/cal_mmlu_result_rephrasing.py \
+  --file_name "results/tinyMMLU_0_shot_zephyr_rmu_run_results__rephrased.json"

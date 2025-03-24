@@ -5,7 +5,8 @@ from os import path, sys
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 from common.utils import choices, data_directory_list
-from MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
+# from MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
+from tiny_MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
 
 
 def compute_metric(run_results):
@@ -50,26 +51,26 @@ def compute_metric(run_results):
             BIOLOGY_TASKS
         )
 
-        # accuracies["other_all"] = sum([accuracies[task] for task in OTHER_TASKS]) / len(
-        #     OTHER_TASKS
-        # )
+        accuracies["other_all"] = sum([accuracies[task] for task in OTHER_TASKS]) / len(
+            OTHER_TASKS
+        )
 
-        # accuracies_answered["other_all"] = sum([accuracies_answered[task] for task in OTHER_TASKS]) / len(
-        #     OTHER_TASKS
-        # )
-        # percentage_answered["other_all"] = sum([percentage_answered[task] for task in OTHER_TASKS]) / len(
-        #     OTHER_TASKS
-        # )
+        accuracies_answered["other_all"] = sum([accuracies_answered[task] for task in OTHER_TASKS]) / len(
+            OTHER_TASKS
+        )
+        percentage_answered["other_all"] = sum([percentage_answered[task] for task in OTHER_TASKS]) / len(
+            OTHER_TASKS
+        )
 
-        # accuracies["all_subjects"] = sum([accuracies[task] for task in TASKS]) / len(
-        #     TASKS
-        # )
-        # accuracies_answered["all_subjects"] = sum([accuracies_answered[task] for task in TASKS]) / len(
-        #     TASKS
-        # )
-        # percentage_answered["all_subjects"] = sum([percentage_answered[task] for task in TASKS]) / len(
-        #     TASKS
-        # )
+        accuracies["all_subjects"] = sum([accuracies[task] for task in TASKS]) / len(
+            TASKS
+        )
+        accuracies_answered["all_subjects"] = sum([accuracies_answered[task] for task in TASKS]) / len(
+            TASKS
+        )
+        percentage_answered["all_subjects"] = sum([percentage_answered[task] for task in TASKS]) / len(
+            TASKS
+        )
 
         print("ACC-biology: %.4f" % accuracies["biology_all"])
         print("ACC-biology-answered: %.4f" %
@@ -77,17 +78,17 @@ def compute_metric(run_results):
         print("Percentage-biology-answered: %.4f" %
               percentage_answered["biology_all"])
         print("-----------------")
-        # print("ACC-other: %.4f" % accuracies["other_all"])
-        # print("ACC-other-answered: %.4f" % accuracies_answered["other_all"])
-        # print("Percentage-other-answered: %.4f" %
-        #       percentage_answered["other_all"])
-        # print("-----------------")
-        # print("ACC-all_subjects: %.4f" % accuracies["all_subjects"])
-        # print("ACC-all_subjects-answered: %.4f" %
-        #       accuracies_answered["all_subjects"])
-        # print("Percentage-all_subjects-answered: %.4f" %
-        #       percentage_answered["all_subjects"])
-        # print("-----------------")
+        print("ACC-other: %.4f" % accuracies["other_all"])
+        print("ACC-other-answered: %.4f" % accuracies_answered["other_all"])
+        print("Percentage-other-answered: %.4f" %
+              percentage_answered["other_all"])
+        print("-----------------")
+        print("ACC-all_subjects: %.4f" % accuracies["all_subjects"])
+        print("ACC-all_subjects-answered: %.4f" %
+              accuracies_answered["all_subjects"])
+        print("Percentage-all_subjects-answered: %.4f" %
+              percentage_answered["all_subjects"])
+        print("-----------------")
 
 
 def main(args):

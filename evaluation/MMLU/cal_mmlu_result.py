@@ -5,7 +5,8 @@ from os import path, sys
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 from common.utils import choices
-from MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
+# from MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
+from tinyMMLU_utils import TASKS, BIOLOGY_TASKS, OTHER_TASKS
 
 
 def compute_metric(run_results):
