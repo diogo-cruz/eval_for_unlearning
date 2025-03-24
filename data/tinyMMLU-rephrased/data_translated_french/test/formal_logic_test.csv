@@ -1,0 +1,10 @@
+Sélectionnez la meilleure traduction en logique des prédicats. Certains pompiers sauvent des victimes du danger. (Dx : x est un danger ; Fx : x est un pompier ; Vx : x est une victime ; Rxyz : x sauve y de z),(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"Utiliser la clé suivante pour traduire la formule de PL en phrases naturelles en anglais :
+A : Marina lit un livre de Percy Jackson.
+B : Izzy joue à Minecraft.
+C : Emily arrête de travailler.
+D : Russell prépare le dîner.
+E : Ashleigh s'arrête.
+~C ∨ D","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

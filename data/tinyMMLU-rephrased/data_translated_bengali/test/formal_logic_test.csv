@@ -1,0 +1,4 @@
+"সেরা অনুবাদটি প্রিডিকেট লজিকে বেছে নিন। কিছু অগ্নিবাহিনীর কর্মী ঝুঁকি থেকে পীড়িতদের উদ্ধার করে। (Dx: x হল ঝুঁকি; Fx: x হল অগ্নিবাহিনীর কর্মী; Vx: x হল পীড়িত; Rxyz: x, y কে z থেকে উদ্ধার করে)",(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"~C ∨ D এর অর্থ হল: ""Emily কাজ বন্ধ করে নি অথবা Russell রান্না করে""।","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

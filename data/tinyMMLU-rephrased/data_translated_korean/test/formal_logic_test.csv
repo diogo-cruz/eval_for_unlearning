@@ -1,0 +1,4 @@
+일부 소방관들이 위험에서 피해자들을 구조한다. (Dx: x는 위험이다; Fx: x는 소방관이다; Vx: x는 피해자이다; Rxyz: x가 y를 z에서 구조한다),(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"~C ∨ D는 ""Emily가 일을 멈추지 않거나 Russell이 저녁 식사를 만든다""를 의미합니다.","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

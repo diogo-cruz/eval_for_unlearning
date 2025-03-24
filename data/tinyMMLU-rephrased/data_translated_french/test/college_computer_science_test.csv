@@ -1,0 +1,5 @@
+"Soit A un ensemble fini avec m éléments, et soit B un ensemble fini avec n éléments. Le nombre de fonctions distinctes mappant A dans B est",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"Soit T un arbre de recherche en profondeur d'un graphe non orienté connexe G. Pour chaque sommet v de T, soit pre(v) le nombre de nœuds visités jusqu'à et y compris v lors d'un parcours préfixe de T, et post(v) le nombre de nœuds visités jusqu'à et y compris v lors d'un parcours postfixe de T. L'ancêtre commun le plus bas des sommets u et v dans T est un sommet w de T tel que w est un ancêtre de u et v, et aucun enfant de w n'est un ancêtre à la fois de u et v. Soit (u, v) une arête dans G qui n'est pas dans T, telle que pre(u) < pre(v). Laquelle des affirmations suivantes concernant u et v doit être vraie ?
+I. post(u) < post(v)
+II. u est un ancêtre de v dans T.
+III. Si w est l'ancêtre commun le plus bas de u et v dans T, alors w = u.",I only,II only,III only,II and III,D

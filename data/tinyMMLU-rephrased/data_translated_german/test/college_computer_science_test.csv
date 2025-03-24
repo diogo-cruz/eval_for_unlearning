@@ -1,0 +1,5 @@
+"Sei A eine endliche Menge mit m Elementen und B eine endliche Menge mit n Elementen. Die Anzahl der unterschiedlichen Funktionen, die A auf B abbilden, ist",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"Sei T ein Tiefensuche-Baum eines zusammenhängenden ungerichteten Graphen G. Für jeden Knoten v von T sei pre(v) die Anzahl der Knoten, die bis einschließlich v während einer Preorder-Traversierung von T besucht wurden, und post(v) sei die Anzahl der Knoten, die bis einschließlich v während einer Postorder-Traversierung von T besucht wurden. Der tiefste gemeinsame Vorfahre der Knoten u und v in T ist ein Knoten w von T, so dass w ein Vorfahre sowohl von u als auch von v ist und kein Kind von w ein Vorfahre sowohl von u als auch von v ist. Sei (u, v) eine Kante in G, die nicht in T ist, so dass pre(u) < pre(v). Welche der folgenden Aussagen über u und v muss wahr sein?
+I. post(u) < post(v)
+II. u ist ein Vorfahre von v in T.
+III. Wenn w der tiefste gemeinsame Vorfahre von u und v in T ist, dann ist w = u.",I only,II only,III only,II and III,D

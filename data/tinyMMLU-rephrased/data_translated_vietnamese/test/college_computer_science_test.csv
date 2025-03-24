@@ -1,0 +1,5 @@
+"Cho tập A là một tập hữu hạn với m phần tử, và tập B là một tập hữu hạn với n phần tử. Số lượng các hàm riêng biệt ánh xạ từ A vào B là",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"Cho T là một cây duyệt theo chiều sâu của một đồ thị vô hướng liên thông G. Với mỗi đỉnh v của T, để pre(v) là số nút được thăm cho đến và bao gồm v trong một phép duyệt tiền thứ tự của T, và post(v) là số nút được thăm cho đến và bao gồm v trong một phép duyệt hậu thứ tự của T. Tổ tiên chung thấp nhất của các đỉnh u và v trong T là một đỉnh w của T sao cho w là tổ tiên của cả u và v, và không có con của w là tổ tiên của cả u và v. Cho (u, v) là một cạnh trong G không thuộc T, sao cho pre(u) < pre(v). Câu nào sau đây về u và v phải đúng?
+I. post(u) < post(v)
+II. u là tổ tiên của v trong T.
+III. Nếu w là tổ tiên chung thấp nhất của u và v trong T, thì w = u.",I only,II only,III only,II and III,D

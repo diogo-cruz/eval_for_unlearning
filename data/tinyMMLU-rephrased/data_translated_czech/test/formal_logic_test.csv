@@ -1,0 +1,11 @@
+Vyberte nejlepší překlad do predikátové logiky. Někteří hasiči zachraňují oběti z nebezpečí. (Dx: x je nebezpečí; Fx: x je hasič; Vx: x je oběť; Rxyz: x zachraňuje y z z),(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"Použijte následující klíč k překladu dané formule PL do přirozených anglických vět:
+
+A: Marina čte knihu Percy Jacksona.
+B: Izzy hraje Minecraft.
+C: Emily přestává pracovat.
+D: Russell připravuje večeři.
+E: Ashleigh se zastaví.
+~C ∨ D","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

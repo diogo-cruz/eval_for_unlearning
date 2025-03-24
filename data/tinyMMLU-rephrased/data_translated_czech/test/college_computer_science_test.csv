@@ -1,0 +1,5 @@
+Nechť A je konečná množina s m prvky a nechť B je konečná množina s n prvky. Počet různých funkcí zobrazujících A do B je,n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"Nechť T je strom prohledávání do hloubky souvislého neorientovaného grafu G. Pro každý vrchol v stromu T, nechť pre(v) je počet navštívených uzlů až do a včetně v během preorder průchodu T a post(v) je počet navštívených uzlů až do a včetně v během postorder průchodu T. Nejnižší společný předek vrcholů u a v v T je vrchol w stromu T takový, že w je předkem obou u a v, a žádný potomek w není předkem obou u a v. Nechť (u, v) je hrana v G, která není v T, taková, že pre(u) < pre(v). Která z následujících tvrzení o u a v musí být pravdivá?
+I. post(u) < post(v)
+II. u je předkem v v T.
+III. Pokud w je nejnižší společný předek u a v v T, pak w = u.",I only,II only,III only,II and III,D
