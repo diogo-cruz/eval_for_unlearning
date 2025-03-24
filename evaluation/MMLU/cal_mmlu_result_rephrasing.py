@@ -6,7 +6,7 @@ sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 from common.utils import choices, data_directory_list
 # from MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
-from tiny_MMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
+from tinyMMLU_utils import BIOLOGY_TASKS, OTHER_TASKS, TASKS
 
 
 def compute_metric(run_results):
@@ -21,8 +21,7 @@ def compute_metric(run_results):
         accuracies_answered = {}
         percentage_answered = {}
 
-        # for task in TASKS:
-        for task in BIOLOGY_TASKS:
+        for task in TASKS:
             num_answered = 0
             acc = 0
             pred_answers = run_results[directory][task]["pred_answers"]
