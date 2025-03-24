@@ -1,0 +1,24 @@
+"Variables:
+X = SR latch
+Y = NOR gates
+
+In an X built from Y, which condition is not allowed?","S=0, R=0","S=0, R=1","S=1, R=0","S=1, R=1",D
+"Variables:
+X = 2 (resistance of one conductor)
+Y = 100 (total number of conductors)
+
+In an X pole Y winding machine, find the total resistance of the conductors.",200Ω,100Ω,50Ω,10Ω,C
+"Variables:
+X = 100 (number of turns)
+Y = 1 (magnetic flux density)
+
+What is the range of the meter if the coil has X turns, is 40 mm long and 30 mm wide, with a control torque of 240*10-6 N-m on full scale, and a magnetic flux density of Y Wb/m2?",1 mA.,2 mA.,3 mA.,4 mA.,B
+"X = 100
+Y = 20
+
+Two long parallel X carry Y. If the conductors are separated by Z mm, the force per meter of length of each conductor will be",100 N.,0.1 N.,1 N.,0.01 N.,B
+"X = 4π * 10^-4
+Y = 4π * 1.5 * 10^-4
+Z = 10 cm
+
+What is the force in newtons on a point pole of Y strength placed at a distance of Z from a point pole with a strength of X?",15 N.,20 N.,7.5 N.,3.75 N.,A

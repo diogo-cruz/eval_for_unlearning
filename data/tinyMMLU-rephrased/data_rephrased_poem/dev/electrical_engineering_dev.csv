@@ -1,0 +1,85 @@
+"In circuits of logic, where NOR gates reside,
+A tale of signals, where states collide.
+Two inputs dancing, a delicate art,
+But one scenario must never start.
+
+When both inputs rise to voltage's peak,
+An ambiguous state begins to speak.
+The output caught in a liminal space,
+Neither set nor reset, a forbidden embrace.
+
+This condition forbidden, a line we must cross not,
+Where logic unravels and order is lost.
+In the SR latch's intricate design,
+Both high inputs breach the cardinal line.","S=0, R=0","S=0, R=1","S=1, R=0","S=1, R=1",D
+"Copper coils in a dance divine,
+Two poles, a hundred conductors intertwine,
+Each thread of wire, resistance so true,
+Two ohms it bears, a current's gentle hue.
+
+Summing the paths where electrons glide,
+Calculating the total where resistance resides,
+Multiplying the single thread's stubborn might,
+By the number of conductors shining bright.
+
+Two times one hundred, the calculation flows,
+Two hundred ohms, the total resistance grows,
+In this machine where magnetic forces sway,
+The electrical path finds its rhythmic way.",200Ω,100Ω,50Ω,10Ω,C
+"In coils of copper, wound with care,
+A hundred turns in measured lair,
+Forty millimeters long and wide,
+Thirty millimeters side by side.
+
+Control torque whispers soft and light,
+Two-forty times ten to the sixth take flight,
+Newton-meters at full scale's might,
+Where magnetic flux shines bright.
+
+One Weber per square meter gleams,
+Across the meter's elegant schemes,
+A dance of current, magnetic grace,
+Revealing measurement's embrace.
+
+What range shall this instrument show?
+What secrets through its windings flow?
+A poem of precision, delicate art,
+Where science and poetry start.",1 mA.,2 mA.,3 mA.,4 mA.,B
+"Copper veins, electric currents flow,
+Parallel paths where hundred amperes go,
+Two conductors stretched in measured space,
+Twenty millimeters set their embrace.
+
+Forces dance between metallic lines,
+Where current's strength and distance intertwines,
+A magnetic ballet of electrons' might,
+Revealing physics in electromagnetic light.
+
+Poles repel, attraction takes its form,
+As current streams beyond the normal norm,
+Each meter bearing tension's subtle song,
+Where electromagnetic forces throng.
+
+Calculate the pull, the pressure's grace,
+Where energy and distance interlace,
+A poetry of physics, pure and clear,
+Revealing nature's secrets drawing near.",100 N.,0.1 N.,1 N.,0.01 N.,B
+"In realms of magnetic might and sway,
+Where poles and forces dance and play,
+A point pole stands with strength sublime,
+Four pi times ten to the fourth, a paradigm.
+
+Another pole approaches near,
+With magnitude both bold and clear,
+Four pi times one point five times ten
+To the fourth, a magnetic fen.
+
+Ten centimeters stretched between,
+These polar forces, yet unseen,
+The question whispers soft and low:
+What force shall betwixt them now flow?
+
+The strength, the distance, numbers pure,
+A mathematical allure,
+Beckoning calculation's art
+To solve the puzzle, part by part.",15 N.,20 N.,7.5 N.,3.75 N.,A

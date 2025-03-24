@@ -1,0 +1,8 @@
+"For all mathematical functions that can be written as equations involving x, if we first multiply the function by x and then take its derivative, what is the result compared to first taking the derivative and then multiplying by x?",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"How much salt remains in a container after adding a weak salt mixture and draining the same amount of liquid over a period of time, starting with a known amount of salt in the initial liquid?",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"If you have a grid of numbers with two rows and two columns, which of these claims must always be correct?
+I. Every number in the result of multiplying this grid by itself is zero or positive.
+II. The special number calculated by a specific method using the grid when multiplied by itself is zero or positive.
+III. If the original grid can be described by two different special numbers, will the grid multiplied by itself also have two different special numbers?",I only,II only,III only,II and III only,B
+"What number will I get if I calculate the function at 15/2, given that the function repeats its values in a predictable way and I know its value at 5 is 11?",-11,0,11,33/2,C
+"Find the largest negative number that can be created by adding the two numbers in each pair of whole numbers that, when multiplied by specific amounts and then added together, equal exactly 22.",-5,-4,-3,-2,B

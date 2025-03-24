@@ -1,0 +1,37 @@
+"Person 1: Hey, I'm trying to understand a cash flow statement for a nonprofit organization called Box.
+
+Person 2: Okay, what would you like to know?
+
+Person 1: Well, they had several financial transactions this year. They sold some investments for $80,000, bought some property and equipment for $10,000, got some long-term debt of $100,000, and had a loss of $5,000 on selling an investment.
+
+Person 2: Right, and what specifically are you wondering about?
+
+Person 1: I'm trying to figure out how much they should report as net cash provided by financing activities in their statement of cash flows.","$70,000","$75,000","$80,000",100000,D
+"Person 1: Hey, I'm curious about a financial history problem.
+Person 2: What's on your mind?
+Person 1: So, imagine my great-great-grandmother invested some money a century ago.
+Person 2: Okay, go on.
+Person 1: She put $100 into an investment that earned 5% interest every year.
+Person 2: Right, and?
+Person 1: I'm wondering how much that investment would be worth today.","$13,000",$600,"$15,000","$28,000",A
+"Person 1: Hey, I have a tax question about Krete's situation.
+Person 2: Okay, what's the details?
+Person 1: So Krete is an unmarried taxpayer who only earns wages, right?
+Person 2: Yes?
+Person 1: By December 31 of year 1, her employer withheld $16,000 in federal income taxes, and she made no estimated tax payments.
+Person 2: Okay, go on.
+Person 1: On April 15 of year 2, she filed for an extension to file her individual tax return and paid $300 of additional taxes.
+Person 2: And then?
+Person 1: When she filed her return on April 30 of year 2, her total tax liability for year 1 was $16,500, and she paid the remaining balance.
+Person 2: What's your specific question?
+Person 1: I want to know how much would be subject to the penalty for underpayment of estimated taxes?",$0,$500,"$1,650","$16,500",A
+"Person 1: I have a question about accounting for a software maintenance agreement.
+Person 2: Sure, go ahead and ask me.
+Person 1: Alpha Co. signed an annual maintenance agreement with a software provider for $15,000 on January 1, year 1, with the maintenance period starting on March 1, year 2. They also spent $5,000 on software modification costs on January 1, year 1, to increase the software's functionality. They depreciate and amortize computer and software assets over five years using the straight-line method.
+Person 2: What would you like to know?
+Person 1: I want to know the total expense Alpha should recognize related to the maintenance agreement and software modifications for the year ended December 31, year 1.","$5,000","$13,500","$16,000","$20,000",B
+"Person 1: I'm reviewing some auditing procedures and I'm curious about tracing serial numbers on equipment.
+Person 2: Okay, what specifically are you wondering about?
+Person 1: Well, I'm trying to understand which management assertion is supported when an auditor traces these serial numbers to a nonissuer's subledger.
+Person 2: What details are you looking for about this tracing process?
+Person 1: I want to know which specific management assertion is being supported by this particular audit test.",Valuation and allocation,Completeness,Rights and obligations,Presentation and disclosure,B

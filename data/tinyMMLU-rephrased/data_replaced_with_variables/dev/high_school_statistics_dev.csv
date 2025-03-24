@@ -1,0 +1,22 @@
+"X = correlation
+Y = statement
+
+Which of the following is a correct X about Y?","If the slope of the regression line is exactly 1, then the correlation is exactly 1.","If the correlation is 0, then the slope of the regression line is undefined.",Switching which variable is called x and which is called y changes the sign of the correlation.,The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.,D
+"X = E(X) = 37, var(X) = 5
+Y = E(Y) = 62, var(Y) = 12
+
+What are the expected value and variance of the random variable X + Y?","E(X + Y) = 99, var(X + Y) = 8.5","E(X + Y) = 99, var(X + Y) = 13","E(X + Y) = 99, var(X + Y) = 17",There is insufficient information to answer this question.,D
+"X = trees
+Y = damage percentage
+
+What is the response variable in this experiment about X and Y?",The proportion of trees that suffered more than 50 percent damage due to frost.,The number of trees affected by the frost.,The number of trees sampled from the grove.,"For each sampled tree, whether it suffered more than 50 percent damage or at most 50 percent damage.",D
+"X = 62
+Y = 1.0
+Z = 456
+
+What is the mean and standard deviation when X and Z are combined, given their respective standard deviations of Y and 6?",Mean 518 grams; standard deviation 7.0 grams,Mean 518 grams; standard deviation 3.5 grams,Mean 518 grams; standard deviation 6.1 grams,Mean 394 grams; standard deviation 6.1 grams,C
+"X: {1,2,3}
+Y: {-10,10}
+Z: {100}
+
+Which of the following sets of X has the smallest standard deviation? Which has the largest?","I, II","II, III","III, I","III, II",D

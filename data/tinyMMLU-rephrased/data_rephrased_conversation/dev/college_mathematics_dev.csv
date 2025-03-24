@@ -1,0 +1,41 @@
+"Person 1: Hey, I'm working on this problem about polynomial transformations.
+Person 2: Okay, what's the problem?
+Person 1: So, we have a set V of all real polynomials, and two transformations T and S.
+Person 2: What do these transformations do?
+Person 1: T transforms a polynomial p(x) to xp(x), and S transforms p(x) to its derivative p'(x).
+Person 2: Got it. What do you need to figure out?
+Person 1: I need to determine which statement is true about the composition of these transformations, specifically (ST)(p(x)).
+Person 2: Sounds like a complex transformation problem. What are you looking to understand about it?
+Person 1: I'm trying to determine what happens when I apply transformation T first, and then transformation S to a polynomial.",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"Person 1: Hey, I have a question about a salt solution problem.
+Person 2: What's the problem?
+Person 1: So, there's this tank that initially has 3 grams of salt dissolved in 100 liters of water.
+Person 2: Okay, go on.
+Person 1: A salt solution with 0.02 grams of salt per liter is being sprayed into the tank at 4 liters per minute.
+Person 2: And what else?
+Person 1: The sprayed solution is mixed instantly with the solution in the tank, and the mixture flows out at 4 liters per minute.
+Person 2: What do you want to know?
+Person 1: I want to find out how many grams of salt are in the tank after 100 minutes have passed.",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"Person 1: Hey, I'm working on this linear algebra problem about a 2x2 matrix A.
+Person 2: Okay, what's the specific question?
+Person 1: I need to determine which statements must be true about A^2.
+Person 2: Alright, what are the statements?
+Person 1: Well, the first statement is about all entries of A^2 being nonnegative.
+Person 2: Hmm, interesting. What's the second statement?
+Person 1: The second one is about the determinant of A^2 being nonnegative.
+Person 2: And the third statement?
+Person 1: The third statement is about A having two distinct eigenvalues and what that means for A^2's eigenvalues.
+Person 2: Got it. So which of these statements must be true?",I only,II only,III only,II and III only,B
+"Person 1: Hey, I'm working on this math problem and I'm a bit confused.
+Person 2: What's the problem?
+Person 1: So, I have this function f where f(1 + x) = f(x) for all real x.
+Person 2: Okay, and what else do you know about this function?
+Person 1: Well, I know it's a polynomial, and when I input 5, the output is 11.
+Person 2: Got it. What do you want to find out?
+Person 1: I need to figure out what f(15/2) would be.",-11,0,11,33/2,C
+"Person 1: I'm working on this math problem and I need some help understanding it.
+Person 2: What's the problem?
+Person 1: It's about a set A of ordered pairs of integers (m, n) where 7m + 12n equals 22.
+Person 2: Okay, and what do you want to know?
+Person 1: I need to find the greatest negative number in the set B, which is formed by adding m and n for each pair (m, n) in set A.
+Person 2: I see. That sounds like an interesting problem. What have you tried so far?",-5,-4,-3,-2,B

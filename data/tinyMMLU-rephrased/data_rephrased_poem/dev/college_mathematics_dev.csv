@@ -1,0 +1,95 @@
+"Polynomials dance on a mathematical stage,
+V, a realm where variables engage,
+Transformations T and S, their elegant might,
+T multiplies x, S differentiates with delight.
+
+T takes p(x) and stretches its frame,
+Multiplying by x, a variable's claim.
+S then arrives with derivative's art,
+Changing each polynomial, taking it apart.
+
+Composition of ST, a journey so keen,
+First T transforms, then S intervenes,
+Which path will these operators trace?
+What truth shall emerge in this algebraic space?",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"In a tank of water, pure and light,
+Three grams of salt gleam crystal-bright
+Across one hundred liters clear and still,
+A saline dance begins to fill
+
+A spray of solution, thin and pale,
+With salt dissolved at zero-two's scale
+Four liters per minute, a steady stream
+Mixing and flowing, a mathematical dream
+
+The liquid enters, swirls with might,
+Blending its essence, both weak and bright
+And just as quick, four liters depart
+A constant rhythm, a fluid art
+
+One hundred minutes pass in time,
+The tank transforms, a problem sublime
+How many grams of salt remain?
+A puzzle waiting to explain
+
+The dance of salt, the ebb and flow,
+Where mathematics help us know
+The delicate balance of liquid's art
+Where concentration plays its part",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"Matrix A, a realm of numbers square,
+Two by two, a mathematical affair,
+Whispers of entries, transformations rare,
+Which truths shall we declare?
+
+First statement speaks of squares so neat,
+Where each entry meets a positive beat,
+But is this claim forever true and sweet?
+Or does complexity make it retreat?
+
+Determinant's dance in A squared's domain,
+Asks if nonzero signs will always reign,
+A tale of signs, both positive and plain,
+Will logic or exception sustain?
+
+Eigenvalues scattered, two points apart,
+When squared, do they keep their separate chart?
+Or merge in a symmetrical art,
+Revealing the matrix's hidden heart?
+
+Ponder these verses of algebraic might,
+Where matrices dance in mathematical light,
+Seek truth in the symbols, both subtle and bright,
+And unravel the theorems' elegant flight.",I only,II only,III only,II and III only,B
+"In realms of math where patterns gleam,
+A function's secret whispers its theme,
+f(1 + x) equals f(x), a steady dance,
+A polynomial's rhythmic, constant trance.
+
+At point five, eleven is its height,
+A single value fixed and tight,
+Now we seek a midway's grace,
+Fifteen halved, a curious place.
+
+The symmetry of function's song,
+Reveals a truth both clear and strong,
+What value shall this moment bear?
+A puzzle waiting, crisp and fair.",-11,0,11,33/2,C
+"In integers' dance, a pattern emerges clear,
+Where seven times m and twelve times n adhere
+To twenty-two, their sum precise and true,
+A set of pairs with mysteries to pursue.
+
+Through ordered realms where m and n entwine,
+Their union creates a mathematical design,
+Where seven times m, with twelve times n combined,
+Yield twenty-two, by algebra refined.
+
+Then gather their sum, in set B we'll explore,
+Each m plus n, what secrets do they store?
+We seek the greatest negative number's might,
+A challenge that beckons with algebraic light.
+
+Seek the pairs that satisfy the equation's call,
+Where seven m and twelve n together fall,
+Then sum each pair, and through the negatives sway,
+To find the grandest number that turns away.",-5,-4,-3,-2,B

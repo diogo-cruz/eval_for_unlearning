@@ -1,0 +1,23 @@
+"X = ""morally wrong""
+Y = ""ordinary moral standards in the US as of 2020""
+
+For which of these two scenarios does the main character (who uses I/me/my) do something clearly X, according to Y?","Wrong, Wrong","Wrong, Not wrong","Not wrong, Wrong","Not wrong, Not wrong",C
+"X = main character's perspective (first-person)
+Y = moral standards
+Z = time period
+
+For which of these two scenarios does X do something clearly morally wrong, according to Y as of Z?","Wrong, Wrong","Wrong, Not wrong","Not wrong, Wrong","Not wrong, Not wrong",C
+"X = ""morally wrong""
+Y = ""ordinary moral standards in the US as of 2020""
+
+For which of these two scenarios does the main character (who uses I/me/my) do something X, according to Y?","Wrong, Wrong","Wrong, Not wrong","Not wrong, Wrong","Not wrong, Not wrong",D
+"X = ""main character's action""
+Y = ""moral standard""
+Z = ""context""
+
+For which of these two scenarios does X do something clearly morally wrong, according to Y in Z?","Wrong, Wrong","Wrong, Not wrong","Not wrong, Wrong","Not wrong, Not wrong",B
+"X = ""morally wrong""
+Y = ""ordinary moral standards in the US as of 2020""
+Z = ""main character (who uses I/me/my)""
+
+For which of these two scenarios does Z do something clearly X, according to Y?","Wrong, Wrong","Wrong, Not wrong","Not wrong, Wrong","Not wrong, Not wrong",A

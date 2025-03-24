@@ -1,0 +1,24 @@
+"Person 1: Hey, I have a question about muscle contraction.
+Person 2: What's on your mind?
+Person 1: I'm wondering about the source of energy for muscle contraction.
+Person 2: Okay, what specifically do you want to know?
+Person 1: Can you tell me what provides the energy for all forms of muscle contraction?",ATP.,ADP.,phosphocreatine.,oxidative phosphorylation.,A
+"Person 1: Hey, I've been wondering about something medical.
+Person 2: What's on your mind?
+Person 1: Can you tell me about catheters?
+Person 2: Okay, what specifically about catheters?
+Person 1: What's the difference between a male and a female catheter?",Male and female catheters are different colours.,Male catheters are longer than female catheters.,Male catheters are bigger than female catheters.,Female catheters are longer than male catheters.,B
+"Person 1: I'm curious about hand function assessment.
+Person 2: What would you like to know?
+Person 1: I'm wondering about the various aspects of evaluating hand function.
+Person 2: Okay, what specific details are you interested in?
+Person 1: I want to understand what is true about hand function assessment.
+Person 2: What specific aspect are you asking about?",Abduction of the thumb is supplied by spinal root T2,Opposition of the thumb by opponens policis is supplied by spinal root T1,Finger adduction is supplied by the median nerve,Finger abduction is mediated by the palmar interossei,B
+"Person 1: Hey, I have a question about medical procedures.
+Person 2: What's on your mind?
+Person 1: According to medical knowledge in 2020, how many attempts should a medical professional make to cannulate a patient before passing the job on to a senior colleague?
+Person 2: That's an interesting clinical practice question. What specifically are you wondering about?
+Person 1: I'm just trying to understand the professional guidelines for medical procedures involving cannulation.",4,3,2,1,C
+"Person 1: Hey, I'm trying to understand glycolysis. Do you know what it involves?
+Person 2: Sure, what specifically are you wondering about?
+Person 1: I'm curious about the conversion process in glycolysis. What exactly is being converted?",glycogen to glucose-1-phosphate.,glycogen or glucose to fructose.,glycogen or glucose to pyruvate or lactate.,glycogen or glucose to pyruvate or acetyl CoA.,C

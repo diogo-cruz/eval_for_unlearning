@@ -1,0 +1,27 @@
+"Variables:
+X = c
+Y = 3
+
+Find all X in Y such that Y[x]/(x^2 + X) is a field.",0,1,2,3,B
+"Variables:
+X = aH
+Y = H
+Z = K
+
+Rephrased question: If X is an element of a factor group, then |X| divides |a|. If Y and Z are subgroups of G, then YZ is a subgroup of G.","True, True","False, False","True, False","False, True",B
+"X = group
+Y = element
+Z = cyclic subgroup
+
+Statement 1 | Every Y of an X generates a Z of the X.
+Statement 2 | The symmetric X S_10 has 10 Y.","True, True","False, False","True, False","False, True",C
+"Variables:
+X = finite set
+Y = function
+Z = abelian group
+
+Rephrased question:
+Statement 1 | Every Y from an X onto itself must be one to one. Statement 2 | Every subgroup of a Z is Z.","True, True","False, False","True, False","False, True",A
+"X = 2Z
+
+What is the characteristic of the ring X?",0,3,12,30,A

@@ -1,0 +1,5 @@
+"In Joe's light setup for a dance, the red light turns on every two seconds, the yellow light every three seconds, and the blue light every five seconds. If we count from the start to the end of the seven-minute dance, how many times will all three lights be on at exactly the same moment?",3,15,6,5,B
+How many years will it take for $300 to grow to $9600 when using the same yearly growth rate that causes $5000 to double in six years?,12,1,30,5,C
+"When x changes, it relates to y squared, and y changes in proportion to z cubed. If x is -16 when z is 2, what will x be when z becomes one-half?",-1,16,-\\frac{1}{256},\\frac{1}{16},C
+Simplify and remove the nested square roots and cube root while keeping a simple fraction in the denominator.,\\frac{3\\sqrt{3}}{3},\\frac{1}{3},\\sqrt{3},\\frac{\\sqrt{3}}{3},D
+What is the average score of these ten students on their biology test?,55,60,62,65,D

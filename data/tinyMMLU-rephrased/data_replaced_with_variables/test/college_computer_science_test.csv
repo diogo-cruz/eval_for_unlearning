@@ -1,0 +1,10 @@
+"Variables:
+X = m (number of elements in set A)
+Y = n (number of elements in set B)
+
+How many distinct X-to-Y mappings exist?",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"X = depth-first search tree
+Y = connected undirected graph
+Z = vertices
+
+Let X be a depth-first search tree of Y. For each vertex Z, let pre(Z) be the number of nodes visited up to and including Z during a preorder traversal of X, and post(Z) be the number of nodes visited up to and including Z during a postorder traversal of X. The lowest common ancestor of vertices Z and Z in X is a vertex Z of X such that Z is an ancestor of both Z and Z, and no child of Z is an ancestor of both Z and Z. Let (Z, Z) be an edge in Y that is not in X, such that pre(Z) < pre(Z). Which of the following statements about Z and Z must be true?",I only,II only,III only,II and III,D

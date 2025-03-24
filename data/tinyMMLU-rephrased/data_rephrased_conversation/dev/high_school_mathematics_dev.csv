@@ -1,0 +1,37 @@
+"Person 1: Hey, I'm helping Joe with a lighting problem for a dance.
+Person 2: Oh really? What's the situation?
+Person 1: So, Joe is in charge of the lights, and he has three different colored lights.
+Person 2: Okay, go on.
+Person 1: The red light blinks every two seconds, the yellow light every three seconds, and the blue light every five seconds.
+Person 2: Interesting setup.
+Person 1: I want to know how many times during the seven-minute dance all the lights will come on at the same time.
+Person 2: And what's the condition?
+Person 1: We're including the very beginning and very end of the dance, and assuming all three lights blink simultaneously at the start.",3,15,6,5,B
+"Person 1: I have a financial problem I'd like to discuss with you.
+Person 2: Sure, what's on your mind?
+Person 1: I'm wondering about compound interest calculations.
+Person 2: Okay, tell me more.
+Person 1: So, I have a scenario where five thousand dollars, when compounded annually at a certain interest rate, takes six years to double.
+Person 2: Alright, I'm following you.
+Person 1: Now I want to know, at that same interest rate, how many years would it take for $300 to grow to $9600?",12,1,30,5,C
+"Person 1: Hey, I'm working on this math problem and I'm a bit confused.
+Person 2: What's the problem?
+Person 1: So, I have this situation where $x$ varies directly as the square of $y$, and $y$ varies directly as the cube of $z$.
+Person 2: Okay, go on.
+Person 1: I know that when $z$ is 2, $x$ is equal to $-16$.
+Person 2: Right.
+Person 1: I need to find what $x$ would be when $z$ is $\frac{1}{2}$. Can you help me understand how to approach this?",-1,16,-\\frac{1}{256},\\frac{1}{16},C
+"Person 1: Hey, can you help me with this math problem? I'm trying to simplify this complex radical expression.
+Person 2: Sure, what does the expression look like?
+Person 1: It's a nested radical: the square root of the cube root of the square root of one divided by 729.
+Person 2: Okay, got it. What do you want to do with this expression?
+Person 1: I need to simplify it and make sure the denominator is rational.",\\frac{3\\sqrt{3}}{3},\\frac{1}{3},\\sqrt{3},\\frac{\\sqrt{3}}{3},D
+"Person 1: Hey, I'm working on this math problem about test scores.
+Person 2: Okay, what's the problem?
+Person 1: We have ten students who took a biology test.
+Person 2: Uh-huh.
+Person 1: Their scores were 45, 55, 50, 70, 65, 80, 40, 90, 70, and 85.
+Person 2: Got it.
+Person 1: I need to figure out the mean of their test scores.
+Person 2: What information do you want to know specifically?
+Person 1: I want to calculate the average score of the ten students.",55,60,62,65,D

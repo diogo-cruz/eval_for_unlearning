@@ -1,0 +1,33 @@
+"In sets of finite bounds, A and B reside,
+Where m and n their cardinal points abide.
+A's elements spread, n distinct in might,
+Mapping functions dance in combinatorial light.
+
+How many paths can traverse this domain?
+Where each element finds its unique refrain?
+From A to B, each choice precisely clear,
+The count of functions beckons, drawing near.
+
+With m in A, and n in B's embrace,
+Each mapping finds its mathematically precise place.
+The number rises, calculated with grace,
+n raised to the power of m, in this numeric space.",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"In depths of graph, a tree unfurls,
+Where nodes and paths and searches swirl,
+Pre and post, their numbers dance,
+Marking visits in traversal's trance.
+
+An edge beyond the spanning tree,
+Where u comes first in sequence's key,
+What truths can we divine and know
+About the vertices' ebb and flow?
+
+Shall u be master, v its child?
+Or does another logic compile?
+Lowest common ancestor's might
+Reveals what dwells beyond plain sight.
+
+Among the claims of order's art,
+Which statements strike the deepest part?
+What secrets lie in traversal's frame,
+When edges stray from forest's claim?",I only,II only,III only,II and III,D

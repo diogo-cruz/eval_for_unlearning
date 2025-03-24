@@ -1,0 +1,11 @@
+"Person 1: I'm working on a construction project and I'm curious about building times for new houses.
+Person 2: What specifically are you wondering about?
+Person 1: Well, I know that the variance of building days is 386, and I have a sample of 40 new homes that shows an average building time of 83 days.
+Person 2: Okay, and what's your question?
+Person 1: I want to know with what confidence I can say that the average building time for a new house falls between 80 and 90 days.",15.4%,17.8%,20.0%,82.1%,D
+"Person 1: Hey, I'm looking at this problem about technical writers' salaries in a metropolitan region.
+Person 2: Okay, what's the specific question?
+Person 1: Well, we know their salaries are approximately normally distributed with a mean of $55,800.
+Person 2: Right, and...?
+Person 1: I'm trying to figure out the standard deviation, and I know the first quartile of salaries is $48,815.
+Person 2: Sounds like an interesting statistical problem. What information do you need to solve it?","$6,984 ","$10,356 ","$10,476 ","$13,968 ",B

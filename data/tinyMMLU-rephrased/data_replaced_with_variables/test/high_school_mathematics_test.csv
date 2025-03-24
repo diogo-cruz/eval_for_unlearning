@@ -1,0 +1,4 @@
+"X = Rowena's painting rate
+Y = Ruby's painting rate
+
+If X paints for x hours and Y paints for y hours, they will finish half of the painting, while if X paints for y hours and Y paints for x hours they will paint the whole room. Find the ordered pair (x,y).","(\\frac{11}{10}, \\frac{11}{10})","(\\frac{231}{20}, \\frac{21}{20})","(\\frac{231}{40}, \\frac{21}{40})","(1,1)",C

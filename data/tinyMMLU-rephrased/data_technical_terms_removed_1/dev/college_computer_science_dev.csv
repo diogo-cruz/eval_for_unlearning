@@ -1,0 +1,8 @@
+"Which of these patterns matches the same group of text combinations as the pattern that allows any number of 'a's followed by either 'b', and then allows either 'c' or 'd'?",a*(c + d)+ b(c + d),a*(c + d)* + b(c + d)*,a*(c + d)+ b*(c + d),(a + b)*c +(a + b)*d,D
+"A computer has 8 storage spaces where it can temporarily keep numbers. You want to calculate A times B, plus A times B times C, plus B times C, using these storage spaces. The goal is to do this calculation while keeping the original values of A, B, and C unchanged. What is the shortest time needed to complete this calculation?",5,6,7,8,B
+"In a design pattern that ensures only one copy of a specific class can be created, which of the following statements are correct?
+I. The special class has a method to provide its single instance.
+II. The special class can be created as a child of another class.
+III. The special class has a hidden creation method.",I only,II only,III only,"I, II, and III",D
+How many steps would it take to calculate the result of this math expression using a computer with limited memory and basic math operation abilities?,5,6,7,9,D
+"How much of the shared communication pathway would one computing unit use for its memory needs, assuming it works smoothly and doesn't interfere with other units?",1/50,1/27,1/25,2/27,B

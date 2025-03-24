@@ -1,0 +1,38 @@
+"Person 1: Hey, I was looking at this number 145,826.
+Person 2: Okay, what about it?
+Person 1: I'm curious about the value of the digit 5 in this number.
+Person 2: What do you mean by its value?
+Person 1: Well, the number represents the population of the city where Michelle was born.
+Person 2: And you want to know specifically about the 5?
+Person 1: Yes, exactly. What is the value of the 5 in 145,826?",5 thousands,5 hundreds,5 tens,5 ones,A
+"Person 1: Hey, I have a math problem I'm working on.
+Person 2: What's up?
+Person 1: Olivia created a number pattern using a specific rule.
+Person 2: Okay, what's the pattern?
+Person 1: The pattern starts with 10, and then goes 21, 32, 43, 54.
+Person 2: I see the numbers. What do you want to know about this pattern?
+Person 1: I need to figure out which statement about the number pattern is true.
+Person 2: What rule do you think Olivia used?
+Person 1: I think she's adding 11 each time, but I'm not sure what statement is true about the pattern.",The 10th number in the pattern will be an even number.,The number pattern will never have two even numbers next to each other.,The next two numbers in the pattern will be an even number then an odd number.,If the number pattern started with an odd number then the pattern would have only odd numbers in it.,B
+"Person 1: I have a question about basketball teams at the park.
+Person 2: Sure, go ahead and ask me.
+Person 1: There are going to be a total of 30 players at the park.
+Person 2: Okay.
+Person 1: And each team will have exactly 5 players.
+Person 2: Right.
+Person 1: I want to know how to find out how many teams will be needed.",Add 5 to 30 to find 35 teams.,Divide 30 by 5 to find 6 teams.,Multiply 30 and 5 to find 150 teams.,Subtract 5 from 30 to find 25 teams.,B
+"Person 1: Hey, I'm wondering about this paint store problem.
+Person 2: What's on your mind?
+Person 1: So, the store sells 107 different colors of paint.
+Person 2: Okay, go on.
+Person 1: And they have 25 cans of each color in storage.
+Person 2: Right.
+Person 1: I want to figure out how many total cans of paint they have stored.
+Person 2: What information do you have to help solve that?
+Person 1: Well, I know the number of cans can be found by multiplying 107 by 25.
+Person 2: Sounds like you're on the right track to finding the total number of paint cans.",749,"2,675","2,945","4,250",B
+"Person 1: Hey, I'm working on a math problem and I'm wondering about equivalent expressions.
+Person 2: What's the problem?
+Person 1: I'm trying to figure out what expression is equivalent to 5 x 9.
+Person 2: Okay, what would you like to know about that?
+Person 1: Well, can you help me find an expression that represents the same value?",(5 x 4) x (6 x 5),(5 x 5) + (5 x 4),(5 x 5) + (5 x 9),(5 x 9) x (6 x 9),B

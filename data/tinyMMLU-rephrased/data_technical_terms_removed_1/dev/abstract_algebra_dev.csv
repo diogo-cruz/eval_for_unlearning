@@ -1,0 +1,5 @@
+"Find all numbers between 0 and 2 such that when you divide polynomials using some special rules, you can create a complete mathematical system with no gaps.",0,1,2,3,B
+Are the two statements about group relationships always true or are there cases where they might not hold?,"True, True","False, False","True, False","False, True",B
+"For any group, can each member create a smaller group by repeating itself multiple times? Is the group of all possible rearrangements of 10 items made up of 10 different parts?","True, True","False, False","True, False","False, True",C
+"Is it true that any function from a limited group of items to itself must match each input to a unique output, and is it also true that any smaller group within a group where order doesn't matter will also have an order that doesn't matter?","True, True","False, False","True, False","False, True",A
+What are the key properties of whole numbers that are divisible by 2?,0,3,12,30,A

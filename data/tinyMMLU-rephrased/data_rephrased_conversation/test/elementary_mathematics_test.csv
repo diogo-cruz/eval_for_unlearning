@@ -1,0 +1,17 @@
+"Person 1: Hey, I'm working on a math problem and I'm a bit confused.
+Person 2: What's the problem?
+Person 1: I need to find the opposite of the number −7.
+Person 2: Okay, what do you want to know about that?
+Person 1: Well, how do I find its opposite?",7,−7,0.7,−7.7,A
+"Person 1: Hey, I'm trying to figure out how many soccer balls our team can buy.
+Person 2: Okay, what details do you have?
+Person 1: Well, we have $90.00 total, and each soccer ball costs $15.60.
+Person 2: So you want to know the maximum number of soccer balls we can purchase?
+Person 1: Exactly! How many can we get?",4,5,6,7,B
+"Person 1: Hey, I have a math problem about fuel efficiency.
+Person 2: Okay, what's the problem?
+Person 1: So, this car can go 24 miles on one gallon of gas.
+Person 2: Right.
+Person 1: And I want to know how many gallons of gas it would take to drive 144 miles.
+Person 2: Got it. What do you want to know about that?
+Person 1: I just want to figure out exactly how many gallons of gas the car would need.",6.5 gallons,6 gallons,5.5 gallons,5 gallons,B

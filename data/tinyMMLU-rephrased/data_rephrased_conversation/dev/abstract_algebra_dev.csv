@@ -1,0 +1,28 @@
+"Person 1: I'm working on a problem in abstract algebra and I'm curious about something.
+Person 2: What's on your mind?
+Person 1: I'm trying to understand when Z_3[x]/(x^2 + c) becomes a field.
+Person 2: Okay, what specifically do you want to know?
+Person 1: I need to find all values of c in Z_3 such that Z_3[x]/(x^2 + c) is a field.
+Person 2: That sounds like an interesting problem. What have you tried so far?",0,1,2,3,B
+"Person 1: I have a question about factor groups and subgroups.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how in group theory, we have some interesting properties about factor groups and subgroups?
+Person 2: Yes?
+Person 1: I'm wondering about two statements. First, if aH is an element of a factor group, does |aH| divide |a|? And second, if H and K are subgroups of G, is HK always a subgroup of G?","True, True","False, False","True, False","False, True",B
+"Person 1: I have a question about group theory.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know about group theory and subgroups?
+Person 2: Yes?
+Person 1: I'm wondering about these two statements: ""Every element of a group generates a cyclic subgroup of the group"" and ""The symmetric group S_10 has 10 elements.""
+Person 2: What about them?
+Person 1: Can you help me understand their relationship or validity?","True, True","False, False","True, False","False, True",C
+"Person 1: I have a question about mathematical statements.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how we're discussing mathematical properties, right?
+Person 2: Yes?
+Person 1: I want to discuss two statements: First, every function from a finite set onto itself must be one to one. And second, every subgroup of an abelian group is abelian. What can you tell me about these statements?","True, True","False, False","True, False","False, True",A
+"Person 1: I have a question about the ring 2Z.
+Person 2: Sure, go ahead and ask me.
+Person 1: Can you help me find its characteristic?
+Person 2: What would you like to know about the characteristic of 2Z?
+Person 1: I want to understand what the characteristic is for this specific ring.",0,3,12,30,A

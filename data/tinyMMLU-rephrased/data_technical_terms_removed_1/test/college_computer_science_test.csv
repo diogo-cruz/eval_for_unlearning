@@ -1,0 +1,2 @@
+"How many different ways can you assign elements from one group to another, given that the first group has a specific number of items and the second group has a different number of items?",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"When exploring a connected network by systematically visiting each point and recording the order of visits, if you have two points where one was visited earlier and is not directly on the path to the other point, which of these statements must be true?",I only,II only,III only,II and III,D

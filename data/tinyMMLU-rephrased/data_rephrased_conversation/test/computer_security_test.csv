@@ -1,0 +1,5 @@
+"Person 1: Hey, I'm wondering about buffer-overflow in apps.
+Person 2: What about it?
+Person 1: I heard that buffer-overflow can remain as a bug if something specific is not done fully.
+Person 2: Oh, and what might that be?
+Person 1: I'm trying to understand what needs to be done completely to prevent buffer-overflow from being a persistent issue in applications.",boundary hacks,memory checks,boundary checks,buffer checks,C

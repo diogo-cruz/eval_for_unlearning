@@ -1,0 +1,4 @@
+"X = c
+Y = e
+
+If X > 0 and f(x) = Y^x - Xx for all real numbers x, then the minimum value of f is",f(c),f(e^c),f(1/c),f(log c),D

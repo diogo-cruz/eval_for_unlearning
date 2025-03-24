@@ -1,0 +1,63 @@
+"In modular rings where numbers dance and play,
+Where integers mod three hold mathematical sway,
+A quest for values of c that unlock a field's embrace,
+Where x squared plus c finds its rightful place.
+
+What constant c shall make the quotient ring complete?
+Where division works and all elements repeat,
+In Z_3's domain, with x's power constrained,
+A perfect structure, elegantly ordained.
+
+Seek the values that make the algebra pure,
+Where every non-zero element has its allure,
+Of multiplicative inverse, clear and bright,
+In this algebraic realm of finite delight.",0,1,2,3,B
+"In the realm of groups, where algebra takes flight,
+A factor group's element reveals a curious might:
+aH, a set with a structure so fine,
+Its order divides |a|, a theorem divine.
+
+And when subgroups H and K converge their domain,
+Their product HK stands, a new group to explain.
+Not always a subgroup, but sometimes it will be,
+A dance of set theory, a mathematical spree.
+
+Two statements of structure, of order and blend,
+Where group theory's beauty begins and transcends.","True, True","False, False","True, False","False, True",B
+"In algebraic dance, elements sway and twirl,
+Each generating its own cyclic world,
+A group's essence, a rhythmic refrain,
+Where subgroups from single points attain.
+
+Ten dancers in symmetric array,
+S_10 pirouettes in mathematical play,
+Its elements precise, its movements clear,
+Ten steps, ten paths, a symmetry to revere.","True, True","False, False","True, False","False, True",C
+"In finite realms where functions reign supreme,
+Is every mapping onto its domain a stream
+Of one-to-one precision, without a fold,
+Where each element's path is perfectly controlled?
+
+And in the world of groups where commutativity holds,
+Where abelian nature softly unfolds,
+Do subgroups inherit this gentle embrace,
+Where order and symmetry find their true place?
+
+Two statements of structure, of mathematical might,
+Inviting the mind to explore their delight,
+A dance of logic, of sets and of groups,
+Where truth weaves its intricate, elegant loops.","True, True","False, False","True, False","False, True",A
+"In the realm of integers, rings unfold,
+Where 2Z, a structure, its secrets will hold.
+Divisible by two, its elements dance,
+Even numbers waltz in mathematical trance.
+
+Closed under addition, subtraction's embrace,
+Multiplicative closure leaves no empty space.
+An additive group with zero at its core,
+Multiplicative structure we shall explore.
+
+Identity and zero, their presence so clear,
+No zero divisors do we find here.
+Not a field, not a domain, it stands unique,
+A ring of even numbers, its nature mystique.",0,3,12,30,A

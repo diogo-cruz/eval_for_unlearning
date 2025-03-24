@@ -1,0 +1,7 @@
+"Person 1: Hey, I have a math problem I'm struggling with.
+Person 2: What's the problem?
+Person 1: It's about painting a room. Rowena can paint a room in 14 hours, and Ruby can paint it in 6 hours.
+Person 2: Okay, what do you need to find out?
+Person 1: If Rowena paints for x hours and Ruby paints for y hours, they will finish half of the painting. But if Rowena paints for y hours and Ruby paints for x hours, they will paint the whole room.
+Person 2: And you want to find the ordered pair (x,y)?
+Person 1: Exactly! Can you help me figure this out?","(\\frac{11}{10}, \\frac{11}{10})","(\\frac{231}{20}, \\frac{21}{20})","(\\frac{231}{40}, \\frac{21}{40})","(1,1)",C

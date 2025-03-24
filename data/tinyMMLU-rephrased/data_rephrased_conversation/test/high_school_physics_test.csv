@@ -1,0 +1,28 @@
+"Person 1: Hey, I have a physics problem I'd like to discuss.
+Person 2: What's the problem?
+Person 1: It's about the Space Shuttle orbiting above the Earth.
+Person 2: Okay, tell me more.
+Person 1: The Space Shuttle orbits 300 km above the Earth's surface, and I know the Earth's radius is 6400 km.
+Person 2: What do you want to know about it?
+Person 1: I'm trying to calculate the acceleration due to Earth's gravity that the Space Shuttle experiences.",4.9 m/s^2,8.9 m/s^2,9.8 m/s^2,10.8 m/s^2,B
+"Person 1: Hey, I'm working on a physics problem and I need some help understanding it.
+Person 2: Sure, what's the problem?
+Person 1: So, there's this disk with a radius of 0.1 meters, and it starts out not moving at all.
+Person 2: Okay, go on.
+Person 1: It then starts to rotate with an angular acceleration of 2.0 radians per second squared.
+Person 2: Got it.
+Person 1: The disk is only rotating, and I need to find out how far a point on the edge of the disk travels in 4.0 seconds.
+Person 2: That sounds like an interesting problem. What information do you have so far?",0.4 m,0.8 m,1.2 m,1.6 m,D
+"Person 1: Hey, I have a physics question about electric charge.
+Person 2: What's on your mind?
+Person 1: I'm wondering about an object that carries a charge of –1 C.
+Person 2: Okay, what specifically do you want to know about it?
+Person 1: I want to figure out how many excess electrons it contains.
+Person 2: Sounds interesting. What details do you have to work with?",6.25 × 10^18,8.00 × 10^18,1.60 × 10^19,3.20 × 10^19,A
+"Person 1: Hey, I'm working on this physics problem and I'm a bit confused.
+Person 2: What's the problem?
+Person 1: It's about an electric field that varies with radius. The equation is Er = –6r^2 + 4r + 3, where r is in meters and E is in N/C.
+Person 2: Okay, what specifically are you trying to find?
+Person 1: I need to calculate the potential difference between the origin and the point (3, 4).
+Person 2: That sounds like an interesting calculation. Do you want to work through it together?
+Person 1: Yes, that would be great!",–165 V,–120 V,64 V,185 V,D

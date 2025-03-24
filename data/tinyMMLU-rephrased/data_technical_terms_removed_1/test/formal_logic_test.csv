@@ -1,0 +1,4 @@
+Who are the firefighters that save people from dangerous situations?,(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"Does Emily continue working, or does Russell make dinner?","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

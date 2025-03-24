@@ -1,0 +1,35 @@
+"Person 1: I have a question about correlation?
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how correlation is an important statistical concept right?
+Person 2: Yes?
+Person 1: Then which of the following is a correct statement about correlation?","If the slope of the regression line is exactly 1, then the correlation is exactly 1.","If the correlation is 0, then the slope of the regression line is undefined.",Switching which variable is called x and which is called y changes the sign of the correlation.,The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.,D
+"Person 1: Hey, I have a statistics problem I'm trying to work through.
+Person 2: What's the problem?
+Person 1: I'm looking at two random variables, X and Y.
+Person 2: Okay, what do you know about them?
+Person 1: Well, for X, the expected value is 37 and the variance is 5.
+Person 2: Got it. And for Y?
+Person 1: For Y, the expected value is 62 and the variance is 12.
+Person 2: What are you trying to find?
+Person 1: I want to know the expected value and variance of X + Y.","E(X + Y) = 99, var(X + Y) = 8.5","E(X + Y) = 99, var(X + Y) = 13","E(X + Y) = 99, var(X + Y) = 17",There is insufficient information to answer this question.,D
+"Person 1: I have a question about frost damage in an orange grove.
+Person 2: Sure, go ahead and ask me.
+Person 1: A frost warning was issued, and the owner asked his workers to spray all trees with water to protect the orange blossoms.
+Person 2: Okay, and what happened?
+Person 1: Well, the owner suspected that some trees suffered considerable damage despite the protective measures.
+Person 2: What did he do to understand the extent of the damage?
+Person 1: He took a random sample of 100 trees from his grove to estimate the proportion of trees that suffered more than 50 percent damage due to the frost.
+Person 2: I see. What specifically are you wondering about?
+Person 1: I want to know what the response variable is in this experiment.",The proportion of trees that suffered more than 50 percent damage due to frost.,The number of trees affected by the frost.,The number of trees sampled from the grove.,"For each sampled tree, whether it suffered more than 50 percent damage or at most 50 percent damage.",D
+"Person 1: I have a question about the weight of a smartwatch and its packaging.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how a smartwatch is manufactured in one part of a factory and then secured for shipping in another independent part?
+Person 2: Yes?
+Person 1: So the smartwatch has a mean weight of 62 grams with a standard deviation of 1.0 grams, and the packaging has a mean weight of 456 grams with a standard deviation of 6 grams. What would be the mean and standard deviation of the total weight when you combine the smartwatch and its packaging?",Mean 518 grams; standard deviation 7.0 grams,Mean 518 grams; standard deviation 3.5 grams,Mean 518 grams; standard deviation 6.1 grams,Mean 394 grams; standard deviation 6.1 grams,C
+"Person 1: Hey, I'm working on a statistics problem and I need some help.
+Person 2: What's the problem?
+Person 1: I'm trying to figure out which set has the smallest standard deviation and which has the largest.
+Person 2: Okay, what are the sets?
+Person 1: I have three sets: {1,2,3}, {-10,10}, and {100}.
+Person 2: Got it. What do you want to know about them?
+Person 1: I want to know which set has the smallest standard deviation and which has the largest.","I, II","II, III","III, I","III, II",D

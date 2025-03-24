@@ -1,0 +1,28 @@
+"A patient comes to the office for preoperative evaluation before an adrenalectomy. One month ago, he was in the emergency department for right flank pain after a motor vehicle collision. A CT scan showed a 10-cm left adrenal mass. His blood pressure was elevated, and follow-up tests revealed high urinary normetanephrine, metanephrine, and plasma aldosterone concentrations. The surgeon recommended adrenalectomy. Today, his vital signs show a pulse of 100/min and blood pressure of 170/95 mm Hg. What initial preoperative treatment should be considered?",Labetalol,A loading dose of potassium chloride,Nifedipine,Phenoxybenzamine,D
+"Person 1: I have a question about a medical case.
+Person 2: Sure, go ahead and ask me.
+Person 1: A 36-year-old male comes to the office with a 3-week history of low back pain. He hasn't had any recent trauma, but he says he climbs in and out of his truck many times a day for work.
+Person 2: Okay, tell me more.
+Person 1: When he's examined lying face down, they find a deep sacral sulcus on the left side, a posterior inferior lateral angle on the right, and when they press on the lumbosacral junction, it moves freely.
+Person 2: And what are you wondering about this case?
+Person 1: What do you think is the most likely diagnosis?",left-on-left sacral torsion,left-on-right sacral torsion,right unilateral sacral flexion,right-on-right sacral torsion,D
+"Person 1: I have a question about a medical case.
+Person 2: Sure, go ahead and ask me.
+Person 1: So there's this 32-year-old woman who came to a physician 8 months after her husband died in a car crash.
+Person 2: Okay, what's going on with her?
+Person 1: Well, since her husband's death, she's been experiencing some significant changes. She has a decreased appetite, difficulty sleeping, and she's often sad and cries frequently.
+Person 2: That sounds like she might be dealing with grief.
+Person 1: There's more. She's developed some new behaviors - she checks the door lock five times before leaving her house and counts exactly five pieces of toilet paper before using it. She says she's always been a perfectionist, but these specific urges and rituals are new to her.
+Person 2: It sounds like she might be experiencing some psychological symptoms related to her trauma.
+Person 1: I'm wondering what neurotransmitter might be targeted to help her with these symptoms.",Dopamine,Glutamate,Norepinephrine,Serotonin,D
+"Person 1: I have a question about a patient who came to the office with some symptoms.
+Person 2: Sure, go ahead and ask me.
+Person 1: A 44-year-old man came in with a 3-day history of sore throat, nonproductive cough, runny nose, and frontal headache. He says the headache is worse in the morning and ibuprofen does provide some relief. He has not had shortness of breath. His medical history is unremarkable, and he takes no medications other than ibuprofen for pain. His temperature is 37.4°C, pulse is 88/min, respirations are 18/min, and blood pressure is 120/84 mm Hg. When examined, his nasal membranes are red, and his throat shows redness and lymphoid tissue swelling in the back. There's no swollen lymph nodes in the neck, and his lungs sound clear. What do you think might be causing his symptoms?
+Person 2: Hmm, let me think about that.",Allergic rhinitis,Epstein-Barr virus,Mycoplasma pneumoniae,Rhinovirus,D
+"Person 1: I have a medical question about a marathon runner.
+Person 2: Okay, what's going on?
+Person 1: So there's this 22-year-old male marathon runner who has been experiencing right-sided rib pain during long runs.
+Person 2: I'm listening.
+Person 1: When he was examined, the doctor found normal heart and lung findings, but discovered an exhalation dysfunction at ribs 4-5 on the right side.
+Person 2: And what does he want to know?
+Person 1: He wants to understand which muscle or muscle group would be most effective in directly correcting this specific dysfunction.",anterior scalene,latissimus dorsi,pectoralis minor,quadratus lumborum,C

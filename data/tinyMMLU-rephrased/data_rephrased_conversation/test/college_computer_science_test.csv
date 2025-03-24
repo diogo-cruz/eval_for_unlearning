@@ -1,0 +1,14 @@
+"Person 1: Hey, I'm working on a problem about functions between sets.
+Person 2: What's the problem?
+Person 1: I have a finite set A with m elements, and another finite set B with n elements.
+Person 2: Okay, what do you want to know?
+Person 1: I'm trying to find out how many distinct functions can map from set A into set B.",n^m,n!/(n - m)!,n!,n!/(m!(n - m)!),A
+"Person 1: I have a question about depth-first search trees.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how in a connected undirected graph G, we have a depth-first search tree T?
+Person 2: Yes?
+Person 1: For each vertex v of T, we define pre(v) as the number of nodes visited up to and including v during a preorder traversal, and post(v) as the number of nodes visited up to and including v during a postorder traversal.
+Person 2: Okay, I'm following.
+Person 1: And the lowest common ancestor of vertices u and v is a vertex w where w is an ancestor of both u and v, and no child of w is an ancestor of both u and v.
+Person 2: Right.
+Person 1: So, consider an edge (u, v) in G that is not in T, where pre(u) < pre(v). What can we say about u and v?",I only,II only,III only,II and III,D

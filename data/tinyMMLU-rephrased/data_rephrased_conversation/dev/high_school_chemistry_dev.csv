@@ -1,0 +1,32 @@
+"Person 1: Hey, I'm studying chemistry and I have a question about acid anhydrides.
+Person 2: What's your question?
+Person 1: I'm trying to figure out which of the following compounds is considered an acid anhydride.
+Person 2: Okay, what are the options you're looking at?",HCl,H2SO3,SO2,Al(NO3)3,C
+"Person 1: I have a question about polar molecules.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how some molecules have specific characteristics right?
+Person 2: Yes?
+Person 1: Then which of the following is expected to be a polar molecule?",PCl4F,BF3,CO2,Si(CH3)4,A
+"Person 1: Hey, I'm studying solubility rules and I'm a bit confused.
+Person 2: What's on your mind?
+Person 1: I'm trying to understand which statement is true based on the solubility rules.
+Person 2: Okay, what specific thing do you want to know about the solubility rules?
+Person 1: I'm wondering which statement is actually true according to these rules.
+Person 2: Go ahead and tell me more about what you're looking at.","All chlorides, bromides, and iodides are soluble",All sulfates are soluble,All hydroxides are soluble,All ammonium-containing compounds are soluble,D
+"Person 1: I'm working on a chemistry problem and I'm a bit confused.
+Person 2: What seems to be the issue?
+Person 1: Well, I have this new compound that's a monoprotic acid.
+Person 2: Okay, what do you know about it?
+Person 1: Its molar mass is 248 g/mol, and when I dissolve 0.0050 mol in 0.500 L of water, the pH comes out to 3.89.
+Person 2: Got it. What are you trying to find?
+Person 1: I'm trying to determine the pKa of this acid.
+Person 2: Let's break this down step by step.",3.89,7.78,5.78,2.33,C
+"Person 1: I have a chemistry problem I'd like to discuss.
+Person 2: Sure, what's the problem?
+Person 1: I have a solution that contains 2.00 mole of acetic acid, CH3COOH, and 1.00 mole of calcium acetate, Ca(CH3COO)2.
+Person 2: Okay, go on.
+Person 1: The solution is able to resist the addition of a small amount of strong acid or strong base with only minor changes in the pH of the solution.
+Person 2: Right, sounds like a buffer solution.
+Person 1: Exactly. Larger quantities of strong acid or strong base can cause a significant change in pH.
+Person 2: What's your specific question?
+Person 1: I want to know how many moles of nitric acid, HNO3, may be added before the pH begins to change significantly.",0.500 mole,1.00 mole,2.00 mole,3.00 mole,C

@@ -1,0 +1,32 @@
+"Variables:
+X = set of real polynomials
+Y = transformation T
+Z = transformation S
+
+Rephrased question:
+Let X be the set of all real polynomials. Let Y and Z be defined on X by Y:p(x) -> xp(x) and Z:p(x) -> p'(x) = d/dx p(x), and interpret (ZY)(p(x)) as Z(Y(p(x))). Which of the following is true?",ST = 0,ST = T,ST = TS,ST - TS is the identity map of V onto itself.,D
+"X = 3
+Y = 0.02
+Z = 100
+
+A tank initially contains X grams of salt dissolved in Y liters of water. A salt solution containing Z grams of salt per liter of water is sprayed into the tank at a rate of 4 liters per minute. The sprayed solution is continually mixed with the salt solution in the tank, and the mixture flows out of the tank at a rate of 4 liters per minute. If the mixing is instantaneous, how many grams of salt are in the tank after 100 minutes have elapsed?",2,2 - e^-2,2 + e^-2,2 + e^-4,D
+"X = matrix type
+Y = matrix dimension
+
+Let X be a Y x Y matrix. Which of the following statements must be true?
+I. All of the entries of X^2 are nonnegative.
+II. The determinant of X^2 is nonnegative.
+III. If X has two distinct eigenvalues, then X^2 has two distinct eigenvalues.",I only,II only,III only,II and III only,B
+"Variables:
+X = 1 + x
+Y = f(x)
+Z = 5
+
+Rephrased question:
+Suppose that Y = X for all real X. If f is a Z-degree polynomial and f(Z) = 11, then f(15/2)",-11,0,11,33/2,C
+"Variables:
+X = 7
+Y = 12
+Z = 22
+
+What is the greatest negative number in the set of values where Xm + Yn = Z?",-5,-4,-3,-2,B

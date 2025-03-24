@@ -1,0 +1,25 @@
+"Person 1: I'm curious about SHA-1 and its message digest.
+Person 2: What specifically would you like to know?
+Person 1: Can you tell me about the message digest of SHA-1?
+Person 2: What details are you looking for about its message digest?
+Person 1: I'm wondering about the specific message digest of SHA-1.",160 bits,512 bits,628 bits,820 bits,A
+"Person 1: Hey, I'm wondering about something related to computer security.
+Person 2: What's on your mind?
+Person 1: I'm curious about something that can potentially harm your computer system.
+Person 2: Oh, what specifically are you asking about?
+Person 1: What can modify data on your system – so that your system doesn't run correctly or you can no longer access specific data, or it may even ask for ransom in order to give your access?",IM – Trojans,Backdoor Trojans,Trojan-Downloader,Ransom Trojan,D
+"Person 1: Hey, I'm curious about something. Can you tell me about ethical hacking?
+Person 2: What would you like to know?
+Person 1: I'm trying to understand what ethical hacking actually involves.
+Person 2: Okay, go ahead and ask me about it.
+Person 1: What exactly is ethical hacking?","""Hacking"" ethics so they justify unintended selfish behavior","Hacking systems (e.g., during penetration testing) to expose vulnerabilities so they can be fixed, rather than exploited",Hacking into systems run by those whose ethics you disagree with,"A slang term for rapid software development, e.g., as part of hackathons",B
+"Person 1: Hey, I wanted to ask you about the Heartbleed bug.
+Person 2: What about it?
+Person 1: I'm curious about how exploiting this vulnerability actually works.
+Person 2: What specifically do you want to know about its exploitation?
+Person 1: Can you explain what permits the exploitation of the Heartbleed bug?",overwriting cryptographic keys in memory,a kind of code injection,a read outside bounds of a buffer,a format string attack,C
+"Person 1: Hey, I'm working on this science problem and I'm curious about something.
+Person 2: What's on your mind?
+Person 1: Can you help me understand what the blank in this question means? It says ""The ____________ is anything which your search engine cannot search.""
+Person 2: Sure, I'm listening. What specifically are you wondering about?
+Person 1: Well, I'm trying to figure out what could go in that blank space that describes something a search engine can't find.",Haunted web,World Wide Web,Surface web,Deep Web,D

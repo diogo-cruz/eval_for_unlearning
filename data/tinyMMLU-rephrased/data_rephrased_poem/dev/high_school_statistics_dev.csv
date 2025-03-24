@@ -1,0 +1,78 @@
+"In the realm of data's dance and sway,
+Correlation whispers its subtle way,
+A measure of how two variables blend,
+Their relationship, where patterns extend.
+
+Not causation, but a linked embrace,
+Where change in one leaves the other's trace,
+A strength and direction, positive or less,
+Revealing connections, no more, no less.","If the slope of the regression line is exactly 1, then the correlation is exactly 1.","If the correlation is 0, then the slope of the regression line is undefined.",Switching which variable is called x and which is called y changes the sign of the correlation.,The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.,D
+"In realms of chance, where X and Y reside,
+With known expectations side by side,
+X bears the mark of thirty-seven's grace,
+While variance of five leaves its light trace.
+
+Y stands tall with sixty-two's domain,
+Its variance twelve, a statistical refrain.
+When these two variables join as one,
+A new adventure has just begun.
+
+What secrets lie in their combined might?
+What moments shall emerge in plain sight?
+The expected value, a simple sum,
+Where thirty-seven and sixty-two become
+
+A total of ninety-nine, clear and bright,
+And variance, a measure of random's flight,
+Shall add their scattered whispers true,
+Five and twelve make seventeen anew.
+
+So X plus Y reveals its heart
+With ninety-nine and seventeen's art,
+A testament to probabilistic song,
+Where random paths together belong.","E(X + Y) = 99, var(X + Y) = 8.5","E(X + Y) = 99, var(X + Y) = 13","E(X + Y) = 99, var(X + Y) = 17",There is insufficient information to answer this question.,D
+"In groves where citrus blossoms gleam,
+A frost's cold breath, a farmer's dream,
+With water's shield, he sought to save
+His trees from winter's icy wave.
+
+But doubt crept in, a silent fear,
+Of damage done both far and near,
+One hundred trees, a random view,
+To gauge the harm that cold winds brew.
+
+What measure tells of nature's might?
+What variable reveals frost's bite?
+The damage done, beyond half's mark,
+A percentage clear, precise and stark.",The proportion of trees that suffered more than 50 percent damage due to frost.,The number of trees affected by the frost.,The number of trees sampled from the grove.,"For each sampled tree, whether it suffered more than 50 percent damage or at most 50 percent damage.",D
+"In the factory's dance of creation,
+A smartwatch takes its form with precision,
+Sixty-two grams its delicate frame,
+With standard deviation of just one to acclaim.
+
+Then to packaging, a separate stage,
+Four-fifty-six grams, its protective cage,
+Six grams of variance, a cushioned embrace,
+To shield the device with calculated grace.
+
+When these two weights in union combine,
+What mathematical secrets will they design?
+A mean and deviation waiting to unfold,
+Their story of mass, waiting to be told.",Mean 518 grams; standard deviation 7.0 grams,Mean 518 grams; standard deviation 3.5 grams,Mean 518 grams; standard deviation 6.1 grams,Mean 394 grams; standard deviation 6.1 grams,C
+"Amidst the numbers, a dance of spread,
+Which set's deviation shall raise its head?
+
+Set I, a modest trio's embrace,
+From one to three, with measured grace.
+
+Set II, a stark contrast's bold design,
+Negative ten and ten's sharp line.
+
+Set III, a single point alone,
+A solitary, steadfast stone.
+
+Which whispers softly, which roars loud?
+Whose standard deviation forms a shroud?
+
+Seek the smallest, seek the wide,
+Let statistical wisdom be your guide.","I, II","II, III","III, I","III, II",D

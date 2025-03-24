@@ -1,0 +1,36 @@
+"Person 1: I'm trying to understand predicate logic and I have a question about this statement: ""No people drive on Mars.""
+Person 2: Okay, what specifically about this statement do you want to know?
+Person 1: I'm wondering how I would translate this into predicate logic.
+Person 2: What details are you considering about the translation?
+Person 1: Well, I know it involves variables, predicates, and quantifiers, but I'm not sure exactly how to represent this statement.",~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+"Person 1: I'm trying to understand predicate logic and how to translate this statement: George borrows Hector's lawnmower.
+Person 2: Okay, what details do you want to know about translating this?
+Person 1: Well, we have George, Hector, and Hector's lawnmower, and we need to represent the borrowing relationship using predicate logic.
+Person 2: Right, and you want to break down the components like the variables and the predicate?
+Person 1: Exactly. How would we represent that George borrows the lawnmower from Hector using predicate logic symbols?",Blgh,Bhlg,Bglh,Bghl,C
+"Person 1: I'm looking at this predicate logic problem and I'm a bit confused.
+Person 2: What seems to be challenging about it?
+Person 1: Well, I have these premises: (∀x)(Wx ⊃ ~Dx) and (∀x)Wx ∨ Ag, and I need to determine what (∃x)Ax means.
+Person 2: Okay, and what specifically are you struggling with understanding?
+Person 1: I'm trying to figure out how to interpret these logical statements in plain English and understand their relationships.
+Person 2: Would you like to walk me through what each symbol represents?",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"Person 1: Hey, I'm working on this logic problem and I'm a bit confused.
+
+Person 2: What's the problem?
+
+Person 1: I need to construct a complete truth table for these two propositions: E ⊃ (F · E) and ~E · F.
+
+Person 2: Okay, what do you want to do with the truth tables?
+
+Person 1: After creating the truth tables, I need to determine whether these statements are logically equivalent or contradictory. And if they're neither of those, I need to figure out if they're consistent or inconsistent.
+
+Person 2: And you want me to help you justify the reasoning?
+
+Person 1: Exactly! Can you walk me through how to approach this?",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"Person 1: Hey, I'm working on this logic problem and I'm trying to symbolize a sentence.
+Person 2: Okay, what's the sentence?
+Person 1: The sentence is: ""Turtles live long lives and are happy creatures, unless they are injured.""
+Person 2: Hmm, that sounds like it could be tricky to symbolize in propositional logic.
+Person 1: I know! I'm trying to figure out which formula would best represent this sentence.
+Person 2: What specific details are you looking at in the sentence?
+Person 1: Well, I'm trying to capture the conditions about turtles living long, being happy, and what happens if they get injured.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

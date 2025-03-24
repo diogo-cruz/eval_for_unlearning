@@ -1,0 +1,24 @@
+"X = people
+Y = Mars
+
+Select the best translation into predicate logic: No X drive on Y.",~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+"X: George
+Y: Hector's lawnmower
+Z: Hector
+
+Select the best translation into predicate logic.",Blgh,Bhlg,Bglh,Bghl,C
+"X = predicate logic
+Y = arguments
+Z = interpretation
+
+Select the best English X of the given Y in Z.",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"Variables:
+X: E
+Y: F
+
+Construct a complete truth table for the following pairs of X and Y. Then, using the truth tables, determine whether the statements are logically equivalent or contradictory. If neither, determine whether they are consistent or inconsistent. Justify your answers.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"X = PL
+Y = formulas
+
+Which of the given Y of X is the best symbolization of the following sentence?
+Turtles live long lives and are happy creatures, unless they are injured.",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

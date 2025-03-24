@@ -1,0 +1,85 @@
+"In the realm of patterns, a quest unfolds,
+Where strings of symbols and logic take hold.
+Which regex, with grace and precision true,
+Captures the essence of (a* + b)*(c + d)'s view?
+
+Seek the equivalent, the mirror so fair,
+Where characters dance with mathematical flair.
+A challenge of symbols, of matching design,
+Where a, b, c, and d intertwine.",a*(c + d)+ b(c + d),a*(c + d)* + b(c + d)*,a*(c + d)+ b*(c + d),(a + b)*c +(a + b)*d,D
+"In registers of eight, a RISC machine's might,
+Where numbers dance and calculations take flight,
+R0 to R7, a digital domain,
+Where ADD and MUL their logic maintain.
+
+A cycle for each, a rhythm precise,
+But dependencies come with a price,
+When results cascade in sequence tight,
+An extra cycle extends the computational height.
+
+A puzzle of terms: AB, ABC, BC unfold,
+With A, B, C in registers bold,
+R0, R1, R2 hold their worth,
+Unchanged through computation's birth.
+
+How many clock ticks shall we count?
+To calculate this algebraic mount,
+Preserving each register's sacred state,
+While arithmetic problems we navigate.
+
+The challenge calls for cycles minimal,
+A dance of math, precise and clinical,
+Where every step is measured and clear,
+And efficiency becomes most dear.",5,6,7,8,B
+"In the realm of design, a pattern so rare,
+Singleton stands with a singular flair.
+One instance, one purpose, its mission defined,
+A class that cannot be easily maligned.
+
+A factory method, static and bright,
+Provides the instance with elegant might.
+Can it inherit from another's base?
+Or must it stand alone in its own embrace?
+
+A private constructor, a key to control,
+Preventing creation beyond its sole role.
+Which statements ring true in this pattern's domain?
+Let wisdom and logic together explain.",I only,II only,III only,"I, II, and III",D
+"In the realm of code, a compiler's might,
+Translates a statement with algebraic delight:
+G equals A plus B, then multiplied by C's grace,
+Minus D and E, then F's impact to trace.
+
+An accumulator stands, singular and bright,
+With load, store, add, subtract, multiply's light.
+Each instruction takes left from its metallic core,
+Returning results to that very same store.
+
+How many steps shall this transformation take?
+What minimum path will the code compiler make?
+A puzzle of efficiency, a challenge to solve,
+Where mathematical elegance and logic revolve.
+
+Each operation carefully placed, each move precise,
+Minimizing instructions with algorithmic device,
+To transform the equation from abstract to concrete,
+Where mathematical poetry makes computation complete.",5,6,7,9,D
+"In silicon's realm, where circuits breathe and think,
+Processors dance on memory's fragile brink.
+A shared bus whispers tales of data's flight,
+Each chip with cache, a guardian of byte's might.
+
+Five hundred nanoseconds mark each stride,
+Until the local memory takes pride.
+But when a cache miss breaks the rhythm's flow,
+Two thousand nanoseconds start to grow.
+
+Half of that pause, the bus must heed the call,
+The other half, a stillness covers all.
+Two references per instruction's quest,
+One percent of chances put to test.
+
+What portion of this highway do they claim,
+When solitude gives bandwidth without blame?
+A calculation lurks within this song,
+To measure how resources flow along.",1/50,1/27,1/25,2/27,B

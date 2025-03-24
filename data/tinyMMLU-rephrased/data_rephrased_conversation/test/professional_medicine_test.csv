@@ -1,0 +1,46 @@
+"Person 1: I have a question about a 17-year-old girl who hasn't had a menstrual period for 6 months.
+Person 2: Yes?
+Person 1: Her mother brought her to the physician because she seems unconcerned about the lack of menses. She started her period at 12 and had regular 28-day cycles until they became irregular a year ago. She's on the high school gymnastics team and looks very thin.
+Person 2: Go on.
+Person 1: She's 163 cm tall, weighs 40 kg, has a BMI of 15 kg/m2, a pulse of 54/min, and blood pressure of 80/50 mm Hg. What do you think could be causing her amenorrhea?",Hyperthyroidism,Hypogonadotropic hypogonadism,Hypothyroidism,Polycystic ovarian syndrome,B
+"Person 1: I have a question about a medical scenario.
+Person 2: Sure, go ahead and ask me.
+Person 1: There's this 52-year-old man who came to the emergency department.
+Person 2: Okay, what happened?
+Person 1: He was shoveling snow and had an episode of chest pain that radiated to his jaw about 30 minutes before arriving.
+Person 2: And what were his vital signs?
+Person 1: His pulse was 80/min, and his blood pressure was 130/70 mm Hg. His lungs were clear when listened to, and during the cardiac examination, they found an S4.
+Person 2: What happened next?
+Person 1: While he was getting an ECG, he said the chest pain was returning.
+Person 2: What are you wondering about?
+Person 1: I want to know what would be the most appropriate immediate treatment based on the mechanism of action of a drug.",Increases cAMP concentration,Increases nitric oxide concentration,Inhibits potassium flux,Inhibits sodium flux,B
+"Person 1: Hi, I'm a medical professional seeking advice about a patient case.
+Person 2: Okay, what's the situation?
+Person 1: I have a 22-year-old female patient who came to the office with urticaria.
+Person 2: Go on.
+Person 1: This is her first episode, and it has occurred and resolved several times in the past week.
+Person 2: And what else can you tell me?
+Person 1: After conducting a thorough history and physical examination, I found no abnormalities.
+Person 2: What are you wondering about?
+Person 1: I'm trying to determine the most appropriate course of action for this patient.
+Person 2: What are you considering?",Determine the serum IgE concentration,Determine the total eosinophil count,Refer her to an allergist,Treat the symptoms,D
+"Person 1: I'm curious about a clinical study involving exercise and physiological measurements.
+Person 2: What would you like to know?
+Person 1: Well, it involves men aged 20 to 30 years doing a 15-minute treadmill session.
+Person 2: Okay, go on.
+Person 1: Their average pulse during the last 2 minutes was 175 beats per minute.
+Person 2: And what measurements were taken?
+Person 1: Various measurements were taken during the last minute of exercise.
+Person 2: What are you wondering about these measurements?
+Person 1: I'm specifically interested in how these measurements might have changed compared to the measurements before the exercise session.
+Person 2: What specific change are you curious about?
+Person 1: I want to know which measurement is most likely to have decreased after the exercise.",Pulse pressure,Stroke volume,Systolic blood pressure,Total peripheral resistance,D
+"Person 1: Doctor, I've been experiencing some shoulder pain.
+Person 2: Can you tell me more about it?
+Person 1: Well, I was chopping wood two days ago, and now my right shoulder is really bothering me.
+Person 2: I see. Can you describe the pain?
+Person 1: When I try to rotate my shoulder outward and someone pushes against my movement, it really hurts. But I don't feel weak.
+Person 2: Have you noticed any visible changes or deformities?
+Person 1: No, nothing looks different. It just hurts when I move it a certain way.
+Person 2: Let me understand this clearly. You chopped wood, and now you have pain when externally rotating your shoulder, but no obvious bone issues or point tenderness?
+Person 1: That's exactly right. What do you think might be causing this?",Infraspinatus,Pectoralis,Subscapularis,Supraspinatus,A

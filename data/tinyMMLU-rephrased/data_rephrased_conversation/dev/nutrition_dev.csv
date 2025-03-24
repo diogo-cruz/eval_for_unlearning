@@ -1,0 +1,25 @@
+"Person 1: I'm looking at this research about tea consumption and diabetes risk.
+Person 2: Okay, what's on your mind?
+Person 1: So in this cohort study, they calculated a risk ratio of 0.86 when comparing tea drinkers to non-tea drinkers.
+Person 2: Right, and what specifically are you wondering about?
+Person 1: I want to know which statement about this finding is correct, based on the knowledge available in 2020.",The tea drinkers have lower risk of developing diabetes.,The tea drinkers have higher risk of developing diabetes.,Based on the information given we cannot tell if the observed difference in disease risk is the result of chance.,"The risk ratio is close to the value one, so there is no difference in disease risk between the two groups.",C
+"Person 1: I'm studying evolutionary biology and I'm curious about a specific concept.
+Person 2: What would you like to know?
+Person 1: I'm trying to understand which statement is scientifically correct according to knowledge available in 2020.
+Person 2: Okay, what's the specific context of your question?
+Person 1: I'm looking at a set of statements and need to determine which one is accurate based on scientific understanding from 2020.
+Person 2: Can you tell me more about the specific statements you're comparing?",Consumers with phenylketonuria must avoid the consumption of the sweetener aspartame,Consumers with phenylketonuria must avoid the consumption of the sweetener saccharin,Consumers with phenylketonuria must avoid the consumption of the sweetener sucralose,Consumers with phenylketonuria must avoid the consumption of the sweetener acesulfame K,A
+"Person 1: I've been reading about dietary fiber and its potential protective effects against colon cancer.
+Person 2: Oh, that's an interesting topic. What specifically are you curious about?
+Person 1: Well, I'm wondering what researchers consider the most plausible explanation for how dietary fiber might help prevent colon cancer, based on the current scientific understanding as of 2020.
+Person 2: That's a great question. What have you learned so far about this potential protective mechanism?","Propionic acid, formed during colonic fibre fermentation inhibits liver fatty acid synthesis","Butyric acid, formed during colonic fibre fermentation stimulates ""silencing"" of the SLC5A8 tumour suppressor gene",None of these options are correct,"Butyric acid, formed during colonic fibre fermentation stimulates anti-oxidant defences in the colon",D
+"Person 1: I have a question about iodine.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how we want to know which statement about iodine is correct, as of 2020, right?
+Person 2: Yes?
+Person 1: So what is the correct statement about iodine?",50% of adults consume iodine at levels below the RNI,Dairy products are a poor source of iodine,The iodine content of organic milk is generally lower that the level in non-organic milk,UK dietary reference values recommend an increase in iodine intake in pregnancy,C
+"Person 1: I've been wondering about diabetes treatment.
+Person 2: What's on your mind?
+Person 1: I'm curious about the first-line medication for patients who have type 2 diabetes and are also dealing with obesity.
+Person 2: Okay, what specifically would you like to know about it?
+Person 1: Specifically, what is the recommended first-line drug for these patients as of 2020?",Acarbose,Metformin,Sulphonylureas,Insulin,B

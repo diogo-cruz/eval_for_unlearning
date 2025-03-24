@@ -1,0 +1,5 @@
+"Variables:
+X = security checks
+Y = validation steps
+
+Question: X and Y may remain as a bug in apps if __________ are not done fully.",boundary hacks,memory checks,boundary checks,buffer checks,C

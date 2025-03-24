@@ -1,0 +1,33 @@
+"Person 1: Hey, I'm trying to understand SR latches built with NOR gates.
+Person 2: What specifically about SR latches are you curious about?
+Person 1: I'm wondering about the conditions in an SR latch made from NOR gates.
+Person 2: Okay, what do you want to know?
+Person 1: Can you help me identify which condition is not allowed in this type of latch?","S=0, R=0","S=0, R=1","S=1, R=0","S=1, R=1",D
+"Person 1: Hey, I'm trying to understand something about a 2 pole lap winding DC machine.
+Person 2: What's your question?
+Person 1: I want to know about the resistance of one conductor and the total number of conductors.
+Person 2: Okay, what specifically do you want to find out?
+Person 1: I'm trying to calculate the total resistance of the machine.
+Person 2: What details do you have?
+Person 1: Well, the resistance of one conductor is 2Ω, and the total number of conductors is 100.
+Person 2: Got it. So you want to know the total resistance?
+Person 1: Exactly! Can you help me figure that out?",200Ω,100Ω,50Ω,10Ω,C
+"Person 1: I have a question about a moving coil meter.
+Person 2: Sure, go ahead and ask me.
+Person 1: The coil has 100 turns and is 40 mm long and 30 mm wide.
+Person 2: Okay, what else do you want to know?
+Person 1: The control torque is 240*10-6 N-m on full scale, and the magnetic flux density is 1Wb/m2.
+Person 2: What specifically are you asking about this meter?
+Person 1: I want to know the range of the meter.",1 mA.,2 mA.,3 mA.,4 mA.,B
+"Person 1: I have a question about parallel conductors.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how two long parallel conductors carry current, right?
+Person 2: Yes?
+Person 1: If the conductors are separated by 20 mm, what will be the force per meter of length of each conductor when they are carrying 100 A?",100 N.,0.1 N.,1 N.,0.01 N.,B
+"Person 1: Hey, I'm working on this physics problem about magnetic poles.
+Person 2: Okay, what's the problem?
+Person 1: There's a point pole with a strength of 4π * 10^-4 weber.
+Person 2: Right, and what do you want to know?
+Person 1: I need to find the force in newtons on another point pole with a strength of 4π * 1.5 * 10^-4 weber, placed 10 cm away from the first pole.
+Person 2: Got it. So you want to calculate the force between these two magnetic poles?
+Person 1: Exactly. Can you help me figure out how to solve this?",15 N.,20 N.,7.5 N.,3.75 N.,A

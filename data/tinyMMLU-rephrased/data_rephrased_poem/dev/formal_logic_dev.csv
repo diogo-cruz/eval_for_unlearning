@@ -1,0 +1,58 @@
+"In realms of red and dusty plain,
+Where silence rules without a strain,
+No human tread, no wheeled device,
+Mars remains, untouched by life's splice.
+
+A logical realm of stark terrain,
+Where movement's absence does sustain,
+The predicate of emptiness pure,
+No drivers here shall e'er endure.",~Pd,(∀x)(Px ∨ ~Dx),(∀x)(Px ⊃ ~Dx),~Dp,C
+"In the realm of logic's precise dance,
+Where symbols weave a structured stance,
+George and Hector, their paths entwine
+Through a lawnmower's borrowed design.
+
+Predicate's language, clear and bright,
+Translates their actions with logical might,
+B(g,l,h) shall be the call,
+Where meaning stands both pure and tall.",Blgh,Bhlg,Bglh,Bghl,C
+"In the realm of logic, where symbols reign supreme,
+A puzzle of predicates, a philosophical dream,
+With premises stark and conclusion to seek,
+What meaning lies hidden, what truth shall we peek?
+
+Whispers of ""W"" and ""D"" dance in the light,
+""A"" joins the ballet, a logical slight,
+Quantifiers universal, existential they sway,
+Beckoning reason to find its true way.
+
+Translate these signs from their formal embrace,
+Render their essence with linguistic grace,
+What English interpretation shall rise,
+Revealing the wisdom that logically lies?",Marina is a dancer. Some weaklings are not dancers. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. Some weaklings are not dancers. Everything is either a weakling or plays volleyball. So something plays volleyball.,Marina is a dancer. No weakling is a dancer. Either everything is a weakling or Georgia plays volleyball. So something plays volleyball.,D
+"In binary realms where logic reigns supreme,
+Two propositions dance upon my scheme,
+E implies F and E, a conditional's might,
+While not-E and F stand in stark contrast bright.
+
+Shall truth tables reveal their hidden art,
+Mapping each possibility from the start?
+Row by row, we'll trace each truth's design,
+And see if paths of logic intertwine.
+
+Are they equivalent in every way?
+Or contradictory, where no truth may stay?
+Perhaps consistent, with harmony rare,
+Or inconsistent beyond compare.
+
+Let symbols speak and tables tell their tale,
+Where reason's light shall ultimately prevail.",Logically equivalent,Contradictory,"Neither logically equivalent nor contradictory, but consistent",Inconsistent,C
+"In logical lands where symbols reign,
+Which formula shall capture thought's domain?
+A sentence of shell-clad beings so bright,
+With longevity and joy in pure delight,
+
+Unless pain strikes, a caveat so clear,
+Where harm might dim their tranquil atmosphere.
+Which sigils and signs shall best convey
+This turtle's tale in symbolic array?",(L • H) ≡ I,(L • H) ∨ I,L • (H ∨ I),L • (H ⊃ R),B

@@ -1,0 +1,18 @@
+"Person 1: Hey, I'm trying to understand this predicate logic statement about firefighters.
+
+Person 2: What's confusing you?
+
+Person 1: It says ""Some firefighters rescue victims from danger"" and I want to translate it into predicate logic notation.
+
+Person 2: Okay, what specific details do you want to know about translating this statement?
+
+Person 1: Well, we have these predicates: Dx means x is danger, Fx means x is a firefighter, Vx means x is a victim, and Rxyz means x rescues y from z. How would we represent this statement?
+
+Person 2: What exactly are you wondering about the translation?",(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"Person 1: I have a question about logical statements.
+Person 2: Sure, go ahead and ask me.
+Person 1: You know how we can translate propositional logic statements into natural language sentences?
+Person 2: Yes?
+Person 1: Can you help me convert the statement ~C ∨ D using the given key?","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

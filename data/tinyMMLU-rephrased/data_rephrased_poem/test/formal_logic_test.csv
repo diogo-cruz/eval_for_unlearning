@@ -1,0 +1,20 @@
+"In the realm of symbols and logical might,
+Where predicate dance takes flight,
+Some heroes brave, in flames they stride,
+Rescuing souls from danger's tide.
+
+Firefighters bold, their purpose clear,
+Snatching victims from peril near,
+A logical waltz of rescue's art,
+Where symbols tell what words cannot start.",(∃x){Fx • (∀y)[Dy ⊃ (∃z)(Vz • Rxyz)]},(∃x){Fx • (∃y)[Vy • (∃z)(Dz • Rxyz)]},(∃x){Fx • (∃y)(∃z)[(Vy • Dz) • Rxzy]},(∀x){Fx ⊃ (∃y)[Vy . (∃z)(Dz • Rxyz)]},B
+"In logic's realm, where symbols speak,
+A tale of choices, soft and sleek,
+Where Emily's work may pause or stay,
+And Russell's dinner finds its way.
+
+The tilde and the ""or"" entwine,
+Suggesting paths that intertwine,
+Not working or with dinner made,
+A freedom of the choice displayed.","t stop working then Russell makes dinner.""
+ ","
+ ""Emily stops working unless Russell doesn",,,D

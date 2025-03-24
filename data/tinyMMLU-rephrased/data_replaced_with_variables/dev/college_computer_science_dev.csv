@@ -1,0 +1,27 @@
+"X = regular expressions
+Y = set of strings
+Z = (a* + b)*(c + d)
+
+Which of the following X is equivalent to (describes the same Y as) Z?",a*(c + d)+ b(c + d),a*(c + d)* + b(c + d)*,a*(c + d)+ b*(c + d),(a + b)*c +(a + b)*d,D
+"X = 8, Y = 3
+How many clock cycles are required to compute X + Y using a pipelined machine with Z general-purpose registers, where the contents of the source registers must not be modified?",5,6,7,8,B
+"X = Singleton design pattern
+Y = class
+Z = instance
+
+Is X used to guarantee that only a single Z of Y may be instantiated? Which of the following is (are) true of this pattern?
+I. Y has a static factory method to provide its Z.
+II. Y can be a subclass of another Y.
+III. Y has a private constructor.",I only,II only,III only,"I, II, and III",D
+"Variables:
+X = arithmetic expression
+Y = target machine characteristics
+Z = instruction set
+
+Rephrased question:
+A compiler generates code for the following X. The Y has a single accumulator and a Z consisting of instructions load, store, add, subtract, and multiply. For the arithmetic operations, the left operand is taken from the accumulator and the result appears in the accumulator. The smallest possible number of instructions in the resulting code is",5,6,7,9,D
+"X = 500 nanoseconds
+Y = 2,000 nanoseconds
+Z = 1 percent
+
+What proportion of the capacity of the bus would a single processor consume, ignoring delays due to competition from other processors?",1/50,1/27,1/25,2/27,B

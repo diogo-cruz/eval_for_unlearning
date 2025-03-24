@@ -1,0 +1,15 @@
+"Person 1: Hey, I'm studying the digestive system and I'm curious about something.
+Person 2: What's on your mind?
+Person 1: I want to know about bile and where it enters the digestive tract.
+Person 2: Okay, what specifically about bile's entry point are you wondering?
+Person 1: I'm trying to figure out at which location bile actually enters the digestive system.
+Person 2: Sounds like an interesting question. What specific locations are you considering?",Gastroesophageal sphincter,Duodenum,Ileocecum,Jejunum,B
+"Person 1: I'm studying fetal circulation and I'm curious about something.
+Person 2: What's on your mind?
+Person 1: In the fetus, can you tell me about how the ductus arteriosus passes blood?
+Person 2: Sure, what specifically would you like to know about its blood passage?",pulmonary vein to the aorta.,aorta to pulmonary vein.,pulmonary artery to the aorta.,aorta to the pulmonary artery.,C
+"Person 1: I'm studying respiratory systems and I'm curious about something.
+Person 2: What's on your mind?
+Person 1: I want to know which structure specifically allows gas exchange in the lungs.
+Person 2: Okay, what are you trying to figure out exactly?
+Person 1: I'm trying to determine which specific structure is responsible for facilitating gas exchange in the lungs.",Alveoli,Bronchi,Bronchioles,Capillaries,A

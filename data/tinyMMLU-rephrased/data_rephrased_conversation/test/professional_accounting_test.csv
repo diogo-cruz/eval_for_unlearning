@@ -1,0 +1,16 @@
+"Person 1: Hey, I'm curious about IT system planning in e-commerce environments.
+Person 2: What specifically about it?
+Person 1: I'm wondering about the key differences in planning emphasis compared to traditional organizations.
+Person 2: What do you mean?
+Person 1: Well, given that e-commerce requires continuous system availability, I'm trying to understand what aspects of planning would get more attention than in a typical organization.
+Person 2: That's an interesting question. What aspects are you thinking about?
+Person 1: I'm not entirely sure. That's why I'm asking - which aspects of planning would be more critical in an e-commerce environment that needs constant IT system availability?",Maintain appropriate written source documents so the data can be re-entered if it is lost or compromised,Maintain redundant systems for instant availability to assure the flow of transactions,Review additional expenses to obtain the required amount of business interruption insurance coverage for the organization,Assure that appropriate data backups are stored in an off-site location,B
+"Person 1: Hey, I'm working on an investment analysis problem and could use some help.
+Person 2: What's the problem?
+Person 1: I need to order some risk and return pairs from least to most favorable, thinking from a rational and risk-averse investor's perspective.
+Person 2: Okay, what are the specific pairs you're looking at?
+Person 1: I have three pairs: (2,2), (2,3), and (4,2). Risk is measured in standard deviations and return in percentage.
+Person 2: Interesting. How are you thinking about approaching this?
+Person 1: I'm trying to imagine it like a scatter diagram with standard deviation on the x-axis and return on the y-axis.
+Person 2: That sounds like a good way to visualize it. What do you want to do next?
+Person 1: I want to order these pairs from least to most favorable.","(4,2),(2,2),(2,3)","(2,2),(2,3),(4,2)","(2,2),(4,2),(2,3)","(2,3),(2,2),(4,2)",A

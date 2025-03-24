@@ -1,0 +1,7 @@
+"Person 1: I'm wondering about group homomorphisms.
+Person 2: What specifically about them?
+Person 1: Well, I'm trying to understand something about the image of a group under a homomorphism.
+Person 2: Okay, what's your specific question?
+Person 1: Is it true that the image of a group of 6 elements under a homomorphism may have 12 elements?
+Person 2: Go on, tell me more.
+Person 1: And is there a homomorphism of some group of 6 elements into some group of 12 elements?","True, True","False, False","True, False","False, True",D
