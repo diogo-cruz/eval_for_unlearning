@@ -53,8 +53,9 @@ def load_wmdp_data(task: str) -> list[dict]:
       res.append(line)
   return res
 
-def load_tiny_mmlu_data(subject: str) -> list[dict]:
-  res = pd.read_csv(DATA_PATH / "tinyMMLU" / "dev" / f"{subject}_dev.csv", header=None)
+def load_tiny_mmlu_data(subject: str, split: str) -> list[dict]:
+  assert split in ["dev", "test"], f"invalid split: {split}"
+  res = pd.read_csv(DATA_PATH / "tinyMMLU" / split / f"{subject}_{split}.csv", header=None)
   return res
 
 def extract_tags(text):
@@ -117,8 +118,9 @@ def generate_rephrased_wmdp_data(task: str, prompt_technique_name: str, verbose:
     for line in lines:
       f.write(json.dumps(line) + "\n")
 
-def generate_rephrased_tiny_mmlu_data(subject: str, prompt_technique_name: str, verbose: bool = False, **kwargs):
-  lines = load_tiny_mmlu_data(subject=subject)
+def generate_rephrased_tiny_mmlu_data(subject: str, prompt_technique_name: str, split: str, verbose: bool = False, **kwargs):
+  assert split in ["dev", "test"], f"invalid split: {split}"
+  lines = load_tiny_mmlu_data(subject=subject, split=split)
   for i, line in tqdm(lines.iterrows(), total=len(lines)):
     question = line[0]
     if verbose: print("original question:", question)
@@ -135,13 +137,40 @@ def generate_rephrased_tiny_mmlu_data(subject: str, prompt_technique_name: str, 
   ## save the original questions
   tiny_mmlu_rephrased_data_dir = DATA_PATH / "tinyMMLU-rephrased" / SAVE_DIR_MAPPING[prompt_technique_name]
   if "language" in kwargs:
-    tiny_mmlu_rephrased_data_dir = tiny_mmlu_rephrased_data_dir.parent / (tiny_mmlu_rephrased_data_dir.name + kwargs["language"].lower()) / "dev"
+    tiny_mmlu_rephrased_data_dir = tiny_mmlu_rephrased_data_dir.parent / (tiny_mmlu_rephrased_data_dir.name + kwargs["language"].lower()) / split
   else:
-    tiny_mmlu_rephrased_data_dir /= "dev"
+    tiny_mmlu_rephrased_data_dir /= split
   Path(tiny_mmlu_rephrased_data_dir).mkdir(parents=True, exist_ok=True)
 
-  lines.to_csv(tiny_mmlu_rephrased_data_dir / f"{subject}_dev.csv", header=False, index=False)
+  lines.to_csv(tiny_mmlu_rephrased_data_dir / f"{subject}_{split}.csv", header=False, index=False)
 
+def generate_rephrased_filler_text_mmlu(subject: str, language: str, split: str, verbose: bool = False):
+  with open(PROMPT_PATH / f"{language.lower()}_filler_text", "r") as f:
+    filler_text = f.read().strip() + "\n\n"
+
+  lines = pd.read_csv(DATA_PATH / "tinyMMLU"/ split / f"{subject}_{split}.csv", header=None)
+  lines[0] = filler_text + lines[0] 
+
+  save_dir = DATA_PATH / "tinyMMLU-rephrased" / f"data_{language.lower()}_filler_text" / split
+  save_dir.mkdir(parents=True, exist_ok=True)
+  lines.to_csv(save_dir / f"{subject}_{split}.csv", header=False, index=False)  
+
+def generate_rephrased_filler_text_wmdp(task: str, language: str,verbose: bool = False):
+  with open(PROMPT_PATH / f"{language.lower()}_filler_text", "r") as f:
+    filler_text = f.read().strip() + "\n\n"
+
+  with open(DATA_PATH / "wmdp" / f"{task}_questions.json", "r") as f:
+    lines = f.readlines()
+    lines = [json.loads(line) for line in lines]
+  
+  for line in lines:
+    line["question"] = filler_text + line["question"]
+
+  save_dir = DATA_PATH / "wmdp-rephrased" / f"data_{language.lower()}_filler_text"
+  save_dir.mkdir(parents=True, exist_ok=True)
+  with open(save_dir / f"{task}_questions.json", "w") as f:
+    for line in lines:
+      f.write(json.dumps(line) + "\n")
 
 if __name__ == "__main__":
   
@@ -151,21 +180,30 @@ if __name__ == "__main__":
   parser.add_argument("--task", type=str, choices=["bio", "cyber"])
   parser.add_argument("--prompt_technique_name", type=str, required=True)
   parser.add_argument("--language", type=str)
+  parser.add_argument("--split", type=str, choices=["dev", "test"])
   args = parser.parse_args()
 
   print(f"Generating rephrases for {args.prompt_technique_name}")
   
   if args.data == "wmdp":
+    if args.task is None: raise ValueError("task is required for wmdp data")
+    if args.split == "dev": raise ValueError("dev split is not supported for wmdp data")
     if args.language:
-      generate_rephrased_wmdp_data(task=args.task, prompt_technique_name=args.prompt_technique_name, language=args.language) 
+      if args.prompt_technique_name.startswith("filler_"):
+        generate_rephrased_filler_text_wmdp(task=args.task, language=args.language)
+      else:
+        generate_rephrased_wmdp_data(task=args.task, prompt_technique_name=args.prompt_technique_name, language=args.language) 
     else:
       generate_rephrased_wmdp_data(task=args.task, prompt_technique_name=args.prompt_technique_name) 
   elif args.data == "tinyMMLU":
     from MMLU.tinyMMLU_utils import TASKS
     for subject in TASKS:
       if args.language:
-        generate_rephrased_tiny_mmlu_data(subject=subject, prompt_technique_name=args.prompt_technique_name, language=args.language)
+        if args.prompt_technique_name.startswith("filler_"):
+          generate_rephrased_filler_text_mmlu(subject=subject, language=args.language, split=args.split)
+        else:
+          generate_rephrased_tiny_mmlu_data(subject=subject, prompt_technique_name=args.prompt_technique_name, split=args.split, language=args.language)
       else:
-        generate_rephrased_tiny_mmlu_data(subject=subject, prompt_technique_name=args.prompt_technique_name)
+        generate_rephrased_tiny_mmlu_data(subject=subject, prompt_technique_name=args.prompt_technique_name, split=args.split)
   else:
     raise ValueError(f"Invalid data argument: {args.data}")
