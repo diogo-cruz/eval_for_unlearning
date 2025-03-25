@@ -7,9 +7,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 choices = ["A", "B", "C", "D"]
 
 data_directory_list = [
-    # 'data_latin_filler_text', 'data_english_filler_text', 'data_hindi_filler_text', 
-    # 'data_rephrased_conversation', 'data_rephrased_poem', 
-    # 'data_technical_terms_removed_1', 'data_technical_terms_removed_2', 
+    'data_latin_filler_text', 'data_english_filler_text', 'data_hindi_filler_text', 
+    'data_rephrased_conversation', 'data_rephrased_poem', 
+    'data_technical_terms_removed_1', 
+    # 'data_technical_terms_removed_2', 
     'data_translated_french', 'data_translated_german', 'data_translated_hindi', 
     'data_translated_korean', 'data_translated_arabic', 'data_translated_czech',
     'data_translated_bengali', 'data_translated_vietnamese', 'data_translated_turkish', 

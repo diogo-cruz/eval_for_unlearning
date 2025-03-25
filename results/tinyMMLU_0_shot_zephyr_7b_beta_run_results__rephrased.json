@@ -76,7 +76,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -84,7 +84,7 @@
     },
     "conceptual_physics": {
       "pred_answers": [
-        "C",
+        "A",
         "C"
       ],
       "gold_answers": [
@@ -250,7 +250,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "C",
         "A"
       ],
@@ -312,7 +312,7 @@
         "A",
         "C",
         "A",
-        "A",
+        "C",
         "A",
         "A"
       ],
@@ -354,7 +354,7 @@
     },
     "prehistory": {
       "pred_answers": [
-        "D",
+        "C",
         "B",
         "C",
         "C",
@@ -403,7 +403,7 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "C",
+        "B",
         "D",
         "B",
         "A"
@@ -462,7 +462,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -554,7 +554,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -728,7 +728,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "C",
         "A"
       ],
@@ -832,7 +832,7 @@
     },
     "prehistory": {
       "pred_answers": [
-        "B",
+        "C",
         "B",
         "C",
         "C",
@@ -859,7 +859,7 @@
     "professional_law": {
       "pred_answers": [
         "C",
-        "B",
+        "D",
         "C",
         "C",
         "D",
@@ -881,7 +881,7 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "C",
+        "B",
         "D",
         "B",
         "A"
@@ -940,7 +940,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -958,7 +958,7 @@
   "data_hindi_filler_text": {
     "abstract_algebra": {
       "pred_answers": [
-        "A"
+        "D"
       ],
       "gold_answers": [
         "D"
@@ -1032,7 +1032,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        " "
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -1109,7 +1109,7 @@
     "high_school_geography": {
       "pred_answers": [
         "D",
-        "B"
+        "C"
       ],
       "gold_answers": [
         "D",
@@ -1269,7 +1269,7 @@
         "C",
         "A",
         "A",
-        "B",
+        "A",
         "A"
       ],
       "gold_answers": [
@@ -1376,7 +1376,7 @@
       "pred_answers": [
         "B",
         "C",
-        "C"
+        "B"
       ],
       "gold_answers": [
         "B",
@@ -1418,7 +1418,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -1436,7 +1436,7 @@
   "data_rephrased_conversation": {
     "abstract_algebra": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "D"
@@ -1510,7 +1510,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -1538,7 +1538,7 @@
       "pred_answers": [
         "B",
         "D",
-        "B"
+        "A"
       ],
       "gold_answers": [
         "A",
@@ -1548,7 +1548,7 @@
     },
     "formal_logic": {
       "pred_answers": [
-        "B",
+        "A",
         "\n"
       ],
       "gold_answers": [
@@ -1558,7 +1558,7 @@
     },
     "high_school_biology": {
       "pred_answers": [
-        "\n"
+        "D"
       ],
       "gold_answers": [
         "B"
@@ -1614,7 +1614,7 @@
     },
     "high_school_mathematics": {
       "pred_answers": [
-        "D"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -1625,7 +1625,7 @@
         "C",
         "D",
         "D",
-        "e"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -1684,7 +1684,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "B",
         "A"
       ],
@@ -1743,9 +1743,9 @@
     "moral_scenarios": {
       "pred_answers": [
         "C",
+        "A",
         "C",
-        "C",
-        "C",
+        "A",
         "C",
         "C",
         "C"
@@ -1765,7 +1765,7 @@
         "C",
         "A",
         "D",
-        "C"
+        "A"
       ],
       "gold_answers": [
         "C",
@@ -1896,7 +1896,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -1914,7 +1914,7 @@
   "data_rephrased_poem": {
     "abstract_algebra": {
       "pred_answers": [
-        "A"
+        "D"
       ],
       "gold_answers": [
         "D"
@@ -1924,7 +1924,7 @@
       "pred_answers": [
         "B",
         "C",
-        "D"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -1972,7 +1972,7 @@
     },
     "college_mathematics": {
       "pred_answers": [
-        "D"
+        "B"
       ],
       "gold_answers": [
         "D"
@@ -1988,7 +1988,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -2036,7 +2036,7 @@
     },
     "high_school_biology": {
       "pred_answers": [
-        "A"
+        "D"
       ],
       "gold_answers": [
         "B"
@@ -2084,7 +2084,7 @@
     },
     "high_school_macroeconomics": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -2243,7 +2243,7 @@
         "C",
         "A",
         "D",
-        "C"
+        "A"
       ],
       "gold_answers": [
         "C",
@@ -2256,7 +2256,7 @@
       "pred_answers": [
         "D",
         "D",
-        "B"
+        "A"
       ],
       "gold_answers": [
         "D",
@@ -2374,7 +2374,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -2401,7 +2401,7 @@
     "anatomy": {
       "pred_answers": [
         "B",
-        "C",
+        "D",
         "A"
       ],
       "gold_answers": [
@@ -2522,7 +2522,7 @@
     },
     "high_school_chemistry": {
       "pred_answers": [
-        "B",
+        "A",
         "B",
         "C"
       ],
@@ -2662,7 +2662,7 @@
     },
     "marketing": {
       "pred_answers": [
-        "y"
+        "B"
       ],
       "gold_answers": [
         "C"
@@ -2700,7 +2700,7 @@
       "pred_answers": [
         "C",
         "A",
-        "C",
+        "A",
         "A",
         "A",
         "C",
@@ -2852,7 +2852,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -2944,7 +2944,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "C"
+        "D"
       ],
       "gold_answers": [
         "C"
@@ -2982,8 +2982,8 @@
     },
     "formal_logic": {
       "pred_answers": [
-        "B",
-        "A"
+        "C",
+        "\n"
       ],
       "gold_answers": [
         "B",
@@ -3057,7 +3057,7 @@
     "high_school_physics": {
       "pred_answers": [
         "C",
-        "D",
+        "C",
         "D",
         "A"
       ],
@@ -3199,7 +3199,7 @@
         "C",
         "A",
         "D",
-        "C"
+        "A"
       ],
       "gold_answers": [
         "C",
@@ -3271,7 +3271,7 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "C",
+        "B",
         "D",
         "B",
         "D"
@@ -3330,7 +3330,7 @@
     },
     "virology": {
       "pred_answers": [
-        "e"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -3357,7 +3357,7 @@
     "anatomy": {
       "pred_answers": [
         "B",
-        "D",
+        "C",
         "A"
       ],
       "gold_answers": [
@@ -3414,7 +3414,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "C"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -3460,7 +3460,7 @@
     },
     "formal_logic": {
       "pred_answers": [
-        "B",
+        "C",
         "\n"
       ],
       "gold_answers": [
@@ -3490,7 +3490,7 @@
     },
     "high_school_european_history": {
       "pred_answers": [
-        "A"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -3535,9 +3535,9 @@
     "high_school_physics": {
       "pred_answers": [
         "D",
+        "C",
         "D",
-        "D",
-        "e"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -3596,7 +3596,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "A",
         "B"
       ],
@@ -3728,7 +3728,7 @@
       "pred_answers": [
         "C",
         "D",
-        "C",
+        "D",
         "C",
         "D",
         "C",
@@ -3749,10 +3749,10 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "C",
+        "A",
         "D",
         "A",
-        "D"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -3808,7 +3808,7 @@
     },
     "virology": {
       "pred_answers": [
-        "e"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -3826,7 +3826,7 @@
   "data_translated_hindi": {
     "abstract_algebra": {
       "pred_answers": [
-        "A"
+        "D"
       ],
       "gold_answers": [
         "D"
@@ -3865,7 +3865,7 @@
     "college_biology": {
       "pred_answers": [
         "C",
-        "D"
+        "C"
       ],
       "gold_answers": [
         "A",
@@ -3892,7 +3892,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "A"
+        "B"
       ],
       "gold_answers": [
         "A"
@@ -3900,7 +3900,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "D"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -3927,7 +3927,7 @@
     "elementary_mathematics": {
       "pred_answers": [
         "B",
-        "C",
+        "D",
         "A"
       ],
       "gold_answers": [
@@ -3958,7 +3958,7 @@
       "pred_answers": [
         "D",
         "B",
-        "B"
+        "C"
       ],
       "gold_answers": [
         "D",
@@ -4074,7 +4074,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "B",
         "A"
       ],
@@ -4096,7 +4096,7 @@
     },
     "marketing": {
       "pred_answers": [
-        "B"
+        "A"
       ],
       "gold_answers": [
         "C"
@@ -4113,7 +4113,7 @@
     "miscellaneous": {
       "pred_answers": [
         "B",
-        "D",
+        "B",
         "C"
       ],
       "gold_answers": [
@@ -4153,9 +4153,9 @@
     "nutrition": {
       "pred_answers": [
         "C",
-        "A",
+        "B",
         "C",
-        "C"
+        "A"
       ],
       "gold_answers": [
         "C",
@@ -4227,8 +4227,8 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "A",
-        "C",
+        "B",
+        "B",
         "D",
         "D"
       ],
@@ -4342,7 +4342,7 @@
     },
     "college_biology": {
       "pred_answers": [
-        "A",
+        "D",
         "D"
       ],
       "gold_answers": [
@@ -4370,7 +4370,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "B"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -4378,7 +4378,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -4491,7 +4491,7 @@
     "high_school_physics": {
       "pred_answers": [
         "C",
-        "D",
+        "C",
         "C",
         "A"
       ],
@@ -4514,7 +4514,7 @@
     },
     "high_school_statistics": {
       "pred_answers": [
-        "D",
+        "B",
         "C"
       ],
       "gold_answers": [
@@ -4552,8 +4552,8 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
-        "A",
+        "B",
+        "B",
         "B"
       ],
       "gold_answers": [
@@ -4574,7 +4574,7 @@
     },
     "marketing": {
       "pred_answers": [
-        "C"
+        "B"
       ],
       "gold_answers": [
         "C"
@@ -4705,7 +4705,7 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "A",
+        "B",
         "C",
         "B",
         "D"
@@ -4722,7 +4722,7 @@
       "pred_answers": [
         "B",
         "D",
-        "C"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -4748,7 +4748,7 @@
     },
     "sociology": {
       "pred_answers": [
-        "A"
+        "B"
       ],
       "gold_answers": [
         "B"
@@ -4764,7 +4764,7 @@
     },
     "virology": {
       "pred_answers": [
-        " "
+        "C"
       ],
       "gold_answers": [
         "A"
@@ -4790,7 +4790,7 @@
     },
     "anatomy": {
       "pred_answers": [
-        "C",
+        "A",
         "A",
         "A"
       ],
@@ -4840,7 +4840,7 @@
     },
     "college_mathematics": {
       "pred_answers": [
-        "D"
+        "B"
       ],
       "gold_answers": [
         "D"
@@ -4848,7 +4848,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "C"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -5003,7 +5003,7 @@
     "high_school_world_history": {
       "pred_answers": [
         "C",
-        "A"
+        "D"
       ],
       "gold_answers": [
         "C",
@@ -5030,7 +5030,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "A",
         "A"
       ],
@@ -5052,7 +5052,7 @@
     },
     "marketing": {
       "pred_answers": [
-        "B"
+        "A"
       ],
       "gold_answers": [
         "C"
@@ -5080,7 +5080,7 @@
     },
     "moral_disputes": {
       "pred_answers": [
-        "B"
+        "D"
       ],
       "gold_answers": [
         "C"
@@ -5111,7 +5111,7 @@
         "C",
         "A",
         "D",
-        "C"
+        "A"
       ],
       "gold_answers": [
         "C",
@@ -5226,7 +5226,7 @@
     },
     "sociology": {
       "pred_answers": [
-        "A"
+        "B"
       ],
       "gold_answers": [
         "B"
@@ -5298,7 +5298,7 @@
     },
     "college_biology": {
       "pred_answers": [
-        "D",
+        "A",
         "D"
       ],
       "gold_answers": [
@@ -5326,7 +5326,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "C"
+        "\n"
       ],
       "gold_answers": [
         "A"
@@ -5372,8 +5372,8 @@
     },
     "formal_logic": {
       "pred_answers": [
-        "A",
-        "A"
+        "C",
+        "\n"
       ],
       "gold_answers": [
         "B",
@@ -5447,7 +5447,7 @@
     "high_school_physics": {
       "pred_answers": [
         "C",
-        "D",
+        "C",
         "C",
         "A"
       ],
@@ -5481,7 +5481,7 @@
     "high_school_world_history": {
       "pred_answers": [
         "C",
-        "A"
+        "B"
       ],
       "gold_answers": [
         "C",
@@ -5508,7 +5508,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "A",
         "A"
       ],
@@ -5567,7 +5567,7 @@
     "moral_scenarios": {
       "pred_answers": [
         "D",
-        "C",
+        "A",
         "C",
         "C",
         "C",
@@ -5612,7 +5612,7 @@
     },
     "prehistory": {
       "pred_answers": [
-        "A",
+        "C",
         "B",
         "B",
         "C",
@@ -5720,7 +5720,7 @@
     },
     "virology": {
       "pred_answers": [
-        "B"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -5738,7 +5738,7 @@
   "data_translated_bengali": {
     "abstract_algebra": {
       "pred_answers": [
-        "A"
+        "C"
       ],
       "gold_answers": [
         "D"
@@ -5926,7 +5926,7 @@
       "pred_answers": [
         "C",
         "D",
-        "C",
+        "D",
         "B"
       ],
       "gold_answers": [
@@ -5948,7 +5948,7 @@
     },
     "high_school_statistics": {
       "pred_answers": [
-        "D",
+        "A",
         "C"
       ],
       "gold_answers": [
@@ -5959,7 +5959,7 @@
     "high_school_world_history": {
       "pred_answers": [
         "C",
-        "B"
+        "D"
       ],
       "gold_answers": [
         "C",
@@ -5986,7 +5986,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "B",
         "A"
       ],
@@ -6008,7 +6008,7 @@
     },
     "marketing": {
       "pred_answers": [
-        "A"
+        "B"
       ],
       "gold_answers": [
         "C"
@@ -6120,7 +6120,7 @@
         "C",
         "D",
         "C",
-        "D",
+        "A",
         "C",
         "D",
         "D"
@@ -6224,7 +6224,7 @@
     },
     "anatomy": {
       "pred_answers": [
-        "D",
+        "C",
         "A",
         "A"
       ],
@@ -6254,7 +6254,7 @@
     },
     "college_biology": {
       "pred_answers": [
-        "D",
+        "A",
         "D"
       ],
       "gold_answers": [
@@ -6282,7 +6282,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "e"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -6290,7 +6290,7 @@
     },
     "computer_security": {
       "pred_answers": [
-        "\n"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -6317,7 +6317,7 @@
     "elementary_mathematics": {
       "pred_answers": [
         "B",
-        "C",
+        "D",
         "A"
       ],
       "gold_answers": [
@@ -6405,7 +6405,7 @@
         "C",
         "D",
         "D",
-        "D"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -6464,8 +6464,8 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
-        "d",
+        "B",
+        "B",
         "B"
       ],
       "gold_answers": [
@@ -6558,7 +6558,7 @@
       "pred_answers": [
         "D",
         "B",
-        "B"
+        "A"
       ],
       "gold_answers": [
         "D",
@@ -6617,7 +6617,7 @@
     "professional_medicine": {
       "pred_answers": [
         "B",
-        "A",
+        "B",
         "C",
         "B",
         "D"
@@ -6676,7 +6676,7 @@
     },
     "virology": {
       "pred_answers": [
-        "\n"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -6733,7 +6733,7 @@
     "college_biology": {
       "pred_answers": [
         "D",
-        "D"
+        "C"
       ],
       "gold_answers": [
         "A",
@@ -6760,7 +6760,7 @@
     },
     "college_medicine": {
       "pred_answers": [
-        "B"
+        "A"
       ],
       "gold_answers": [
         "A"
@@ -6825,7 +6825,7 @@
     "high_school_chemistry": {
       "pred_answers": [
         "D",
-        "C",
+        "B",
         "D"
       ],
       "gold_answers": [
@@ -6854,7 +6854,7 @@
     },
     "high_school_government_and_politics": {
       "pred_answers": [
-        "B",
+        "D",
         "D"
       ],
       "gold_answers": [
@@ -6883,7 +6883,7 @@
         "C",
         "D",
         "D",
-        "e"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -6895,7 +6895,7 @@
     "high_school_psychology": {
       "pred_answers": [
         "D",
-        "A"
+        "C"
       ],
       "gold_answers": [
         "D",
@@ -6904,7 +6904,7 @@
     },
     "high_school_statistics": {
       "pred_answers": [
-        "D",
+        "C",
         "D"
       ],
       "gold_answers": [
@@ -6942,7 +6942,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "A",
         "C"
       ],
@@ -7077,7 +7077,7 @@
         "D",
         "C",
         "A",
-        "C",
+        "A",
         "D",
         "D"
       ],
@@ -7094,10 +7094,10 @@
     },
     "professional_medicine": {
       "pred_answers": [
-        "D",
-        "A",
+        "B",
+        "B",
         "C",
-        "A",
+        "D",
         "D"
       ],
       "gold_answers": [
@@ -7111,7 +7111,7 @@
     "professional_psychology": {
       "pred_answers": [
         "B",
-        "B",
+        "D",
         "D"
       ],
       "gold_answers": [
@@ -7154,7 +7154,7 @@
     },
     "virology": {
       "pred_answers": [
-        "B"
+        "D"
       ],
       "gold_answers": [
         "A"
@@ -7172,7 +7172,7 @@
   "data_translated_telugu": {
     "abstract_algebra": {
       "pred_answers": [
-        "A"
+        "C"
       ],
       "gold_answers": [
         "D"
@@ -7180,8 +7180,8 @@
     },
     "anatomy": {
       "pred_answers": [
-        "D",
         "C",
+        "D",
         "D"
       ],
       "gold_answers": [
@@ -7264,7 +7264,7 @@
     },
     "electrical_engineering": {
       "pred_answers": [
-        "B"
+        "C"
       ],
       "gold_answers": [
         "C"
@@ -7273,7 +7273,7 @@
     "elementary_mathematics": {
       "pred_answers": [
         "B",
-        "D",
+        "C",
         "B"
       ],
       "gold_answers": [
@@ -7361,7 +7361,7 @@
         "C",
         "D",
         "D",
-        "D"
+        "B"
       ],
       "gold_answers": [
         "B",
@@ -7393,7 +7393,7 @@
     "high_school_world_history": {
       "pred_answers": [
         "C",
-        "B"
+        "D"
       ],
       "gold_answers": [
         "C",
@@ -7420,7 +7420,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "B",
         "B"
       ],
@@ -7499,7 +7499,7 @@
     "nutrition": {
       "pred_answers": [
         "C",
-        "C",
+        "B",
         "C",
         "C"
       ],
@@ -7513,7 +7513,7 @@
     "philosophy": {
       "pred_answers": [
         "D",
-        "B",
+        "D",
         "C"
       ],
       "gold_answers": [
@@ -7553,8 +7553,8 @@
         "C",
         "D",
         "D",
+        "C",
         "D",
-        "B",
         "C",
         "D",
         "D"
@@ -7572,7 +7572,7 @@
     },
     "professional_medicine": {
       "pred_answers": [
-        "C",
+        "B",
         "A",
         "A",
         "D",
@@ -7839,7 +7839,7 @@
         "C",
         "D",
         "D",
-        "D"
+        "A"
       ],
       "gold_answers": [
         "B",
@@ -7871,7 +7871,7 @@
     "high_school_world_history": {
       "pred_answers": [
         "C",
-        "A"
+        "D"
       ],
       "gold_answers": [
         "C",
@@ -7898,7 +7898,7 @@
     },
     "international_law": {
       "pred_answers": [
-        "D",
+        "B",
         "B",
         "B"
       ],
@@ -7920,7 +7920,7 @@
     },
     "marketing": {
       "pred_answers": [
-        "A"
+        "y"
       ],
       "gold_answers": [
         "C"
@@ -7978,8 +7978,8 @@
       "pred_answers": [
         "C",
         "A",
-        "C",
-        "C"
+        "D",
+        "A"
       ],
       "gold_answers": [
         "C",
@@ -8002,7 +8002,7 @@
     },
     "prehistory": {
       "pred_answers": [
-        "A",
+        "C",
         "D",
         "A",
         "C",
@@ -8050,7 +8050,7 @@
     },
     "professional_medicine": {
       "pred_answers": [
-        "C",
+        "B",
         "B",
         "C",
         "D",
@@ -8094,7 +8094,7 @@
     },
     "sociology": {
       "pred_answers": [
-        "A"
+        "B"
       ],
       "gold_answers": [
         "B"
@@ -8110,7 +8110,7 @@
     },
     "virology": {
       "pred_answers": [
-        "B"
+        "C"
       ],
       "gold_answers": [
         "A"
