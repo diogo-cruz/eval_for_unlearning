@@ -25,12 +25,13 @@ export LOGLEVEL=DEBUG
 #   --output output/wmdp_rephrased \
 #   --log_samples
 
-source .env
+[ ! -f .env ] || export $(grep -v '^#' .env | xargs)
+
 HF_TOKEN=$HF_TOKEN
 # MODEL="mistral_7b_v0.1"
-MODEL="llama3_8b_instruct_elm"
-# llama3_8b_elm
-# llama3_8b
+# MODEL="llama3_8b_instruct_elm"
+# MODEL="llama3_8b_elm"
+MODEL="llama3_8b"
 
 python3 -m eval.eval --model $MODEL --tasks wmdp_bio --output output/wmdp --log_samples --hf_token $HF_TOKEN
 python3 -m eval.eval --model $MODEL --output output/wmdp_rephrased --log_samples --hf_token $HF_TOKEN \
