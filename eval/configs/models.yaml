@@ -18,3 +18,43 @@ llama3_tar_bio:
   tokenizer: "meta-llama/Llama-3.1-8B-Instruct"
   device_map: "auto"
   precision: "bfloat16" 
+
+llama3_8b_rmu:
+  name: "ScaleAI/mhj-llama3-8b-rmu"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+llama3_8b_instruct:
+  name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+zephyr_7b_elm:
+  name: "baulab/elm-zephyr-7b-beta"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+mistral_7b_elm:
+  name: "baulab/elm-Mistral-7B-v0.1"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+mistral_7b_v0.1:
+  name: "mistralai/Mistral-7B-v0.1"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+llama3_8b_instruct_elm:
+  name: "baulab/elm-Meta-Llama-3-8B-Instruct"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+llama3_8b_elm:
+  name: "baulab/elm-Meta-Llama-3-8B"
+  device_map: "auto"
+  precision: "bfloat16" 
+
+llama3_8b:
+  name: "meta-llama/Meta-Llama-3-8B"
+  device_map: "auto"
+  precision: "bfloat16" 
