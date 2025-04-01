@@ -13,6 +13,4 @@ uv pip install -r requirements.txt
 
 
 git clone https://github.com/felipemaiapolo/tinyBenchmarks.git
-cd tinyBenchmarks
-uv pip install -e .
-cd ..
+uv pip install -e tinyBenchmarks

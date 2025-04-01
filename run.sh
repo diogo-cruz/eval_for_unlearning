@@ -38,9 +38,8 @@ HF_TOKEN=$HF_TOKEN
 # MODEL="llama3_8b"
 MODEL="llama3_tar_bio"
 
-python3 -m eval.eval --model $MODEL --tasks wmdp_bio --output output/wmdp --log_samples --hf_token $HF_TOKEN
+# python3 -m eval.eval --model $MODEL --tasks wmdp_bio --output output/wmdp --log_samples --hf_token $HF_TOKEN
 python3 -m eval.eval --model $MODEL --output output/wmdp_rephrased --log_samples --hf_token $HF_TOKEN \
   --tasks wmdp_bio_rephrased_english_filler wmdp_bio_rephrased_hindi_filler wmdp_bio_rephrased_latin_filler wmdp_bio_rephrased_conversation wmdp_bio_rephrased_poem wmdp_bio_rephrased_replace_with_variables wmdp_bio_rephrased_technical_terms_removed_1 wmdp_bio_rephrased_translated_farsi  wmdp_bio_rephrased_translated_german wmdp_bio_rephrased_translated_korean
 
-
-# python3 -m eval.eval --model $MODEL --tasks tinyMMLU --output output/tinyMMLU --log_samples --hf_token $HF_TOKEN
+python3 -m eval.eval --model $MODEL --tasks tinyMMLU --output output/tinyMMLU --log_samples --hf_token $HF_TOKEN

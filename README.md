@@ -57,6 +57,7 @@
 | Llama3-8B-RMU          | wmdp_bio_rephrased_translated_farsi          | 0.2789   |
 | Llama3-8B-RMU          | wmdp_bio_rephrased_translated_german         | 0.2773   |
 | Llama3-8B-RMU          | wmdp_bio_rephrased_translated_korean         | 0.2773   |
+| Llama3-8B-RMU          | tinyMMLU                                     | 0.5595   |
 | Llama3-8B-Instruct     | wndp_bio                                     | 0.7086   |
 | Llama3-8B-Instruct     | wmdp_bio_rephrased_english_filler            | 0.7054   |
 | Llama3-8B-Instruct     | wmdp_bio_rephrased_hindi_filler              | 0.7235   |
@@ -68,6 +69,7 @@
 | Llama3-8B-Instruct     | wmdp_bio_rephrased_translated_farsi          | 0.6528   |
 | Llama3-8B-Instruct     | wmdp_bio_rephrased_translated_german         | 0.6591   |
 | Llama3-8B-Instruct     | wmdp_bio_rephrased_translated_korean         | 0.6277   |
+| Llama3-8B-Instruct     | tinyMMLU                                     | 0.5921   |
 | Zephyr-7B-ELM          | wmdp_bio                                     | 0.3016   |
 | Zephyr-7B-ELM          | wmdp_bio_rephrased_english_filler            | 0.3519   |
 | Zephyr-7B-ELM          | wmdp_bio_rephrased_hindi_filler              | 0.5507   |
@@ -79,6 +81,7 @@
 | Zephyr-7B-ELM          | wmdp_bio_rephrased_translated_farsi          | 0.3621   |
 | Zephyr-7B-ELM          | wmdp_bio_rephrased_translated_german         | 0.3040   |
 | Zephyr-7B-ELM          | wmdp_bio_rephrased_translated_korean         | 0.3252   |
+| Zephyr-7B-ELM          | tinyMMLU                                     | 0.6185   |
 | Mistral-7B-ELM         | wmdp_bio                                     | 0.2891   |
 | Mistral-7B-ELM         | wmdp_bio_rephrased_english_filler            | 0.3064   |
 | Mistral-7B-ELM         | wmdp_bio_rephrased_hindi_filler              | 0.4721   |
@@ -90,6 +93,7 @@
 | Mistral-7B-ELM         | wmdp_bio_rephrased_translated_farsi          | 0.2844   |
 | Mistral-7B-ELM         | wmdp_bio_rephrased_translated_german         | 0.2875   |
 | Mistral-7B-ELM         | wmdp_bio_rephrased_translated_korean         | 0.2954   |
+| Mistral-7B-ELM         | tinyMMLU                                     | 0.5597   |
 | Mistral-7B-v0.1        | wmdp_bio                                     | 0.6740   |
 | Mistral-7B-v0.1        | wmdp_bio_rephrased_english_filler            | 0.6410   |
 | Mistral-7B-v0.1        | wmdp_bio_rephrased_hindi_filler              | 0.6347   |
@@ -101,6 +105,7 @@
 | Mistral-7B-v0.1        | wmdp_bio_rephrased_translated_farsi          | 0.5020   |
 | Mistral-7B-v0.1        | wmdp_bio_rephrased_translated_german         | 0.6174   |
 | Mistral-7B-v0.1        | wmdp_bio_rephrased_translated_korean         | 0.5703   |
+| Mistral-7B-v0.1        | tinyMMLU                                     | 0.6046   |
 | Llama3-8B-Instruct-ELM | wmdp_bio                                     | 0.3299   |
 | Llama3-8B-Instruct-ELM | wmdp_bio_rephrased_english_filler            | 0.3959   |
 | Llama3-8B-Instruct-ELM | wmdp_bio_rephrased_hindi_filler              | 0.5373   |
@@ -112,6 +117,7 @@
 | Llama3-8B-Instruct-ELM | wmdp_bio_rephrased_translated_farsi          | 0.3040   |
 | Llama3-8B-Instruct-ELM | wmdp_bio_rephrased_translated_german         | 0.3221   |
 | Llama3-8B-Instruct-ELM | wmdp_bio_rephrased_translated_korean         | 0.3472   |
+| Llama3-8B-Instruct-ELM | tinyMMLU                                     | 0.5741   |
 | Llama3-8B-ELM          | wmdp_bio                                     | 0.3449   |
 | Llama3-8B-ELM          | wmdp_bio_rephrased_english_filler            | 0.4077   |
 | Llama3-8B-ELM          | wmdp_bio_rephrased_hindi_filler              | 0.5923   |
@@ -123,6 +129,7 @@
 | Llama3-8B-ELM          | wmdp_bio_rephrased_translated_farsi          | 0.2946   |
 | Llama3-8B-ELM          | wmdp_bio_rephrased_translated_german         | 0.3024   |
 | Llama3-8B-ELM          | wmdp_bio_rephrased_translated_korean         | 0.2899   |
+| Llama3-8B-ELM          | tinyMMLU                                     | 0.6004   |
 | Llama3-8B              | wmdp_bio                                     | 0.7054   |
 | Llama3-8B              | wmdp_bio_rephrased_english_filler            | 0.6929   |
 | Llama3-8B              | wmdp_bio_rephrased_hindi_filler              | 0.7054   |
@@ -134,3 +141,16 @@
 | Llama3-8B              | wmdp_bio_rephrased_translated_farsi          | 0.6394   |
 | Llama3-8B              | wmdp_bio_rephrased_translated_german         | 0.6866   |
 | Llama3-8B              | wmdp_bio_rephrased_translated_korean         | 0.6198   |
+| Llama3-8B              | tinyMMLU                                     | 0.6427   |
+| Llama3-TAR-bio         | wmdp_bio                                     | 0.2781   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_english_filler            | 0.3103   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_hindi_filler              | 0.3032   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_latin_filler              | 0.3032   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_conversation              | 0.3032   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_poem                      | 0.2868   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_replace_with_variables    | 0.2828   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_technical_terms_removed_1 | 0.2765   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_translated_farsi          | 0.2757   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_translated_german         | 0.2930   |
+| Llama3-TAR-bio         | wmdp_bio_rephrased_translated_korean         | 0.2922   |
+| Llama3-TAR-bio         | tinyMMLU                                     | 0.4738   |
