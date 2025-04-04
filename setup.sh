@@ -12,5 +12,5 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 
 
-git clone https://github.com/felipemaiapolo/tinyBenchmarks.git
-uv pip install -e tinyBenchmarks
+# git clone https://github.com/felipemaiapolo/tinyBenchmarks.git
+# uv pip install -e tinyBenchmarks

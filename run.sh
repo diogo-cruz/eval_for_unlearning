@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e 
 
 if [ ! -d "lm-evaluation-harness" ]; then
@@ -14,32 +15,28 @@ if [ ! -d "lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased" ]; then
 fi
 
 
-
 export LOGLEVEL=DEBUG
-# example below creates a log file
-# lm_eval --model hf --model_args pretrained=HuggingFaceH4/zephyr-7b-beta --tasks wmdp --limit 10 --output output/wmdp/ --log_samples
+# --tasks tinyMMLU
 
-# python3 -m eval.eval \
-#   --model zephyr_7b_beta \
-#   --tasks wmdp_bio wmdp_bio_rephrased_english_filler wmdp_bio_rephrased_hindi_filler wmdp_bio_rephrased_latin_filler wmdp_bio_rephrased_conversation wmdp_bio_rephrased_poem wmdp_bio_rephrased_replace_with_variables wmdp_bio_rephrased_technical_terms_removed_1 wmdp_bio_rephrased_translated_arabic wmdp_bio_rephrased_translated_bengali wmdp_bio_rephrased_translated_czech wmdp_bio_rephrased_translated_farsi wmdp_bio_rephrased_translated_french wmdp_bio_rephrased_translated_german wmdp_bio_rephrased_translated_hindi wmdp_bio_rephrased_translated_korean wmdp_bio_rephrased_translated_telugu wmdp_bio_rephrased_translated_turkish wmdp_bio_rephrased_translated_vietnamese \
-#   --output output/wmdp_rephrased \
-#   --log_samples
+# models="models.txt"
+# if [ ! -f "$models" ]; then
+#   echo "Error: File $models not found"
+#   exit 1
+# fi
 
-[ ! -f .env ] || export $(grep -v '^#' .env | xargs)
+# while IFS= read -r model; do
+#   # Skip empty lines and comments
+#   [[ -z "$model" || "$model" =~ ^#.*$ ]] && continue
 
-HF_TOKEN=$HF_TOKEN
-# MODEL="llama3_8b_rmu"
-# MODEL="llama3_8b_instruct"
-# MODEL="zephyr_7b_elm"
-# MODEL="mistral_7b_elm"
-# MODEL="mistral_7b_v0.1"
-# MODEL="llama3_8b_instruct_elm"
-# MODEL="llama3_8b_elm"
-# MODEL="llama3_8b"
-MODEL="llama3_tar_bio"
+#   echo "Processing model: $model"
+#   lm_eval --model hf --model_args pretrained=$model,dtype="bfloat16" \
+#     --output ./results --log_sample \
+#     --tasks tinyMMLU
+#     # --tasks wmdp_bio,wmdp_bio_rephrased_english_filler,wmdp_bio_rephrased_hindi_filler,wmdp_bio_rephrased_latin_filler,wmdp_bio_rephrased_conversation,wmdp_bio_rephrased_poem,wmdp_bio_rephrased_replace_with_variables,wmdp_bio_rephrased_technical_terms_removed_1,wmdp_bio_rephrased_translated_farsi,wmdp_bio_rephrased_translated_german,wmdp_bio_rephrased_translated_korean
 
-# python3 -m eval.eval --model $MODEL --tasks wmdp_bio --output output/wmdp --log_samples --hf_token $HF_TOKEN
-python3 -m eval.eval --model $MODEL --output output/wmdp_rephrased --log_samples --hf_token $HF_TOKEN \
-  --tasks wmdp_bio_rephrased_english_filler wmdp_bio_rephrased_hindi_filler wmdp_bio_rephrased_latin_filler wmdp_bio_rephrased_conversation wmdp_bio_rephrased_poem wmdp_bio_rephrased_replace_with_variables wmdp_bio_rephrased_technical_terms_removed_1 wmdp_bio_rephrased_translated_farsi  wmdp_bio_rephrased_translated_german wmdp_bio_rephrased_translated_korean
+#   done < "$models"
+# exit 1
 
-python3 -m eval.eval --model $MODEL --tasks tinyMMLU --output output/tinyMMLU --log_samples --hf_token $HF_TOKEN
+lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-4,dtype="bfloat16" \
+  --output ./results --log_sample \
+  --tasks wmdp_bio,wmdp_bio_rephrased_english_filler,wmdp_bio_rephrased_hindi_filler,wmdp_bio_rephrased_latin_filler,wmdp_bio_rephrased_conversation,wmdp_bio_rephrased_poem,wmdp_bio_rephrased_replace_with_variables,wmdp_bio_rephrased_technical_terms_removed_1,wmdp_bio_rephrased_translated_farsi,wmdp_bio_rephrased_translated_german,wmdp_bio_rephrased_translated_korean,tinyMMLU

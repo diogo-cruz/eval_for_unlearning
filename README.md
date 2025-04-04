@@ -1,3 +1,7 @@
+## Setup
+1. Create .env with HF_TOKEN
+
+
 ## lm-eval experiment results
 
 | Model            | Task                                           | Accuracy  |
