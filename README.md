@@ -1,1 +1,1 @@
-![LLM-GAT figure]("LLM-GAT figure.png")
+![LLM-GAT Architecture Diagram](LLM-GAT_figure.png)
