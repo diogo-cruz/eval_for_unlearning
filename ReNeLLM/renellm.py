@@ -118,5 +118,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
     random.seed(args.seed)
     main(args)
-
-    # python renellm.py --gemini_api_key AIzaSyCN-C_Psa8d9rShNN5AT72o6i968Ie8oIw --sample_path ./data/wmdp-bio_5_percent.json
