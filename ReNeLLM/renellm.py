@@ -29,7 +29,8 @@ def main(args):
     if args.prompt is not None:
         data = [{"question": args.prompt}]
 
-    operations = [shortenSentence, misrewriteSentence, changeOrder, addChar, languageMix, styleChange]
+    # operations = [shortenSentence, misrewriteSentence, changeOrder, addChar, languageMix, styleChange]
+    operations = [addChar]
     # scenarios = SCENARIOS
 
     # Create a separate dataset for each operation
@@ -82,11 +83,11 @@ def main(args):
             # break  # Remove the original while loop
 
         # Save the complete dataset for this operation
-        if not os.path.exists('./results/renellm/rewritten'):
-            os.makedirs('./results/renellm/rewritten')
+        if not os.path.exists('./data/rewritten'):
+            os.makedirs('./data/rewritten')
 
         # file_name = f"./results/renellm/rewritten/rewritten_prompts_{args.save_suffix}.json"
-        file_name = f"./results/renellm/rewritten/{op_name}_{args.save_suffix}.json"
+        file_name = f"./data/rewritten/{op_name}_{args.save_suffix}.json"
         with open(file_name, "w", encoding="utf-8") as f:
             json.dump(new_dataset, f, ensure_ascii=False, indent=4)
 
