@@ -36,12 +36,13 @@ export LOGLEVEL=DEBUG
 # exit 1
 
 # example for wmdp_rephrased tasks
-lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-4,dtype="bfloat16" \
-  --output ./results --log_sample \
-  --tasks wmdp_bio,wmdp_bio_rephrased_english_filler,wmdp_bio_rephrased_hindi_filler,wmdp_bio_rephrased_latin_filler,wmdp_bio_rephrased_conversation,wmdp_bio_rephrased_poem,wmdp_bio_rephrased_replace_with_variables,wmdp_bio_rephrased_technical_terms_removed_1,wmdp_bio_rephrased_translated_farsi,wmdp_bio_rephrased_translated_german,wmdp_bio_rephrased_translated_korean,tinyMMLU
+# lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
+#   --output ./results --log_sample \
+#   --tasks wmdp_bio,wmdp_bio_rephrased_english_filler,wmdp_bio_rephrased_hindi_filler,wmdp_bio_rephrased_latin_filler,wmdp_bio_rephrased_conversation,wmdp_bio_rephrased_poem,wmdp_bio_rephrased_replace_with_variables,wmdp_bio_rephrased_technical_terms_removed_1,wmdp_bio_rephrased_translated_farsi,wmdp_bio_rephrased_translated_german,wmdp_bio_rephrased_translated_korean,tinyMMLU
 
 
 # example for ReNeLLM tasks
-lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-4,dtype="bfloat16" \
+# lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
+lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
   --output ./results --log_sample \
-  --tasks wmdp_bio_renellm_addChar,wmdp_bio_renellm_changeOrder,wmdp_bio_renellm_languageMix,wmdp_bio_renellm_misrewrite,wmdp_bio_renellm_shortenSentence,wmdp_bio_renellm_styleChange
+  --tasks wmdp_bio_renellm_addChar,wmdp_bio_renellm_changeOrder,wmdp_bio_renellm_languageMix,wmdp_bio_renellm_misrewriteSentence,wmdp_bio_renellm_shortenSentence,wmdp_bio_renellm_styleChange
