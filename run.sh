@@ -45,4 +45,4 @@ export LOGLEVEL=DEBUG
 # lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
 lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
   --output ./results --log_sample \
-  --tasks wmdp_bio_renellm_addChar,wmdp_bio_renellm_changeOrder,wmdp_bio_renellm_languageMix,wmdp_bio_renellm_misrewriteSentence,wmdp_bio_renellm_shortenSentence,wmdp_bio_renellm_styleChange
+  --tasks wmdp_bio_renellm_addChar_full
