@@ -1,20 +1,23 @@
 #!/bin/bash
 set -e 
 
-if [ ! -d "lm-evaluation-harness" ]; then
-  git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
-  cd lm-evaluation-harness
-  uv pip install -e .
-  cd ..
-fi
+# if [ ! -d "lm-evaluation-harness" ]; then
+#   git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
+#   cd lm-evaluation-harness
+#   uv pip install -e .
+#   cd ..
+# fi
 
-if [ ! -d "lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased" ]; then
-  echo "Copying wmdp_rephrased tasks to lm-evaluation-harness..."
-  mkdir -p lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
-  cp -r wmdp_lm_eval_tasks/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
-fi
+# if [ ! -d "lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased" ]; then
+#   echo "Copying wmdp_rephrased tasks to lm-evaluation-harness..."
+#   mkdir -p lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
+#   cp -r wmdp_lm_eval_tasks/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
+# fi
 
-export LOGLEVEL=DEBUG
+# export LOGLEVEL=DEBUG
+
+
+
 
 # models="models.txt"
 # if [ ! -f "$models" ]; then
@@ -43,6 +46,18 @@ export LOGLEVEL=DEBUG
 
 # example for ReNeLLM tasks
 # lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
-lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
-  --output ./results --log_sample \
-  --tasks wmdp_bio_renellm_addChar_full
+# lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
+#   --output ./results --log_sample \
+#   --tasks wmdp_bio_renellm_addChar_full
+
+cp -r wmdp_bio_mmlu_tasks lm-evaluation-harness/lm_eval/tasks
+cp -r wmdp_bio_retain_tasks lm-evaluation-harness/lm_eval/tasks
+
+declare -a n_shots=(0 1 3 5 10 20)
+for n_shot in "${n_shots[@]}"; do
+  # lm_eval --model hf --model_args pretrained=HuggingFaceH4/zephyr-7b-beta,dtype="bfloat16" \
+  # lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
+  lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
+    --output "./results_cross_task/$n_shot-shot" \
+    --log_sample --tasks wmdp_bio_retain --num_fewshot $n_shot 
+done
