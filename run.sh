@@ -1,18 +1,18 @@
 #!/bin/bash
 set -e 
 
-# if [ ! -d "lm-evaluation-harness" ]; then
-#   git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
-#   cd lm-evaluation-harness
-#   uv pip install -e .
-#   cd ..
-# fi
+if [ ! -d "lm-evaluation-harness" ]; then
+  git clone --depth 1 https://github.com/EleutherAI/lm-evaluation-harness
+  cd lm-evaluation-harness
+  uv pip install -e .
+  cd ..
+fi
 
-# if [ ! -d "lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased" ]; then
-#   echo "Copying wmdp_rephrased tasks to lm-evaluation-harness..."
-#   mkdir -p lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
-#   cp -r wmdp_lm_eval_tasks/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
-# fi
+if [ ! -d "lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased" ]; then
+  echo "Copying wmdp_rephrased tasks to lm-evaluation-harness..."
+  mkdir -p lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
+  cp -r wmdp_lm_eval_tasks/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
+fi
 
 # export LOGLEVEL=DEBUG
 
@@ -50,14 +50,20 @@ set -e
 #   --output ./results --log_sample \
 #   --tasks wmdp_bio_renellm_addChar_full
 
-cp -r wmdp_bio_mmlu_tasks lm-evaluation-harness/lm_eval/tasks
-cp -r wmdp_bio_retain_tasks lm-evaluation-harness/lm_eval/tasks
+# cp -r wmdp_bio_mmlu_tasks lm-evaluation-harness/lm_eval/tasks
+# cp -r wmdp_bio_retain_tasks lm-evaluation-harness/lm_eval/tasks
 
-declare -a n_shots=(0 1 3 5 10 20)
-for n_shot in "${n_shots[@]}"; do
-  # lm_eval --model hf --model_args pretrained=HuggingFaceH4/zephyr-7b-beta,dtype="bfloat16" \
-  # lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
-  lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
-    --output "./results_cross_task/$n_shot-shot" \
-    --log_sample --tasks wmdp_bio_retain --num_fewshot $n_shot 
-done
+# declare -a n_shots=(0 1 3 5 10 20)
+# for n_shot in "${n_shots[@]}"; do
+#   # lm_eval --model hf --model_args pretrained=HuggingFaceH4/zephyr-7b-beta,dtype="bfloat16" \
+#   # lm_eval --model hf --model_args pretrained=LLM-GAT/llama-3-8b-instruct-elm-checkpoint-8,dtype="bfloat16" \
+#   lm_eval --model hf --model_args pretrained=cais/Zephyr_RMU,dtype="bfloat16" \
+#     --output "./results_cross_task/$n_shot-shot" \
+#     --log_sample --tasks wmdp_bio_retain --num_fewshot $n_shot 
+# done
+
+lm_eval --model hf \
+  --model_args pretrained=HuggingFaceH4/zephyr-7b-beta,peft=50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft,dtype="bfloat16" \
+  --tasks  wmdp_bio,wmdp_bio_rephrased_english_filler,wmdp_bio_rephrased_hindi_filler,wmdp_bio_rephrased_latin_filler,wmdp_bio_rephrased_conversation,wmdp_bio_rephrased_poem,wmdp_bio_rephrased_replace_with_variables,wmdp_bio_rephrased_technical_terms_removed_1,wmdp_bio_rephrased_translated_farsi,wmdp_bio_rephrased_translated_german,wmdp_bio_rephrased_translated_korean
+  
+  #tinyMMLU
