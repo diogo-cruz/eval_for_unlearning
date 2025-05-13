@@ -48,7 +48,7 @@ def main(args):
             directory
         )
 
-    with open(output_filename, "w") as f:
+    with open(output_filename, 'w', encoding='utf-8') as f:
         json.dump(run_results, f, ensure_ascii=False, indent=2)
 
 
@@ -86,6 +86,7 @@ def generate_results_for_prompt(
         print("Testing %s ..." % task)
         prompts = []
         labels = []
+        non_sys = []
 
         test_data = load_json(task)
         dev_df = load_df() if args.dev_task != "" else None
@@ -108,13 +109,19 @@ def generate_results_for_prompt(
 
             prompts.append(prompt)
             labels.append(label)
+            non_sys.append(train_prompt + prompt_end)
 
         pred_answers = make_inference(
             model, tokenizer, prompts
         )
 
         run_results[directory][task] = {
-            "pred_answers": pred_answers, "gold_answers": labels}
+            "pred_answers": pred_answers, 
+            "gold_answers": labels,
+            "questions": test_data,
+            "full_prompts": prompts,
+            "non_system_prompts": non_sys
+        }
         json.dump(run_results, open(output_breakpoint_name, "w"))
 
 
