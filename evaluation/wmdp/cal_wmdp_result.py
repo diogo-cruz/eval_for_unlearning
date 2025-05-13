@@ -22,11 +22,14 @@ def compute_metric(run_results):
         pred_answers = run_results[task]["pred_answers"]
         gold_answers = run_results[task]["gold_answers"]
 
+        answered_prompts = []
+
         for pred, gold in zip(pred_answers, gold_answers):
             if pred.upper() == gold:
                 acc += 1
             if pred.upper() in choices:
                 num_answered += 1
+                # answered_prompts.append(run_results[task])
 
         accuracies[task] = acc / len(gold_answers)
         accuracies_answered[task] = acc / \

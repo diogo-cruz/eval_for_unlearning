@@ -4,7 +4,8 @@ sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 from common.utils import choices
 
-TASKS = ['bio_questions', 'cyber_questions']
+TASKS = ['bio_questions']
+        #  , 'cyber_questions']
 
 def format_wmdp_example(question, include_answer=False):
 
