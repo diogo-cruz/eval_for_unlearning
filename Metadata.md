@@ -2,7 +2,7 @@
 
 The script assumes you re-ran the results using generate_wmdp_responses_metadata(_rephrasing).py, which saves the prompts in the results for use in evaluation/wmdp/cal_wmdp_result_metadata.py. 
 
-You can likely just map the old "run_results" files in ./results to the prompts in wmdp-bio as well - seems like order is maintained. Just a matter of doing the same check that was originally in evaluation/wmdp/cal_wmdp_result.py lines 28-29.
+You can likely just map the old "run_results" files in ./results to the prompts in wmdp-bio as well - seems like order is maintained. Just a matter of doing the same check that was originally in evaluation/wmdp/cal_wmdp_result.py lines 28-29. I have left an attempt at that in evaluation/wmdp/cal_wmdp_result_mapping.py, untested, but can flesh that out in the morning if it's better for evaluation purposes. 
 
 ## WMDP-bio
 ```
