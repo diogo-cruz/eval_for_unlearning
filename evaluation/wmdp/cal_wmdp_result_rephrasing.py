@@ -40,11 +40,11 @@ def compute_metric(run_results):
             num_answered = 0
             acc = 0
             
-            pred_answers = run_results[task]["pred_answers"]
-            gold_answers = run_results[task]["gold_answers"]
-            questions = run_results[task]["questions"]
-            prompts = run_results[task]["full_prompts"]
-            non_sys = run_results[task]["non_system_prompts"]
+            pred_answers = run_results[directory][task]["pred_answers"]
+            gold_answers = run_results[directory][task]["gold_answers"]
+            questions = run_results[directory][task]["questions"]
+            prompts = run_results[directory][task]["full_prompts"]
+            non_sys = run_results[directory][task]["non_system_prompts"]
             
             # Initialize data containers for answered and non-answered items
             answered_data = {
