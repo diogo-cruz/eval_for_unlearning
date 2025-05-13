@@ -6,54 +6,44 @@ from os import path, sys
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 import pandas as pd
-from common.utils import data_directory_list, gen_prompt, load, make_inference
+from common.utils import gen_prompt, load, make_inference
 from wmdp_utils import TASKS, format_wmdp_example
 
-## overwrite for now
-# data_directory_list = [
-#     'data_rephrased_conversation', 'data_rephrased_poem', 'data_technical_terms_removed_1', 'data_replaced_with_variables',
-#     'data_translated_french', 'data_translated_german', 'data_translated_hindi', 'data_translated_arabic',
-#     'data_translated_czech', 'data_translated_bengali', 'data_translated_vietnamese', 'data_translated_turkish',
-#     'data_translated_telugu', 'data_translated_farsi', 'data_translated_korean',
-# ]
-TASKS = ["bio_questions"]
 
 def main(args):
 
     run_results = {}
-    for directory in data_directory_list:
-        run_results[directory] = {}
 
     if args.dev_task == "":
-        output_breakpoint_name = "run_breakpoint_%s_rephrasing.json" % (
-            args.extra_info)
-        output_filename = "run_results_%s_rephrasing.json" % (args.extra_info)
+        output_breakpoint_name = "run_breakpoint_%s.json" % (args.extra_info)
+        output_filename = "run_results_%s.json" % (args.extra_info)
     else:
-        output_breakpoint_name = "run_breakpoint_%s_%sdev_rephrasing.json" % (
+        output_breakpoint_name = "run_breakpoint_%s_%sdev.json" % (
             args.extra_info, args.dev_task)
-        output_filename = "run_results_%s_%sdev_rephrasing.json" % (
+        output_filename = "run_results_%s_%sdev.json" % (
             args.extra_info, args.dev_task)
     if os.path.isfile(output_breakpoint_name):
         run_results = json.load(open(output_breakpoint_name))
 
     model, tokenizer = load(args.ckpt_dir, args.peft_model, args.tokenizer)
 
-    for directory in data_directory_list:
-        generate_results_for_prompt(
-            args,
-            model,
-            tokenizer,
-            run_results,
-            output_breakpoint_name,
-            directory
-        )
+    generate_results_for_prompt(
+        args,
+        model,
+        tokenizer,
+        run_results,
+        output_breakpoint_name
+    )
 
-    with open(output_filename, "w") as f:
+    # with open(output_filename, "w") as f:
+    #     json.dump(run_results, f, ensure_ascii=False, indent=2)
+    with open(output_filename, 'w', encoding='utf-8') as f:
         json.dump(run_results, f, ensure_ascii=False, indent=2)
 
 
+
 def generate_results_for_prompt(
-    args, model, tokenizer, run_results, output_breakpoint_name, directory
+    args, model, tokenizer, run_results, output_breakpoint_name
 ):
 
     def load_df():
@@ -62,30 +52,25 @@ def generate_results_for_prompt(
             os.path.join(args.MMLU_dir, 'dev', args.dev_task + "_dev.csv"), header=None
         )[: args.ntrain]
 
-    # def load_json(task):
-    #     f = open(os.path.join(args.data_dir, directory, task + '.json'))
-    #     return json.load(f)
-
     def load_json(task):
         res = []
-        with open(os.path.join(args.data_dir, directory, task + '.json'), "r") as f:
+        with open(os.path.join(args.data_dir, task + '.json'), "r") as f:
             for line in f:
                 line = json.loads(line)
                 res.append(line)
         return res
-
-    print(
-        f"Processing {directory}"
-    )
+    
     for task in TASKS:
         if (
-            task in run_results[directory]
+            task in run_results
         ):
             print("Skipping %s ..." % task)
             continue
         print("Testing %s ..." % task)
+
         prompts = []
         labels = []
+        non_sys = []
 
         test_data = load_json(task)
         dev_df = load_df() if args.dev_task != "" else None
@@ -93,9 +78,6 @@ def generate_results_for_prompt(
         for question in test_data:
 
             k = args.ntrain
-            if question["question"] is None:
-                continue
-
             prompt_end = format_wmdp_example(question)
 
             train_prompt = gen_prompt(
@@ -108,13 +90,19 @@ def generate_results_for_prompt(
 
             prompts.append(prompt)
             labels.append(label)
+            non_sys.append(train_prompt + prompt_end)
 
         pred_answers = make_inference(
             model, tokenizer, prompts
         )
 
-        run_results[directory][task] = {
-            "pred_answers": pred_answers, "gold_answers": labels}
+        run_results[task] = {
+            "pred_answers": pred_answers, 
+            "gold_answers": labels,
+            "questions": test_data,
+            "full_prompts": prompts,
+            "non_system_prompts": non_sys
+        }
         json.dump(run_results, open(output_breakpoint_name, "w"))
 
 
