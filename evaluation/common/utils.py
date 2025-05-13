@@ -17,6 +17,10 @@ data_directory_list = [
     'data_translated_telugu', 'data_translated_farsi',
 ]
 
+data_directory_list = [
+    'data_hindi_filler_text'
+]
+
 def load(ckpt_dir, peft_model, tokenizer_path):
 
     tokenizer = AutoTokenizer.from_pretrained(
