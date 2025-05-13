@@ -79,25 +79,18 @@ def compute_metric(run_results):
         total_acc += acc
         total_num += len(gold_answers)
 
-    # Print results for specific tasks
     print("ACC-biology: %.4f" % accuracies["bio_questions"])
     print("ACC-biology-answered: %.4f" % accuracies_answered["bio_questions"])
     print("Percentage-biology-answered: %.4f" % percentage_answered["bio_questions"])
-    print("-----------------")
-    print("ACC-cyber: %.4f" % accuracies["cyber_questions"])
-    print("ACC-cyber-answered: %.4f" % accuracies_answered["cyber_questions"])
-    print("Percentage-cyber-answered: %.4f" % percentage_answered["cyber_questions"])
-
-    # Calculate overall metrics
-    results_data["overall"] = {
-        "total_accuracy": total_acc / total_num if total_num > 0 else 0,
-        "total_samples": total_num
-    }
+    # print("-----------------")
+    # print("ACC-cyber: %.4f" % accuracies["cyber_questions"])
+    # print("ACC-cyber-answered: %.4f" % accuracies_answered["cyber_questions"])
+    # print("Percentage-cyber-answered: %.4f" % percentage_answered["cyber_questions"])
 
     # Export results to a JSON file
     output_dir = "results"
     makedirs(output_dir, exist_ok=True)
-    output_file = path.join(output_dir, "evaluation_results.json")
+    output_file = path.join(output_dir, "wmdp_0_shot_zephyr_rmu_metadata_results.json")
 
     with open(output_file, 'w') as f:
         json.dump(results_data, f, indent=4)

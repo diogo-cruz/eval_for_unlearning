@@ -35,8 +35,11 @@ def main(args):
         output_breakpoint_name
     )
 
-    with open(output_filename, "w") as f:
+    # with open(output_filename, "w") as f:
+    #     json.dump(run_results, f, ensure_ascii=False, indent=2)
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(run_results, f, ensure_ascii=False, indent=2)
+
 
 
 def generate_results_for_prompt(
