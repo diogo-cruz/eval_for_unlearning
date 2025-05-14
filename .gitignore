@@ -1,0 +1,7 @@
+*.zip
+.DS_STORE
+.ipynb_checkpoints/
+__pycache__/
+
+"LLMU results/"
+"RMU results/"

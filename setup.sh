@@ -1,6 +1,6 @@
 set -e 
 
-apt-get update && apt-get install -y vim
+apt-get update && apt-get install -y vim unzip
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH=$PATH:$HOME/.local/bin/env

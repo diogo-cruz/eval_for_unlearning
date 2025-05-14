@@ -1,5 +1,0 @@
-"task": "wmdp_bio_rephrased_technical_terms_removed_1"
-"dataset_name": "default"
-"dataset_path": "./wmdp_rephrased/data_technical_terms_removed_1"
-"include": "_default_template_yaml"
-"description": "The following are multiple choice questions (with answers) about biology.\n\n"
