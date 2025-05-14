@@ -1,0 +1,53 @@
+Model,WMDP-bio accuracy,n-shot,fewshot_dataset,note
+Zephyr_RMU,0.3126,0,MMLU,
+Zephyr_RMU,0.2977,1,MMLU,
+Zephyr_RMU,0.2985,3,MMLU,
+Zephyr_RMU,0.2852,5,MMLU,
+Zephyr_RMU,0.2742,10,MMLU,
+Zephyr_RMU,0.2584,20,MMLU,
+Zephyr_beta,0.6441,0,MMLU,
+Zephyr_beta,0.6426,1,MMLU,
+Zephyr_beta,0.6386,3,MMLU,
+Zephyr_beta,0.6371,5,MMLU,
+Zephyr_beta,0.6292,10,MMLU,
+Zephyr_beta,0.6402,20,MMLU,
+LLM-GAT/ELM-8,0.3299,0,MMLU,
+LLM-GAT/ELM-8,0.3299,1,MMLU,
+LLM-GAT/ELM-8,0.3559,3,MMLU,
+LLM-GAT/ELM-8,0.3598,5,MMLU,
+LLM-GAT/ELM-8,0.3456,10,MMLU,
+LLM-GAT/ELM-8,0.3504,20,MMLU,
+Zephyr_RMU,0.3126,0,WMDP-bio,user-assistant format
+Zephyr_RMU,0.2443,1,WMDP-bio,user-assistant format
+Zephyr_RMU,0.2592,3,WMDP-bio,user-assistant format
+Zephyr_RMU,0.26,5,WMDP-bio,user-assistant format
+Zephyr_RMU,0.2529,10,WMDP-bio,user-assistant format
+Zephyr_RMU,0.2498,20,WMDP-bio,user-assistant format
+Zephyr_beta,0.6441,0,WMDP-bio,user-assistant format
+Zephyr_beta,0.6536,1,WMDP-bio,user-assistant format
+Zephyr_beta,0.6481,3,WMDP-bio,user-assistant format
+Zephyr_beta,0.6473,5,WMDP-bio,user-assistant format
+Zephyr_beta,0.6465,10,WMDP-bio,user-assistant format
+Zephyr_beta,0.6512,20,WMDP-bio,user-assistant format
+LLM-GAT/ELM-8,0.3299,0,WMDP-bio,user-assistant format
+LLM-GAT/ELM-8,0.2726,1,WMDP-bio,user-assistant format
+LLM-GAT/ELM-8,0.2584,3,WMDP-bio,user-assistant format
+LLM-GAT/ELM-8,0.2718,5,WMDP-bio,user-assistant format
+LLM-GAT/ELM-8,0.2742,10,WMDP-bio,user-assistant format
+LLM-GAT/ELM-8,0.2867,20,WMDP-bio,user-assistant format
+Zephyr_RMU,0.3126,0,WMDP-bio,
+Zephyr_RMU,0.2577,1,WMDP-bio,
+Zephyr_RMU,0.2498,3,WMDP-bio,
+Zephyr_RMU,0.2577,5,WMDP-bio,
+Zephyr_RMU,0.2569,10,WMDP-bio,
+Zephyr_RMU,0.2655,20,WMDP-bio,
+Zephyr_beta,0.6441,0,WMDP-bio,
+Zephyr_beta,0.6591,1,WMDP-bio,
+Zephyr_beta,0.6567,3,WMDP-bio,
+Zephyr_beta,0.6614,5,WMDP-bio,
+Zephyr_beta,0.6614,10,WMDP-bio,
+LLM-GAT/ELM-8,0.3299,0,WMDP-bio,
+LLM-GAT/ELM-8,0.2781,1,WMDP-bio,
+LLM-GAT/ELM-8,0.2577,3,WMDP-bio,
+LLM-GAT/ELM-8,0.2443,5,WMDP-bio,
+LLM-GAT/ELM-8,0.2474,10,WMDP-bio,
