@@ -73,22 +73,22 @@ lm_eval --model hf \
 ### How to run erasure script
 Run WMDP eval script:
 ```python
-python3 Knowledge-Erasure/evaluation/wmdp/generate_wmdp_responses.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/wmdp --peft_model --extra_info "llmu_wmdp_bio"
-python3 Knowledge-Erasure/evaluation/wmdp/cal_wmdp_result.py --file_name "erasure_results/run_results_llmu_wmdp_bio.json"
+python3 knowledge_erasure/evaluation/wmdp/generate_wmdp_responses.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/wmdp --peft_model --extra_info "llmu_wmdp_bio"
+python3 knowledge_erasure/evaluation/wmdp/cal_wmdp_result.py --file_name "erasure_results/run_results_llmu_wmdp_bio.json"
 ```
 Run WMDP eval scripts for rephrased tasks:
 ```python
-python3 Knowledge-Erasure/evaluation/wmdp/generate_wmdp_responses_rephrasing.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/wmdp_rephrased_copy --peft_model --extra_info "llmu_wmdp_bio_rephrased"
-# python3 Knowledge-Erasure/evaluation/wmdp/generate_wmdp_responses_rephrasing.py --ckpt_dir LLMU\ results/Biology\ Dataset\ /Zephyr/48079515/ --data_dir data/wmdp_rephrased_copy --peft_model --extra_info "llmu_wmdp_bio_rephrased"
-python3 Knowledge-Erasure/evaluation/wmdp/cal_wmdp_result_rephrasing.py --file_name "erasure_results/run_results_llmu_wmdp_bio_rephrased_rephrasing.json"
+python3 knowledge_erasure/evaluation/wmdp/generate_wmdp_responses_rephrasing.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/wmdp_rephrased_copy --peft_model --extra_info "llmu_wmdp_bio_rephrased"
+# python3 knowledge_erasure/evaluation/wmdp/generate_wmdp_responses_rephrasing.py --ckpt_dir LLMU\ results/Biology\ Dataset\ /Zephyr/48079515/ --data_dir data/wmdp_rephrased_copy --peft_model --extra_info "llmu_wmdp_bio_rephrased"
+python3 knowledge_erasure/evaluation/wmdp/cal_wmdp_result_rephrasing.py --file_name "erasure_results/run_results_llmu_wmdp_bio_rephrased_rephrasing.json"
 ```
 
 Run tinyMMLU eval script:
 ```python
-python3 Knowledge-Erasure/evaluation/wmdp/generate_wmdp_responses.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/wmdp --peft_model --extra_info "llmu_wmdp_bio"
+python3 knowledge_erasure/evaluation/wmdp/generate_wmdp_responses.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/wmdp --peft_model --extra_info "llmu_wmdp_bio"
 ```
 
 # Run MMLU eval script:
 # ```python
-# python3 Knowledge-Erasure/evaluation/MMLU/generate_mmlu_responses.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/MMLU --peft_model --extra_info "llmu_mmlu"
+# python3 knowledge_erasure/evaluation/MMLU/generate_mmlu_responses.py --ckpt_dir LLMU\ results/WMDP\ Dataset\ /Zephyr/50368626_checkpoint_1000/zephyr-7b-beta_unlearned_24_checkpoint_1000_peft/ --data_dir data/MMLU --peft_model --extra_info "llmu_mmlu"
 # ```
