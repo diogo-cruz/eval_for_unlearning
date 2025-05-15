@@ -4,16 +4,17 @@ set -xe
 LOG_DIR="logs"
 mkdir -p "$LOG_DIR"
 
-# Run translation-based rephrasing jobs
+# Translating to various languages
 for lang in Hindi Bengali Arabic Czech French German Korean Vietnamese Turkish Telugu Farsi; do
   LOG_FILE="$LOG_DIR/rephrase_translating_to_language_${lang,,}.log"
   python3 evaluation/rephrase_prompts.py \
+    --data "wmdp" \
     --task "bio" \
     --prompt_technique_name "translating_to_language" \
     --language "$lang" > "$LOG_FILE" 2>&1 &
 done
 
-# Standard prompt techniques
+# Standard prompt techniques (no language)
 for technique in \
   rephrase_as_conversation \
   rephrase_as_poem \
@@ -21,6 +22,7 @@ for technique in \
   replacing_technical_terms_with_variables; do
   LOG_FILE="$LOG_DIR/rephrase_${technique}.log"
   python3 evaluation/rephrase_prompts.py \
+    --data "wmdp" \
     --task "bio" \
     --prompt_technique_name "$technique" > "$LOG_FILE" 2>&1 &
 done
@@ -29,12 +31,12 @@ done
 for lang in english latin hindi; do
   LOG_FILE="$LOG_DIR/rephrase_filler_text_${lang,,}.log"
   python3 evaluation/rephrase_prompts.py \
+    --data "wmdp" \
     --task "bio" \
     --prompt_technique_name "filler_text" \
     --language "$lang" > "$LOG_FILE" 2>&1 &
 done
 
-# Wait for all background jobs to finish
 wait
 
 # --- Error Detection ---
