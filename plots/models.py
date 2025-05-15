@@ -2,12 +2,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import io
+from matplotlib.lines import Line2D
 
-# Enable LaTeX formatting
+# Enable LaTeX formatting and configure larger fonts
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Computer Modern Roman"],
+    "font.size": 18,
+    "axes.titlesize": 24,
+    "axes.labelsize": 24,
+    "xtick.labelsize": 16,
+    "ytick.labelsize": 16,
+    "legend.fontsize": 18
 })
 
 # Parse the CSV data
@@ -109,14 +116,13 @@ Llama3-8B-Instruct,wmdp_bio_rephrased_translated_german,0.6591
 Llama3-8B-Instruct,wmdp_bio_rephrased_translated_korean,0.6277
 Llama3-8B-Instruct,tinyMMLU,0.5921"""
 
-# Load data
 df = pd.read_csv(io.StringIO(csv_data))
 
 # Adjust accuracy
 df['adjusted_accuracy'] = df['accuracy'] - 0.25
 df['adjusted_accuracy'] = df['adjusted_accuracy'].clip(lower=0)
 
-# Define model families with colorblind-friendly colors (Wong's palette)
+# Define model families with colorblind-friendly colors
 model_families = [
     {'name': 'Zephyr', 'base': 'Zephyr_7B_Beta', 'elm': 'Zephyr-7B-ELM', 'color': '#0072B2'},
     {'name': 'Mistral', 'base': 'Mistral-7B-v0.1', 'elm': 'Mistral-7B-ELM', 'color': '#D55E00'},
@@ -124,94 +130,135 @@ model_families = [
     {'name': 'Llama3-8B-Instruct', 'base': 'Llama3-8B-Instruct', 'elm': 'Llama3-8B-Instruct-ELM', 'color': '#CC79A7'},
 ]
 
-# Task styles with unique markers
+# Define task styles
 task_styles = {
     'wmdp_bio': {
-        'marker': 's', 'label': 'Base prompt', 'size': 180, 'highlight': True
+        'marker': 's', 'label': 'Base prompt', 'size': 240, 'highlight': False
     },
     'tinyMMLU': {
-        'marker': '*', 'label': 'tinyMMLU', 'size': 180, 'highlight': True
+        'marker': '*', 'label': 'tinyMMLU', 'size': 300, 'highlight': False
     },
-    'wmdp_bio_rephrased_english_filler': {'marker': 'o', 'label': 'Rephrased w/ English filler'},
-    'wmdp_bio_rephrased_hindi_filler': {'marker': 'P', 'label': 'Rephrased w/ Hindi filler'},
-    'wmdp_bio_rephrased_latin_filler': {'marker': 'X', 'label': 'Rephrased w/ Latin filler'},
-    'wmdp_bio_rephrased_conversation': {'marker': 'D', 'label': 'Rephrased as conversation'},
-    'wmdp_bio_rephrased_poem': {'marker': '^', 'label': 'Rephrased as poem'},
-    'wmdp_bio_rephrased_replace_with_variables': {'marker': 'v', 'label': 'Replaced with variables'},
-    'wmdp_bio_rephrased_technical_terms_removed_1': {'marker': 'p', 'label': 'Technical terms removed'},
-    'wmdp_bio_rephrased_translated_farsi': {'marker': '<', 'label': 'Translated to Farsi'},
-    'wmdp_bio_rephrased_translated_german': {'marker': 'd', 'label': 'Translated to German'},
-    'wmdp_bio_rephrased_translated_korean': {'marker': '>', 'label': 'Translated to Korean'},    
+    'wmdp_bio_rephrased_english_filler': {
+        'marker': 'o', 'label': 'Filler text', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_hindi_filler': {
+        'marker': 'o', 'label': 'Filler text', 'size': 160, 'highlight': True
+    },
+    'wmdp_bio_rephrased_latin_filler': {
+        'marker': 'o', 'label': 'Filler text', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_conversation': {
+        'marker': '^', 'label': 'Rephrased as conversation', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_poem': {
+        'marker': 'v', 'label': 'Rephrased as poem', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_replace_with_variables': {
+        'marker': 'P', 'label': 'Replaced with variables', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_technical_terms_removed_1': {
+        'marker': 'X', 'label': 'Technical terms removed', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_translated_farsi': {
+        'marker': 'd', 'label': 'Translated', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_translated_german': {
+        'marker': 'd', 'label': 'Translated', 'size': 160, 'highlight': False
+    },
+    'wmdp_bio_rephrased_translated_korean': {
+        'marker': 'd', 'label': 'Translated', 'size': 160, 'highlight': False
+    },
 }
 
 # Create figure
 plt.figure(figsize=(12, 10))
 ax = plt.gca()
 
-# Plot diagonal reference line
+# Diagonal reference line
 ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
 
-# Plot data
+# Plot points
 for family in model_families:
     base_data = df[df['model'] == family['base']]
     elm_data = df[df['model'] == family['elm']]
     merged = pd.merge(base_data, elm_data, on='task', suffixes=('_base', '_elm'))
-    
-    # Plot points
+
     for _, row in merged.iterrows():
         task = row['task']
         if task in task_styles:
             style = task_styles[task]
+
+            edge_color = "#999999"
+            highlight_edge = 'black'
             ax.scatter(
                 row['adjusted_accuracy_base'],
                 row['adjusted_accuracy_elm'],
-                color=style.get('facecolor', family['color']),
+                color=family['color'],
                 marker=style['marker'],
                 s=style.get('size', 100),
-                edgecolor=style.get('edgecolor', 'black'),
-                linewidth=1.2 if style.get('highlight') else 0.5,
-                alpha=0.9
+                edgecolor=highlight_edge if style.get('highlight', False) else edge_color,
+                linewidth=2.5 if style.get('highlight', False) else 1.0,
+                alpha=0.9,
+                zorder=5 if style.get('highlight', False) else 4
             )
+
+            # Annotate Hindi filler points
+            if task == 'wmdp_bio_rephrased_hindi_filler':
+                ax.text(
+                    row['adjusted_accuracy_base'] + 0.007,
+                    row['adjusted_accuracy_elm'] + 0.005,
+                    'Hindi filler text',
+                    fontsize=16,
+                    alpha=0.85
+                )
 
 
 # Axis labels
-ax.set_xlabel(r'Base model accuracy (adjusted)', fontsize=14)
-ax.set_ylabel(r'Unlearned (ELM) model accuracy (adjusted)', fontsize=14)
-
-# Axis limits
+ax.set_xlabel(r'Base model accuracy (adjusted)')
+ax.set_ylabel(r'Unlearned (ELM) model accuracy (adjusted)')
 ax.set_xlim(0, 0.55)
 ax.set_ylim(0, 0.55)
 
-# Legends
 # Model family legend
-from matplotlib.lines import Line2D
 model_legend = [
     Line2D([0], [0], marker='o', color=family['color'], label=family['name'],
-           linestyle='', markersize=8) for family in model_families
+           linestyle='', markersize=14) for family in model_families
 ]
 
-# Task legend
-task_legend = [
-    Line2D([0], [0], marker=style['marker'], color='black', label=style['label'],
-           linestyle='', markersize=8) for task, style in task_styles.items()
-]
+# De-duplicate task legend entries
+task_seen = set()
+task_legend = []
+for key, style in task_styles.items():
+    if style['label'] not in task_seen:
+        task_seen.add(style['label'])
+        task_legend.append( 
+            Line2D(
+                [0], [0],
+                marker=style['marker'],
+                markerfacecolor=edge_color,
+                markeredgecolor=edge_color,
+                label=style['label'],
+                linestyle='',
+                markersize=14
+            )
+        )
+
+
+# Extra legend for highlighted Hindi filler
+highlight_legend = Line2D(
+    [0], [0], marker='o', color=highlight_edge, markerfacecolor='white',
+    markeredgewidth=3, markersize=12, linestyle='', label='Knowledge retrieval'
+)
 
 # Add legends
-legend1 = ax.legend(handles=model_legend, title='Models', loc='upper left', fontsize=10, title_fontsize=11, bbox_to_anchor=(0, 1), handletextpad=1.5)
-legend2 = ax.legend(handles=task_legend, title='Tasks', loc='upper left', fontsize=9, title_fontsize=11, bbox_to_anchor=(0, 0.85), handletextpad=1.5, labelspacing=1.2)
+legend1 = ax.legend(handles=model_legend, title='Models', loc='upper left', bbox_to_anchor=(0, 1))
+legend2 = ax.legend(handles=task_legend + [highlight_legend], title='Tasks', loc='upper left', bbox_to_anchor=(0, 0.78))
 ax.add_artist(legend1)
 
-# Grid
+# Grid and layout
 ax.grid(True, linestyle='--', alpha=0.3)
-
-# Layout
 plt.tight_layout()
-
-# Save the plot with higher resolution
-plt.savefig('model_performance_comparison_unified.pdf', bbox_inches='tight', dpi=300)
-
-# Show the figure
+plt.savefig('model_performance_comparison.pdf', bbox_inches='tight', dpi=300)
 plt.close()
 
-# Return the paths to the generated images
-print('Saved as: model_performance_comparison_unified.pdf')
+print('Saved as: model_performance_comparison.pdf')
