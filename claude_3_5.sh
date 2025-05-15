@@ -4,10 +4,12 @@ set -xe
 LOG_DIR="logs"
 mkdir -p "$LOG_DIR"
 
+SCRIPT="evaluation/rephrase_prompts_claude_3_5.py"
+
 # Translating to various languages
 for lang in Hindi Bengali Arabic Czech French German Korean Vietnamese Turkish Telugu Farsi; do
   LOG_FILE="$LOG_DIR/rephrase_translating_to_language_${lang,,}.log"
-  python3 evaluation/rephrase_prompts.py \
+  python3 "$SCRIPT" \
     --data "wmdp" \
     --task "bio" \
     --prompt_technique_name "translating_to_language" \
@@ -21,7 +23,7 @@ for technique in \
   removing_technical_terms_from_the_question \
   replacing_technical_terms_with_variables; do
   LOG_FILE="$LOG_DIR/rephrase_${technique}.log"
-  python3 evaluation/rephrase_prompts.py \
+  python3 "$SCRIPT" \
     --data "wmdp" \
     --task "bio" \
     --prompt_technique_name "$technique" > "$LOG_FILE" 2>&1 &
@@ -30,7 +32,7 @@ done
 # Filler text variants
 for lang in english latin hindi; do
   LOG_FILE="$LOG_DIR/rephrase_filler_text_${lang,,}.log"
-  python3 evaluation/rephrase_prompts.py \
+  python3 "$SCRIPT" \
     --data "wmdp" \
     --task "bio" \
     --prompt_technique_name "filler_text" \
