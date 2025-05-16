@@ -8,6 +8,7 @@ from peft import AutoPeftModelForCausalLM
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 CHOICES = ["A", "B", "C", "D"]
+CHOICE_TOKEN_IDS = [330, 365, 334, 384] # _A, _B, _C, _D (reference: https://huggingface.co/HuggingFaceH4/zephyr-7b-beta/raw/main/tokenizer.json)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_json(data_dir, dataset_name):
@@ -30,28 +31,44 @@ def format_wmdp_example(question, include_answer=False):
 
 def run_single_forward_pass(model, tokenizer, prompt):
   encode_inputs = tokenizer.encode_plus(prompt, return_tensors="pt", padding=True).to(device)
-  outputs = model.generate(**encode_inputs, max_new_tokens=1, pad_token_id=tokenizer.eos_token_id)
 
+  outputs = model(**encode_inputs, return_dict=True) 
+  logits = outputs.logits
+  next_token_logits = logits[:,-1,:]
+  choice_logits = next_token_logits[0, CHOICE_TOKEN_IDS]
+  next_token_best_logit = choice_logits.argmax()
+  next_token_best_logit_token_id = CHOICE_TOKEN_IDS[next_token_best_logit]
+
+  outputs = model.generate(**encode_inputs, max_new_tokens=1, pad_token_id=tokenizer.eos_token_id) ## greedy search
   next_token_id = outputs[0][-1]
-  return next_token_id.item(), tokenizer.decode(next_token_id, skip_special_tokens=True) # _A is parsed as A
+  next_token = tokenizer.decode(next_token_id, skip_special_tokens=True) # _A is parsed as A
+  return next_token_best_logit_token_id, next_token_best_logit, next_token_id.item(), next_token
 
 def run_inference(model, tokenizer, data_dir, dataset_name, system_prompt):
-  choice_token_ids = [330, 365, 334, 384] # _A, _B, _C, _D (reference: https://huggingface.co/HuggingFaceH4/zephyr-7b-beta/raw/main/tokenizer.json)
   test_data = load_json(data_dir=data_dir, dataset_name=dataset_name)
 
-  is_match_label_list = []
-  is_in_label_list = []
+  is_in_the_right_format_list = []
+  is_match_logit_list = []
+  # is_match_label_list = []
+  # is_in_label_list = []
   is_match_list = []
   is_in_list = []
+  questions_with_meta = []
   for i, question in tqdm(enumerate(test_data), total=len(test_data)):
     prompt_end = format_wmdp_example(question)
     train_prompt = "" # TODO: for n-shot prompts
     prompt = system_prompt + train_prompt + prompt_end
 
     label = chr(65 + question["answer"])
-    label_token_id = choice_token_ids[question["answer"]]
+    label_token_id = CHOICE_TOKEN_IDS[question["answer"]]
 
-    pred_token_id, pred_label = run_single_forward_pass(model, tokenizer, prompt)
+    pred_best_logit_token_id, pred_best_logit_label, pred_token_id, pred_label = run_single_forward_pass(model, tokenizer, prompt)
+
+    is_match_logit = pred_best_logit_token_id == label_token_id
+    is_match_logit_list.append(is_match_logit)
+
+    is_in_the_right_format = pred_label in CHOICES
+    is_in_the_right_format_list.append(is_in_the_right_format)
 
     # is_match_label = pred_label == label
     # is_in_label = pred_label in CHOICES
@@ -59,24 +76,38 @@ def run_inference(model, tokenizer, data_dir, dataset_name, system_prompt):
     # is_in_label_list.append(is_in_label)
 
     is_match = pred_token_id == label_token_id 
-    is_in = pred_token_id in choice_token_ids
+    is_in = pred_token_id in CHOICE_TOKEN_IDS
     is_match_list.append(is_match)
     is_in_list.append(is_in)
 
-  is_match_label_list = np.array(is_match_label_list)
-  is_in_label_list = np.array(is_in_label_list)
+    question.update({"right_format": is_in_the_right_format, "pred_label": pred_label})
+    questions_with_meta.append(question)
+
+  with open(f"{data_dir}/bio_questions_with_meta.json", "w") as f:
+    for question in questions_with_meta:
+      f.write(json.dumps(question) + "\n")
+
+  # is_match_label_list = np.array(is_match_label_list)
+  # is_in_label_list = np.array(is_in_label_list)
 
   is_match_list = np.array(is_match_list)
   is_in_list = np.array(is_in_list)
+
+  is_match_logit_list = np.array(is_match_logit_list)
 
   # acc_label = is_match_label_list.mean()
   # acc_answered_label = is_in_label_list[is_in_label_list].mean()
   # coverage_label = is_in_label_list.mean()
 
+  acc_logit = is_match_logit_list.mean().item()  
+  acc_logit_right_format = is_match_logit_list[is_in_the_right_format_list].mean().item()
+  is_not_in_the_right_format = [not x for x in is_in_the_right_format_list]
+  acc_logit_not_right_format = is_match_logit_list[is_not_in_the_right_format].mean().item()
+
   acc = is_match_list.mean().item()
   acc_answered = is_match_list[is_in_list].mean().item()
   coverage = is_in_list.mean().item()
-  return dict(acc=acc, acc_answered=acc_answered, coverage=coverage)
+  return dict(acc=acc, acc_answered=acc_answered, coverage=coverage, acc_logit=acc_logit, acc_logit_right_format=acc_logit_right_format, acc_logit_not_right_format=acc_logit_not_right_format)
 
 def load(args):
   tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
@@ -104,7 +135,9 @@ if __name__ == "__main__":
 
   model, tokenizer = load(args)
   out = run_inference(model, tokenizer, args.data_dir, args.dataset_name, args.system_prompt)
-  print(out)
+  
+  from pprint import pprint
+  pprint(out)
 
   # ===================
   ## examples
@@ -123,3 +156,4 @@ if __name__ == "__main__":
 
   # python3 inference.py --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" --data_dir "data/wmdp/test/" --dataset_name "bio_questions"
   # python3 inference.py --ckpt_dir "cais/Zephyr_RMU" --data_dir "data/claude_3_5/data_translated_hindi/test/" --dataset_name "bio_questions"
+  # python3 inference.py --ckpt_dir "HuggingFaceH4/zephyr-7b-beta" --data_dir "data/wmdp/test/" --dataset_name "bio_questions"
