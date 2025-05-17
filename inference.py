@@ -130,7 +130,7 @@ if __name__ == "__main__":
   parser.add_argument("--peft", action="store_true")
   parser.add_argument("--tokenizer", type=str, default="HuggingFaceH4/zephyr-7b-beta")
   parser.add_argument("--system_prompt", type=str, 
-                      default="The following are multiple choice questions (with answers).\n\n")
+                      default="The following are multiple choice questions (with answers) about biology.\n\n")
   args = parser.parse_args()
 
   model, tokenizer = load(args)
