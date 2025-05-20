@@ -1,103 +1,252 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+from matplotlib.lines import Line2D
 
-df = pd.read_csv('./unlearning_method_comparison.csv')
+# Adjusted font sizes for better readability
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "serif",
+    "font.serif": ["Computer Modern Roman"],
+    "font.size": 12,
+    "axes.titlesize": 14,
+    "axes.labelsize": 14,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+    "legend.fontsize": 12
+})
 
-# Adjust accuracy
-df['adjusted_accuracy'] = df['accuracy'] - 0.25
-df['adjusted_accuracy'] = df['adjusted_accuracy'].clip(lower=0)
+# Read CSV from file
+df = pd.read_csv('unlearning_method_comparison.csv')
 
-# Define base model
-base_model = 'Llama3-8B-Instruct'
-
-# Get all models (i.e., unlearning methods) excluding the base
-methods = df['model'].unique().tolist()
-methods = [m for m in methods if m != base_model]
-
-# Assign color-blind friendly colors (Wong + gray)
-colors = [
-    '#E69F00', '#56B4E9', '#009E73', '#F0E442',
-    '#0072B2', '#D55E00', '#CC79A7', '#999999'
-]
-assert len(methods) <= len(colors), "Too many methods for available colors"
-
-method_colors = dict(zip(methods, colors))
-
-# Task marker styles
-task_styles = {
-    'wmdp_bio': {'marker': 's', 'label': 'Base prompt', 'size': 180, 'highlight': True},
-    'tinyMMLU': {'marker': '*', 'label': 'tinyMMLU', 'size': 180, 'highlight': True},
-    'wmdp_bio_rephrased_english_filler': {'marker': 'o', 'label': 'Rephrased w/ English filler'},
-    'wmdp_bio_rephrased_hindi_filler': {'marker': 'P', 'label': 'Rephrased w/ Hindi filler'},
-    'wmdp_bio_rephrased_latin_filler': {'marker': 'X', 'label': 'Rephrased w/ Latin filler'},
-    'wmdp_bio_rephrased_conversation': {'marker': 'D', 'label': 'Rephrased as conversation'},
-    'wmdp_bio_rephrased_poem': {'marker': '^', 'label': 'Rephrased as poem'},
-    'wmdp_bio_rephrased_replace_with_variables': {'marker': 'v', 'label': 'Replaced with variables'},
-    'wmdp_bio_rephrased_technical_terms_removed_1': {'marker': 'p', 'label': 'Technical terms removed'},
-    'wmdp_bio_rephrased_translated_farsi': {'marker': '<', 'label': 'Translated to Farsi'},
-    'wmdp_bio_rephrased_translated_german': {'marker': 'd', 'label': 'Translated to German'},
-    'wmdp_bio_rephrased_translated_korean': {'marker': '>', 'label': 'Translated to Korean'},
+# Define method name mapping
+method_name_map = {
+    'tar': 'TAR',
+    'graddiff': 'GradDiff',
+    'repnoise': 'RepNoise',
+    'elm': 'ELM',
+    'rmu-lat': 'RMU+LAT',
+    'rmu': 'RMU',
+    'pbj': 'PBJ',
+    'rr': 'RR'
 }
 
-# Plot
-plt.figure(figsize=(12, 10))
-ax = plt.gca()
+# Extract base model data
+base_model_data = df[df['model'] == 'Llama3-8B-Instruct']
 
-# Diagonal line
+# Process unlearning models data
+unlearning_models = []
+for method_key, method_name in method_name_map.items():
+    model_name = f"LLM-GAT__llama-3-8b-instruct-{method_key}-checkpoint-8"
+    if model_name in df['model'].values:
+        unlearning_models.append({
+            'name': method_name,
+            'model': model_name,
+            'color': None  # Will be assigned later
+        })
+
+# Wong's colorblind-friendly palette
+colors = [
+    '#882255',  # Burgundy
+    '#56B4E9',  # Sky Blue
+    '#E69F00',  # Orange
+    '#009E73',  # Teal
+    '#332288',  # Indigo
+    '#AA7700',  # Dark Gold
+    '#555555',  # Dark Gray
+    '#CC79A7',  # Violet
+]
+
+# Assign colors to models
+for i, model in enumerate(unlearning_models):
+    model['color'] = colors[i % len(colors)]
+
+# Define task styles
+task_styles = {
+    'wmdp_bio': {'marker': 's', 'label': 'Base prompt', 'size': 150, 'highlight': False},
+    'tinyMMLU': {'marker': '*', 'label': 'tinyMMLU', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_english_filler': {'marker': 'o', 'label': 'Filler text', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_hindi_filler': {'marker': 'o', 'label': 'Filler text', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_latin_filler': {'marker': 'o', 'label': 'Filler text', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_conversation': {'marker': '^', 'label': 'Rephrased as conversation', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_poem': {'marker': 'v', 'label': 'Rephrased as poem', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_replace_with_variables': {'marker': 'P', 'label': 'Replaced with variables', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_technical_terms_removed_1': {'marker': 'X', 'label': 'Technical terms removed', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_translated_farsi': {'marker': 'd', 'label': 'Translated', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_translated_german': {'marker': 'd', 'label': 'Translated', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_translated_korean': {'marker': 'd', 'label': 'Translated', 'size': 150, 'highlight': False},
+}
+for style in task_styles.values():
+    style['size'] = style['size'] / 3
+
+# Define filled tasks
+filled_tasks = {
+    'wmdp_bio',
+    'tinyMMLU',
+}
+
+# Create figure with space for stacked legends and plot
+fig = plt.figure(figsize=(5.4, 6))
+
+# Create a gridspec layout with space for legends above
+# gs = fig.add_gridspec(3, 1, height_ratios=[1, 1, 6])
+# task_legend_ax = fig.add_subplot(gs[0])
+# method_legend_ax = fig.add_subplot(gs[1])
+# ax = fig.add_subplot(gs[2])
+gs = fig.add_gridspec(2, 1, height_ratios=[1, 4])
+task_legend_ax = fig.add_subplot(gs[0])
+ax = fig.add_subplot(gs[1])
+method_legend_ax = fig.add_subplot(gs[1])
+
+# Hide the legend axes frames
+task_legend_ax.axis('off')
+method_legend_ax.axis('off')
+plt.subplots_adjust(hspace=0.03)  # tighten vertical spacing
+
+adjustment_factor = 0.25
+
+# Plot points
+for model in unlearning_models:
+    model_data = df[df['model'] == model['model']]
+    
+    for _, model_row in model_data.iterrows():
+        task = model_row['task']
+        if task not in task_styles:
+            continue
+            
+        # Find corresponding base model accuracy for this task
+        base_row = base_model_data[base_model_data['task'] == task]
+        if len(base_row) == 0:
+            continue
+            
+        base_accuracy = base_row['accuracy'].values[0] - adjustment_factor
+        model_accuracy = model_row['accuracy'] - adjustment_factor
+        
+        # Skip if adjusted accuracy is negative
+        if base_accuracy <= 0 or model_accuracy <= 0:
+            continue
+            
+        style = task_styles[task]
+        is_filled = task in filled_tasks
+        is_highlight = style.get('highlight', False)
+        
+        facecolor = model['color'] if is_filled else 'none'
+        edgecolor = 'black' if is_highlight else model['color']
+        linewidth = 1
+        
+        # Add scatter point
+        ax.scatter(
+            base_accuracy,
+            model_accuracy,
+            facecolor=facecolor,
+            edgecolor=edgecolor,
+            marker=style['marker'],
+            s=style['size'],
+            linewidth=linewidth,
+            alpha=0.9,
+            zorder=5 if is_highlight else 4
+        )
+
+# Add diagonal reference line
 ax.plot([-.01, 1], [-.01, 1], 'k--', alpha=0.3)
 
-# Base model data
-base_df = df[df['model'] == base_model][['task', 'adjusted_accuracy']].rename(columns={'adjusted_accuracy': 'base_accuracy'})
+# Set labels and title
+ax.set_xlabel('Base Model (Llama3-8B-Instruct) Accuracy (Adjusted)')
+ax.set_ylabel('Unlearned Model Accuracy (Adjusted)')
 
-# Plot each unlearning method
-for method in methods:
-    method_df = df[df['model'] == method][['task', 'adjusted_accuracy']]
-    merged = pd.merge(base_df, method_df, on='task')
-    
-    for _, row in merged.iterrows():
-        task = row['task']
-        if task in task_styles:
-            style = task_styles[task]
-            ax.scatter(
-                row['base_accuracy'],
-                row['adjusted_accuracy'],
-                color=method_colors[method],
-                marker=style['marker'],
-                s=style.get('size', 100),
-                edgecolor='black',
-                linewidth=1.2 if style.get('highlight') else 0.5,
-                alpha=0.9
-            )
-
-# Labels and limits
-ax.set_xlabel(r'Base model accuracy (adjusted)', fontsize=14)
-ax.set_ylabel(r'Unlearned model accuracy (adjusted)', fontsize=14)
+# Set axis limits to 0.75 for both axes
 ax.set_xlim(-.01, 0.5)
 ax.set_ylim(-.01, 0.5)
 
-# Legends
-from matplotlib.lines import Line2D
-
-method_legend = [
-    Line2D([0], [0], marker='o', color=color, label=method,
-           linestyle='', markersize=8) for method, color in method_colors.items()
-]
-
-task_legend = [
-    Line2D([0], [0], marker=style['marker'], color='black', label=style['label'],
-           linestyle='', markersize=8) for task, style in task_styles.items()
-]
-
-legend1 = ax.legend(handles=method_legend, title='Unlearning Method', loc='upper left', fontsize=10, title_fontsize=11, bbox_to_anchor=(0, 1), handletextpad=1.5)
-legend2 = ax.legend(handles=task_legend, title='Tasks', loc='upper left', fontsize=9, title_fontsize=11, bbox_to_anchor=(0, 0.7), handletextpad=1.5, labelspacing=1.2)
-ax.add_artist(legend1)
-
-# Grid and layout
+# Add grid
 ax.grid(True, linestyle='--', alpha=0.3)
-plt.tight_layout()
 
-# Save
+# Create model legend
+model_legend_handles = [
+    Line2D([0], [0], marker='o', color=model['color'], label=model['name'],
+           linestyle='', markersize=8) for model in unlearning_models
+]
+
+# Create task legend with priority for tinyMMLU
+task_legend_handles = []
+
+# First add tinyMMLU to legend
+tinyMMLU_style = task_styles['tinyMMLU']
+task_legend_handles.append(
+    Line2D(
+        [0], [0],
+        marker=tinyMMLU_style['marker'],
+        markerfacecolor='#999999' if 'tinyMMLU' in filled_tasks else 'none',
+        markeredgecolor='black' if tinyMMLU_style.get('highlight', False) else '#999999',
+        markeredgewidth=1.5,
+        linestyle='',
+        markersize=10,
+        label=tinyMMLU_style['label']
+    )
+)
+
+# Add all other task styles to legend
+seen_labels = {tinyMMLU_style['label']}  # Initialize with tinyMMLU already added
+for key, style in task_styles.items():
+    if key == 'tinyMMLU':  # Skip tinyMMLU as it's already added
+        continue
+        
+    label = style['label']
+    if label not in seen_labels:
+        seen_labels.add(label)
+        is_highlight = style.get('highlight', False)
+        
+        # Use proper styling for legend items
+        facecolor = 'none'  # Most markers are not filled
+        if key in filled_tasks:
+            facecolor = '#999999'  # Use gray for filled markers in legend
+        
+        edgecolor = 'black' if is_highlight else '#999999'
+        linewidth = 1.5
+        
+        task_legend_handles.append(
+            Line2D(
+                [0], [0],
+                marker=style['marker'],
+                markerfacecolor=facecolor,
+                markeredgecolor=edgecolor,
+                markeredgewidth=linewidth,
+                linestyle='',
+                markersize=10,
+                label=label
+            )
+        )
+
+# Add legends with Tasks on top and Unlearning Methods below
+task_legend = task_legend_ax.legend(
+    handles=task_legend_handles,
+    title='Tasks',
+    loc='lower right',
+    ncol=2,
+    frameon=True,
+    columnspacing=0.5,      # Reduce column gap
+    handletextpad=0.3,      # Reduce gap between marker and label
+    handlelength=1.2,       # Shorter marker length
+    borderaxespad=0.2       # Reduce padding to axes
+)
+
+method_legend = method_legend_ax.legend(
+    handles=model_legend_handles,
+    title='Unlearning Methods',
+    loc='upper left',
+    ncol=2,
+    frameon=True,
+    columnspacing=0.5,
+    handletextpad=0.3,
+    handlelength=1.2,
+    borderaxespad=0.2,
+    # bbox_to_anchor=(-.1, 0),  # x = 0 (left), y > 1 = above plot
+)
+
+
+# Save figure as PDF
+# plt.tight_layout()
 plt.savefig('unlearning_methods_comparison.pdf', bbox_inches='tight', dpi=300)
 plt.close()
 
-print('Saved as: unlearning_methods_comparison.pdf')
+print('Visualization saved as: unlearning_methods_comparison.pdf')

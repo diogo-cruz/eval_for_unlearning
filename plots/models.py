@@ -1,128 +1,42 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import io
 from matplotlib.lines import Line2D
 
-# Enable LaTeX formatting and configure larger fonts
+# # Adjusted font sizes
+# plt.rcParams.update({
+#     "text.usetex": True,
+#     "font.family": "serif",
+#     "font.serif": ["Computer Modern Roman"],
+#     "font.size": 34,
+#     "axes.titlesize": 40,
+#     "axes.labelsize": 40,
+#     "xtick.labelsize": 26,
+#     "ytick.labelsize": 26,
+#     "legend.fontsize": 32
+# })
+
+# Adjusted font sizes for better readability
 plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Computer Modern Roman"],
-    "font.size": 18,
-    "axes.titlesize": 24,
-    "axes.labelsize": 24,
-    "xtick.labelsize": 16,
-    "ytick.labelsize": 16,
-    "legend.fontsize": 18
+    "font.size": 12,
+    "axes.titlesize": 14,
+    "axes.labelsize": 14,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+    "legend.fontsize": 12
 })
 
-# Parse the CSV data
-csv_data = """model,task,accuracy
-Zephyr_7B_Beta,wmdp_bio,0.6465
-Zephyr_7B_Beta,wmdp_bio_rephrased_english_filler,0.6379
-Zephyr_7B_Beta,wmdp_bio_rephrased_hindi_filler,0.6308
-Zephyr_7B_Beta,wmdp_bio_rephrased_latin_filler,0.6449
-Zephyr_7B_Beta,wmdp_bio_rephrased_conversation,0.6434
-Zephyr_7B_Beta,wmdp_bio_rephrased_poem,0.6517
-Zephyr_7B_Beta,wmdp_bio_rephrased_replace_with_variables,0.6104
-Zephyr_7B_Beta,wmdp_bio_rephrased_technical_terms_removed_1,0.5617
-Zephyr_7B_Beta,wmdp_bio_rephrased_translated_farsi,0.4988
-Zephyr_7B_Beta,wmdp_bio_rephrased_translated_german,0.6041
-Zephyr_7B_Beta,wmdp_bio_rephrased_translated_korean,0.5538
-Zephyr_7B_Beta,tinyMMLU,0.6244
-Zephyr-7B-ELM,wmdp_bio,0.3016
-Zephyr-7B-ELM,wmdp_bio_rephrased_english_filler,0.3519
-Zephyr-7B-ELM,wmdp_bio_rephrased_hindi_filler,0.5507
-Zephyr-7B-ELM,wmdp_bio_rephrased_latin_filler,0.3778
-Zephyr-7B-ELM,wmdp_bio_rephrased_conversation,0.2977
-Zephyr-7B-ELM,wmdp_bio_rephrased_poem,0.2868
-Zephyr-7B-ELM,wmdp_bio_rephrased_replace_with_variables,0.3252
-Zephyr-7B-ELM,wmdp_bio_rephrased_technical_terms_removed_1,0.3111
-Zephyr-7B-ELM,wmdp_bio_rephrased_translated_farsi,0.3621
-Zephyr-7B-ELM,wmdp_bio_rephrased_translated_german,0.304
-Zephyr-7B-ELM,wmdp_bio_rephrased_translated_korean,0.3252
-Zephyr-7B-ELM,tinyMMLU,0.6185
-Mistral-7B-ELM,wmdp_bio,0.2891
-Mistral-7B-ELM,wmdp_bio_rephrased_english_filler,0.3064
-Mistral-7B-ELM,wmdp_bio_rephrased_hindi_filler,0.4721
-Mistral-7B-ELM,wmdp_bio_rephrased_latin_filler,0.3032
-Mistral-7B-ELM,wmdp_bio_rephrased_conversation,0.3001
-Mistral-7B-ELM,wmdp_bio_rephrased_poem,0.3255
-Mistral-7B-ELM,wmdp_bio_rephrased_replace_with_variables,0.3056
-Mistral-7B-ELM,wmdp_bio_rephrased_technical_terms_removed_1,0.2875
-Mistral-7B-ELM,wmdp_bio_rephrased_translated_farsi,0.2844
-Mistral-7B-ELM,wmdp_bio_rephrased_translated_german,0.2875
-Mistral-7B-ELM,wmdp_bio_rephrased_translated_korean,0.2954
-Mistral-7B-ELM,tinyMMLU,0.5597
-Mistral-7B-v0.1,wmdp_bio,0.674
-Mistral-7B-v0.1,wmdp_bio_rephrased_english_filler,0.641
-Mistral-7B-v0.1,wmdp_bio_rephrased_hindi_filler,0.6347
-Mistral-7B-v0.1,wmdp_bio_rephrased_latin_filler,0.6606
-Mistral-7B-v0.1,wmdp_bio_rephrased_conversation,0.6599
-Mistral-7B-v0.1,wmdp_bio_rephrased_poem,0.6328
-Mistral-7B-v0.1,wmdp_bio_rephrased_replace_with_variables,0.6308
-Mistral-7B-v0.1,wmdp_bio_rephrased_technical_terms_removed_1,0.597
-Mistral-7B-v0.1,wmdp_bio_rephrased_translated_farsi,0.502
-Mistral-7B-v0.1,wmdp_bio_rephrased_translated_german,0.6174
-Mistral-7B-v0.1,wmdp_bio_rephrased_translated_korean,0.5703
-Mistral-7B-v0.1,tinyMMLU,0.6046
-Llama3-8B-Instruct-ELM,wmdp_bio,0.3299
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_english_filler,0.3959
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_hindi_filler,0.5373
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_latin_filler,0.3582
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_conversation,0.3472
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_poem,0.3278
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_replace_with_variables,0.3378
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_technical_terms_removed_1,0.2985
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_translated_farsi,0.304
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_translated_german,0.3221
-Llama3-8B-Instruct-ELM,wmdp_bio_rephrased_translated_korean,0.3472
-Llama3-8B-Instruct-ELM,tinyMMLU,0.5741
-Llama3-8B-ELM,wmdp_bio,0.3449
-Llama3-8B-ELM,wmdp_bio_rephrased_english_filler,0.4077
-Llama3-8B-ELM,wmdp_bio_rephrased_hindi_filler,0.5923
-Llama3-8B-ELM,wmdp_bio_rephrased_latin_filler,0.3425
-Llama3-8B-ELM,wmdp_bio_rephrased_conversation,0.4438
-Llama3-8B-ELM,wmdp_bio_rephrased_poem,0.3381
-Llama3-8B-ELM,wmdp_bio_rephrased_replace_with_variables,0.2938
-Llama3-8B-ELM,wmdp_bio_rephrased_technical_terms_removed_1,0.2993
-Llama3-8B-ELM,wmdp_bio_rephrased_translated_farsi,0.2946
-Llama3-8B-ELM,wmdp_bio_rephrased_translated_german,0.3024
-Llama3-8B-ELM,wmdp_bio_rephrased_translated_korean,0.2899
-Llama3-8B-ELM,tinyMMLU,0.6004
-Llama3-8B,wmdp_bio,0.7054
-Llama3-8B,wmdp_bio_rephrased_english_filler,0.6929
-Llama3-8B,wmdp_bio_rephrased_hindi_filler,0.7054
-Llama3-8B,wmdp_bio_rephrased_latin_filler,0.7109
-Llama3-8B,wmdp_bio_rephrased_conversation,0.6991
-Llama3-8B,wmdp_bio_rephrased_poem,0.6556
-Llama3-8B,wmdp_bio_rephrased_replace_with_variables,0.6591
-Llama3-8B,wmdp_bio_rephrased_technical_terms_removed_1,0.6245
-Llama3-8B,wmdp_bio_rephrased_translated_farsi,0.6394
-Llama3-8B,wmdp_bio_rephrased_translated_german,0.6866
-Llama3-8B,wmdp_bio_rephrased_translated_korean,0.6198
-Llama3-8B,tinyMMLU,0.6427
-Llama3-8B-Instruct,wmdp_bio,0.7086
-Llama3-8B-Instruct,wmdp_bio_rephrased_english_filler,0.7054
-Llama3-8B-Instruct,wmdp_bio_rephrased_hindi_filler,0.7235
-Llama3-8B-Instruct,wmdp_bio_rephrased_latin_filler,0.7203
-Llama3-8B-Instruct,wmdp_bio_rephrased_conversation,0.7117
-Llama3-8B-Instruct,wmdp_bio_rephrased_poem,0.6801
-Llama3-8B-Instruct,wmdp_bio_rephrased_replace_with_variables,0.663
-Llama3-8B-Instruct,wmdp_bio_rephrased_technical_terms_removed_1,0.6127
-Llama3-8B-Instruct,wmdp_bio_rephrased_translated_farsi,0.6528
-Llama3-8B-Instruct,wmdp_bio_rephrased_translated_german,0.6591
-Llama3-8B-Instruct,wmdp_bio_rephrased_translated_korean,0.6277
-Llama3-8B-Instruct,tinyMMLU,0.5921"""
-
-df = pd.read_csv(io.StringIO(csv_data))
+# Read CSV from external file
+df = pd.read_csv('models.csv')
 
 # Adjust accuracy
 df['adjusted_accuracy'] = df['accuracy'] - 0.25
 df['adjusted_accuracy'] = df['adjusted_accuracy'].clip(lower=0)
 
-# Define model families with colorblind-friendly colors
+# Define model families
 model_families = [
     {'name': 'Zephyr', 'base': 'Zephyr_7B_Beta', 'elm': 'Zephyr-7B-ELM', 'color': '#0072B2'},
     {'name': 'Mistral', 'base': 'Mistral-7B-v0.1', 'elm': 'Mistral-7B-ELM', 'color': '#D55E00'},
@@ -130,52 +44,51 @@ model_families = [
     {'name': 'Llama3-8B-Instruct', 'base': 'Llama3-8B-Instruct', 'elm': 'Llama3-8B-Instruct-ELM', 'color': '#CC79A7'},
 ]
 
-# Define task styles
 task_styles = {
-    'wmdp_bio': {
-        'marker': 's', 'label': 'Base prompt', 'size': 240, 'highlight': False
-    },
-    'tinyMMLU': {
-        'marker': '*', 'label': 'tinyMMLU', 'size': 300, 'highlight': False
-    },
-    'wmdp_bio_rephrased_english_filler': {
-        'marker': 'o', 'label': 'Filler text', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_hindi_filler': {
-        'marker': 'o', 'label': 'Filler text', 'size': 160, 'highlight': True
-    },
-    'wmdp_bio_rephrased_latin_filler': {
-        'marker': 'o', 'label': 'Filler text', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_conversation': {
-        'marker': '^', 'label': 'Rephrased as conversation', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_poem': {
-        'marker': 'v', 'label': 'Rephrased as poem', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_replace_with_variables': {
-        'marker': 'P', 'label': 'Replaced with variables', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_technical_terms_removed_1': {
-        'marker': 'X', 'label': 'Technical terms removed', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_translated_farsi': {
-        'marker': 'd', 'label': 'Translated', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_translated_german': {
-        'marker': 'd', 'label': 'Translated', 'size': 160, 'highlight': False
-    },
-    'wmdp_bio_rephrased_translated_korean': {
-        'marker': 'd', 'label': 'Translated', 'size': 160, 'highlight': False
-    },
+    'wmdp_bio': {'marker': 's', 'label': 'Base prompt', 'size': 300, 'highlight': False},
+    'tinyMMLU': {'marker': '*', 'label': 'tinyMMLU', 'size': 375, 'highlight': False},
+    'wmdp_bio_rephrased_english_filler': {'marker': 'o', 'label': 'Filler text', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_hindi_filler': {'marker': 'o', 'label': 'Filler text', 'size': 200, 'highlight': True},
+    'wmdp_bio_rephrased_latin_filler': {'marker': 'o', 'label': 'Filler text', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_conversation': {'marker': '^', 'label': 'Rephrased as conversation', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_poem': {'marker': 'v', 'label': 'Rephrased as poem', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_replace_with_variables': {'marker': 'P', 'label': 'Replaced with variables', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_technical_terms_removed_1': {'marker': 'X', 'label': 'Technical terms removed', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_translated_farsi': {'marker': 'd', 'label': 'Translated', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_translated_german': {'marker': 'd', 'label': 'Translated', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_translated_korean': {'marker': 'd', 'label': 'Translated', 'size': 200, 'highlight': False},
+}
+for style in task_styles.values():
+    style['size'] = style['size'] / 3
+
+# Define filled tasks
+filled_tasks = {
+    'wmdp_bio',
+    'tinyMMLU',
+    'wmdp_bio_rephrased_english_filler',
+    'wmdp_bio_rephrased_hindi_filler'
 }
 
-# Create figure
-plt.figure(figsize=(12, 10))
-ax = plt.gca()
+# Create figure with additional space at the top for the task legend
+# fig = plt.figure(figsize=(15, 15))
+fig = plt.figure(figsize=(5, 6))
+
+# # Add the main plot with enough space at the top for the legend
+# # This uses a percentage of the figure - bottom 80%, leaving 20% at top for legend
+# main_ax = plt.axes([0.1, 0.1, 0.8, 0.8])
+
+gs = fig.add_gridspec(2, 1, height_ratios=[1, 4])
+task_legend_ax = fig.add_subplot(gs[0])
+main_ax = fig.add_subplot(gs[1])
+model_legend_ax = fig.add_subplot(gs[1])
+
+# Hide the legend axes frames
+task_legend_ax.axis('off')
+model_legend_ax.axis('off')
+plt.subplots_adjust(hspace=0.03)  # tighten vertical spacing
 
 # Diagonal reference line
-ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
+main_ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
 
 # Plot points
 for family in model_families:
@@ -185,80 +98,147 @@ for family in model_families:
 
     for _, row in merged.iterrows():
         task = row['task']
-        if task in task_styles:
-            style = task_styles[task]
+        if task not in task_styles:
+            continue
 
-            edge_color = "#999999"
-            highlight_edge = 'black'
-            ax.scatter(
-                row['adjusted_accuracy_base'],
-                row['adjusted_accuracy_elm'],
-                color=family['color'],
-                marker=style['marker'],
-                s=style.get('size', 100),
-                edgecolor=highlight_edge if style.get('highlight', False) else edge_color,
-                linewidth=2.5 if style.get('highlight', False) else 1.0,
-                alpha=0.9,
-                zorder=5 if style.get('highlight', False) else 4
+        style = task_styles[task]
+        is_filled = task in filled_tasks
+        is_highlight = style.get('highlight', False)
+
+        facecolor = family['color'] if is_filled else 'none'
+        edgecolor = 'black' if is_highlight else family['color']
+        linewidth = 2 if is_highlight else 1
+
+        main_ax.scatter(
+            row['adjusted_accuracy_base'],
+            row['adjusted_accuracy_elm'],
+            facecolor=facecolor,
+            edgecolor=edgecolor,
+            marker=style['marker'],
+            s=style.get('size', 100),
+            linewidth=linewidth,
+            alpha=0.9,
+            zorder=5 if is_highlight else 4
+        )
+
+        if task == 'wmdp_bio_rephrased_hindi_filler':
+            if family['name'] == 'Zephyr':
+                main_ax.text(
+                row['adjusted_accuracy_base'] + 0.006,
+                row['adjusted_accuracy_elm'] + 0.01,
+                'Hindi filler',
+                fontsize=11,
+                alpha=0.85
             )
-
-            # Annotate Hindi filler points
-            if task == 'wmdp_bio_rephrased_hindi_filler':
-                ax.text(
-                    row['adjusted_accuracy_base'] + 0.007,
-                    row['adjusted_accuracy_elm'] + 0.005,
-                    'Hindi filler text',
-                    fontsize=16,
+            else:
+                main_ax.text(
+                    row['adjusted_accuracy_base'] + 0.011,
+                    row['adjusted_accuracy_elm'] + 0.003,
+                    'Hindi filler',
+                    fontsize=11,
                     alpha=0.85
                 )
 
-
 # Axis labels
-ax.set_xlabel(r'Base model accuracy (adjusted)')
-ax.set_ylabel(r'Unlearned (ELM) model accuracy (adjusted)')
-ax.set_xlim(0, 0.55)
-ax.set_ylim(0, 0.55)
+main_ax.set_xlabel(r'Base Model Accuracy (Adjusted)')
+main_ax.set_ylabel(r'Unlearned (ELM) Model Accuracy (Adjusted)')
+main_ax.set_xlim(0, 0.6)
+main_ax.set_ylim(0, 0.6)
 
-# Model family legend
+# Grid
+main_ax.grid(True, linestyle='--', alpha=0.3)
+
+# Model family legend - Keep in original position
 model_legend = [
     Line2D([0], [0], marker='o', color=family['color'], label=family['name'],
-           linestyle='', markersize=14) for family in model_families
+           linestyle='', markersize=8) for family in model_families
 ]
 
-# De-duplicate task legend entries
-task_seen = set()
+# Task legend (preserve order and uniqueness)
+ordered_tasks = [
+    'tinyMMLU',
+    'wmdp_bio',
+    'wmdp_bio_rephrased_english_filler',
+    'wmdp_bio_rephrased_hindi_filler',
+    'wmdp_bio_rephrased_latin_filler'
+]
+seen_labels = set()
 task_legend = []
-for key, style in task_styles.items():
-    if style['label'] not in task_seen:
-        task_seen.add(style['label'])
-        task_legend.append( 
+
+# Helper to add a legend entry from a task key
+def add_task_legend_entry(task_key, label_override=None):
+    style = task_styles[task_key]
+    label = label_override if label_override else style['label']
+    if label in seen_labels:
+        return
+    seen_labels.add(label)
+    is_highlight = style.get('highlight', False)
+    facecolor = 'white' if is_highlight else '#999999'
+    edgecolor = 'black' if is_highlight else '#999999'
+    linewidth = 2.5 if is_highlight else 1.5
+
+    task_legend.append(
+        Line2D(
+            [0], [0],
+            marker=style['marker'],
+            markerfacecolor=facecolor if not is_highlight else 'white',
+            markeredgecolor=edgecolor,
+            markeredgewidth=linewidth,
+            linestyle='',
+            markersize=10,
+            label=label
+        )
+    )
+
+# Add legend items in the requested order
+add_task_legend_entry('tinyMMLU')  # MMLU
+add_task_legend_entry('wmdp_bio')  # Base prompt
+add_task_legend_entry('wmdp_bio_rephrased_hindi_filler', label_override='Knowledge retrieval')  # Highlighted
+add_task_legend_entry('wmdp_bio_rephrased_english_filler')  # Filler text
+
+# Add remaining task types not already seen
+for task_key, style in task_styles.items():
+    label = 'Knowledge retrieval' if task_key == 'wmdp_bio_rephrased_hindi_filler' else style['label']
+    if label not in seen_labels:
+        task_legend.append(
             Line2D(
                 [0], [0],
                 marker=style['marker'],
-                markerfacecolor=edge_color,
-                markeredgecolor=edge_color,
-                label=style['label'],
+                markerfacecolor='none',
+                markeredgecolor='#999999',
+                markeredgewidth=1.5,
                 linestyle='',
-                markersize=14
+                markersize=10,
+                label=label
             )
         )
+        seen_labels.add(label)
 
-
-# Extra legend for highlighted Hindi filler
-highlight_legend = Line2D(
-    [0], [0], marker='o', color=highlight_edge, markerfacecolor='white',
-    markeredgewidth=3, markersize=12, linestyle='', label='Knowledge retrieval'
+legend1 = model_legend_ax.legend(
+    handles=model_legend, 
+    title='Models', 
+    loc='upper left',
+    # bbox_to_anchor=(0.0, 1),  
+    columnspacing=0.5,
+    handletextpad=0.3,
+    handlelength=1.2,
+    borderaxespad=0.2,
 )
 
-# Add legends
-legend1 = ax.legend(handles=model_legend, title='Models', loc='upper left', bbox_to_anchor=(0, 1))
-legend2 = ax.legend(handles=task_legend + [highlight_legend], title='Tasks', loc='upper left', bbox_to_anchor=(0, 0.78))
-ax.add_artist(legend1)
+legend2 = task_legend_ax.legend(
+    handles=task_legend,
+    title='Tasks',
+    loc='lower right',
+    ncol=2,
+    frameon=True,
+    columnspacing=0.5,      # Reduce column gap
+    handletextpad=0.3,      # Reduce gap between marker and label
+    handlelength=1.2,       # Shorter marker length
+    borderaxespad=0.2 
+)
 
-# Grid and layout
-ax.grid(True, linestyle='--', alpha=0.3)
-plt.tight_layout()
+# Save figure
 plt.savefig('model_performance_comparison.pdf', bbox_inches='tight', dpi=300)
-plt.close()
+plt.show()
 
 print('Saved as: model_performance_comparison.pdf')
