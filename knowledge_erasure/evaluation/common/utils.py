@@ -16,7 +16,8 @@ choices = ["A", "B", "C", "D"]
 #     'data_translated_turkish', 'data_translated_telugu', 'data_translated_farsi'
 # ]
 data_directory_list = [
-    'data_translated_bengali'
+    'data_translated_bengali',
+    'data_translated_hindi',
 ]
 
 def load(ckpt_dir, peft_model, tokenizer_path):

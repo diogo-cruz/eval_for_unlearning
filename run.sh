@@ -11,7 +11,8 @@ fi
 if [ ! -d "lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased" ]; then
   echo "Copying wmdp_rephrased tasks to lm-evaluation-harness..."
   mkdir -p lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
-  cp -r custom_tasks/wmdp_lm_eval_tasks/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
+  # cp -r custom_tasks/wmdp_lm_eval_tasks/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
+  cp -r custom_tasks/wmdp_lm_eval_tasks_rmu_logit_analysis/* lm-evaluation-harness/lm_eval/tasks/wmdp_rephrased
 fi
 
 # export LOGLEVEL=DEBUG
