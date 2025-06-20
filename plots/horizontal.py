@@ -1,593 +1,489 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red131\green0\blue165;\red245\green245\blue245;\red0\green0\blue0;
-\red15\green112\blue1;\red144\green1\blue18;\red0\green0\blue255;\red19\green85\blue52;\red31\green99\blue128;
-\red86\green65\blue25;\red0\green0\blue109;}
-{\*\expandedcolortbl;;\cssrgb\c59216\c13725\c70588;\cssrgb\c96863\c96863\c96863;\cssrgb\c0\c0\c0;
-\cssrgb\c0\c50196\c0;\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c0\c100000;\cssrgb\c6667\c40000\c26667;\cssrgb\c14510\c46275\c57647;
-\cssrgb\c41569\c32157\c12941;\cssrgb\c0\c6275\c50196;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib.lines import Line2D
 
-\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 import\cf0 \strokec4  matplotlib.pyplot \cf2 \strokec2 as\cf0 \strokec4  plt\cb1 \
-\cf2 \cb3 \strokec2 import\cf0 \strokec4  numpy \cf2 \strokec2 as\cf0 \strokec4  np\cb1 \
-\cf2 \cb3 \strokec2 import\cf0 \strokec4  pandas \cf2 \strokec2 as\cf0 \strokec4  pd\cb1 \
-\cf2 \cb3 \strokec2 from\cf0 \strokec4  matplotlib.lines \cf2 \strokec2 import\cf0 \strokec4  Line2D\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Adjusted font sizes for better readability\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 plt.rcParams.update(\{\cb1 \
-\cb3     \cf6 \strokec6 "text.usetex"\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "font.family"\cf0 \strokec4 : \cf6 \strokec6 "serif"\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "font.serif"\cf0 \strokec4 : [\cf6 \strokec6 "Computer Modern Roman"\cf0 \strokec4 ],\cb1 \
-\cb3     \cf6 \strokec6 "font.size"\cf0 \strokec4 : \cf8 \strokec8 12\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "axes.titlesize"\cf0 \strokec4 : \cf8 \strokec8 14\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "axes.labelsize"\cf0 \strokec4 : \cf8 \strokec8 14\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "xtick.labelsize"\cf0 \strokec4 : \cf8 \strokec8 12\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "ytick.labelsize"\cf0 \strokec4 : \cf8 \strokec8 12\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 "legend.fontsize"\cf0 \strokec4 : \cf8 \strokec8 12\cf0 \cb1 \strokec4 \
-\cb3 \})\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Read CSV from external file\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 df = pd.read_csv(\cf6 \strokec6 'models.csv'\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Adjust accuracy\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 df[\cf6 \strokec6 'adjusted_accuracy'\cf0 \strokec4 ] = df[\cf6 \strokec6 'accuracy'\cf0 \strokec4 ] - \cf8 \strokec8 0.25\cf0 \cb1 \strokec4 \
-\cb3 df[\cf6 \strokec6 'adjusted_accuracy'\cf0 \strokec4 ] = df[\cf6 \strokec6 'adjusted_accuracy'\cf0 \strokec4 ].clip(lower=\cf8 \strokec8 0\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Define model families\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 model_families = [\cb1 \
-\cb3     \{\cf6 \strokec6 'name'\cf0 \strokec4 : \cf6 \strokec6 'Zephyr'\cf0 \strokec4 , \cf6 \strokec6 'base'\cf0 \strokec4 : \cf6 \strokec6 'Zephyr_7B_Beta'\cf0 \strokec4 , \cf6 \strokec6 'elm'\cf0 \strokec4 : \cf6 \strokec6 'Zephyr-7B-ELM'\cf0 \strokec4 , \cf6 \strokec6 'color'\cf0 \strokec4 : \cf6 \strokec6 '#0072B2'\cf0 \strokec4 \},\cb1 \
-\cb3     \{\cf6 \strokec6 'name'\cf0 \strokec4 : \cf6 \strokec6 'Mistral'\cf0 \strokec4 , \cf6 \strokec6 'base'\cf0 \strokec4 : \cf6 \strokec6 'Mistral-7B-v0.1'\cf0 \strokec4 , \cf6 \strokec6 'elm'\cf0 \strokec4 : \cf6 \strokec6 'Mistral-7B-ELM'\cf0 \strokec4 , \cf6 \strokec6 'color'\cf0 \strokec4 : \cf6 \strokec6 '#D55E00'\cf0 \strokec4 \},\cb1 \
-\cb3     \{\cf6 \strokec6 'name'\cf0 \strokec4 : \cf6 \strokec6 'Llama3-8B'\cf0 \strokec4 , \cf6 \strokec6 'base'\cf0 \strokec4 : \cf6 \strokec6 'Llama3-8B'\cf0 \strokec4 , \cf6 \strokec6 'elm'\cf0 \strokec4 : \cf6 \strokec6 'Llama3-8B-ELM'\cf0 \strokec4 , \cf6 \strokec6 'color'\cf0 \strokec4 : \cf6 \strokec6 '#009E73'\cf0 \strokec4 \},\cb1 \
-\cb3     \{\cf6 \strokec6 'name'\cf0 \strokec4 : \cf6 \strokec6 'Llama3-8B-Instruct'\cf0 \strokec4 , \cf6 \strokec6 'base'\cf0 \strokec4 : \cf6 \strokec6 'Llama3-8B-Instruct'\cf0 \strokec4 , \cf6 \strokec6 'elm'\cf0 \strokec4 : \cf6 \strokec6 'Llama3-8B-Instruct-ELM'\cf0 \strokec4 , \cf6 \strokec6 'color'\cf0 \strokec4 : \cf6 \strokec6 '#CC79A7'\cf0 \strokec4 \},\cb1 \
-\cb3 ]\cb1 \
-\
-\cb3 task_styles = \{\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 's'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Base prompt'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 300\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 '*'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 375\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_english_filler'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'o'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Filler text'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'o'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Filler text'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 True\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_latin_filler'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'o'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Filler text'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_conversation'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 '^'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Rephrased as conversation'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_poem'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'v'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Rephrased as poem'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_replace_with_variables'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'P'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Replaced with variables'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_technical_terms_removed_1'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'X'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Technical terms removed'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_translated_farsi'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'd'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Translated'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_translated_german'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'd'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Translated'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_translated_korean'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'd'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Translated'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3 \}\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  style \cf7 \strokec7 in\cf0 \strokec4  task_styles.values():\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     style[\cf6 \strokec6 'size'\cf0 \strokec4 ] = style[\cf6 \strokec6 'size'\cf0 \strokec4 ] / \cf8 \strokec8 3\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Define filled tasks\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 filled_tasks = \{\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_english_filler'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \cb1 \strokec4 \
-\cb3 \}\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Create figure with additional space at the top for the task legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # fig = plt.figure(figsize=(5.4, 12))\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # # # Add the main plot with enough space at the top for the legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # # # This uses a percentage of the figure - bottom 80%, leaving 20% at top for legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # # main_ax = plt.axes([0.1, 0.1, 0.8, 0.8])\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # gs = fig.add_gridspec(4, 1, height_ratios=[1, 4, .8, 4])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_ax = fig.add_subplot(gs[0])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # main_ax = fig.add_subplot(gs[1])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # model_legend_ax = fig.add_subplot(gs[1])\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # ax2 = fig.add_subplot(gs[2])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # ax2.axis("off")  # This is just for spacing\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # # Hide the legend axes frames\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_ax.axis('off')\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # model_legend_ax.axis('off')\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # plt.subplots_adjust(hspace=0.03)  # tighten vertical spacing\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 fig = plt.figure(figsize=(\cf8 \strokec8 14\cf0 \strokec4 , \cf8 \strokec8 10\cf0 \strokec4 ))\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # # Add the main plot with enough space at the top for the legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # # This uses a percentage of the figure - bottom 80%, leaving 20% at top for legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # main_ax = plt.axes([0.1, 0.1, 0.8, 0.8])\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 gs = fig.add_gridspec(\cf8 \strokec8 2\cf0 \strokec4 , \cf8 \strokec8 2\cf0 \strokec4 , height_ratios=[\cf8 \strokec8 1\cf0 \strokec4 , \cf8 \strokec8 4\cf0 \strokec4 ])\cb1 \
-\cb3 task_legend_ax = fig.add_subplot(gs[\cf8 \strokec8 0\cf0 \strokec4 ,:])\cb1 \
-\cb3 main_ax = fig.add_subplot(gs[\cf8 \strokec8 1\cf0 \strokec4 ,\cf8 \strokec8 0\cf0 \strokec4 ])\cb1 \
-\cb3 model_legend_ax = fig.add_subplot(gs[\cf8 \strokec8 1\cf0 \strokec4 ,\cf8 \strokec8 0\cf0 \strokec4 ])\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # ax2 = fig.add_subplot(gs[2])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # ax2.axis("off")  # This is just for spacing\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # Hide the legend axes frames\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 task_legend_ax.axis(\cf6 \strokec6 'off'\cf0 \strokec4 )\cb1 \
-\cb3 model_legend_ax.axis(\cf6 \strokec6 'off'\cf0 \strokec4 )\cb1 \
-\cb3 plt.subplots_adjust(hspace=\cf8 \strokec8 0.03\cf0 \strokec4 )  \cf5 \strokec5 # tighten vertical spacing\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Diagonal reference line\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 main_ax.plot([\cf8 \strokec8 0\cf0 \strokec4 , \cf8 \strokec8 1\cf0 \strokec4 ], [\cf8 \strokec8 0\cf0 \strokec4 , \cf8 \strokec8 1\cf0 \strokec4 ], \cf6 \strokec6 'k--'\cf0 \strokec4 , alpha=\cf8 \strokec8 0.3\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Plot points\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  family \cf7 \strokec7 in\cf0 \strokec4  model_families:\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     base_data = df[df[\cf6 \strokec6 'model'\cf0 \strokec4 ] == family[\cf6 \strokec6 'base'\cf0 \strokec4 ]]\cb1 \
-\cb3     elm_data = df[df[\cf6 \strokec6 'model'\cf0 \strokec4 ] == family[\cf6 \strokec6 'elm'\cf0 \strokec4 ]]\cb1 \
-\cb3     merged = pd.merge(base_data, elm_data, on=\cf6 \strokec6 'task'\cf0 \strokec4 , suffixes=(\cf6 \strokec6 '_base'\cf0 \strokec4 , \cf6 \strokec6 '_elm'\cf0 \strokec4 ))\cb1 \
-\
-\cb3     \cf2 \strokec2 for\cf0 \strokec4  _, row \cf7 \strokec7 in\cf0 \strokec4  merged.iterrows():\cb1 \
-\cb3         task = row[\cf6 \strokec6 'task'\cf0 \strokec4 ]\cb1 \
-\cb3         \cf2 \strokec2 if\cf0 \strokec4  task \cf7 \strokec7 not\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  task_styles:\cb1 \
-\cb3             \cf2 \strokec2 continue\cf0 \cb1 \strokec4 \
-\
-\cb3         style = task_styles[task]\cb1 \
-\cb3         is_filled = task \cf7 \strokec7 in\cf0 \strokec4  filled_tasks\cb1 \
-\cb3         is_highlight = style.get(\cf6 \strokec6 'highlight'\cf0 \strokec4 , \cf7 \strokec7 False\cf0 \strokec4 )\cb1 \
-\
-\cb3         facecolor = family[\cf6 \strokec6 'color'\cf0 \strokec4 ] \cf2 \strokec2 if\cf0 \strokec4  is_filled \cf2 \strokec2 else\cf0 \strokec4  \cf6 \strokec6 'none'\cf0 \cb1 \strokec4 \
-\cb3         edgecolor = \cf6 \strokec6 'black'\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  family[\cf6 \strokec6 'color'\cf0 \strokec4 ]\cb1 \
-\cb3         linewidth = \cf8 \strokec8 2\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf8 \strokec8 1\cf0 \cb1 \strokec4 \
-\
-\cb3         main_ax.scatter(\cb1 \
-\cb3             row[\cf6 \strokec6 'adjusted_accuracy_base'\cf0 \strokec4 ],\cb1 \
-\cb3             row[\cf6 \strokec6 'adjusted_accuracy_elm'\cf0 \strokec4 ],\cb1 \
-\cb3             facecolor=facecolor,\cb1 \
-\cb3             edgecolor=edgecolor,\cb1 \
-\cb3             marker=style[\cf6 \strokec6 'marker'\cf0 \strokec4 ],\cb1 \
-\cb3             s=style.get(\cf6 \strokec6 'size'\cf0 \strokec4 , \cf8 \strokec8 100\cf0 \strokec4 ),\cb1 \
-\cb3             linewidth=linewidth,\cb1 \
-\cb3             alpha=\cf8 \strokec8 0.9\cf0 \strokec4 ,\cb1 \
-\cb3             zorder=\cf8 \strokec8 5\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf8 \strokec8 4\cf0 \cb1 \strokec4 \
-\cb3         )\cb1 \
-\
-\cb3         \cf2 \strokec2 if\cf0 \strokec4  task == \cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \strokec4 :\cb1 \
-\cb3             \cf2 \strokec2 if\cf0 \strokec4  family[\cf6 \strokec6 'name'\cf0 \strokec4 ] == \cf6 \strokec6 'Zephyr'\cf0 \strokec4 :\cb1 \
-\cb3                 main_ax.text(\cb1 \
-\cb3                 row[\cf6 \strokec6 'adjusted_accuracy_base'\cf0 \strokec4 ] + \cf8 \strokec8 0.006\cf0 \strokec4 ,\cb1 \
-\cb3                 row[\cf6 \strokec6 'adjusted_accuracy_elm'\cf0 \strokec4 ] + \cf8 \strokec8 0.01\cf0 \strokec4 ,\cb1 \
-\cb3                 \cf6 \strokec6 'Hindi filler'\cf0 \strokec4 ,\cb1 \
-\cb3                 fontsize=\cf8 \strokec8 11\cf0 \strokec4 ,\cb1 \
-\cb3                 alpha=\cf8 \strokec8 0.85\cf0 \cb1 \strokec4 \
-\cb3             )\cb1 \
-\cb3             \cf2 \strokec2 else\cf0 \strokec4 :\cb1 \
-\cb3                 main_ax.text(\cb1 \
-\cb3                     row[\cf6 \strokec6 'adjusted_accuracy_base'\cf0 \strokec4 ] + \cf8 \strokec8 0.011\cf0 \strokec4 ,\cb1 \
-\cb3                     row[\cf6 \strokec6 'adjusted_accuracy_elm'\cf0 \strokec4 ] + \cf8 \strokec8 0.003\cf0 \strokec4 ,\cb1 \
-\cb3                     \cf6 \strokec6 'Hindi filler'\cf0 \strokec4 ,\cb1 \
-\cb3                     fontsize=\cf8 \strokec8 11\cf0 \strokec4 ,\cb1 \
-\cb3                     alpha=\cf8 \strokec8 0.85\cf0 \cb1 \strokec4 \
-\cb3                 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Axis labels\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 main_ax.set_xlabel(r\cf6 \strokec6 'Base Model Accuracy (Adjusted)'\cf0 \strokec4 )\cb1 \
-\cb3 main_ax.set_ylabel(r\cf6 \strokec6 'Unlearned (ELM) Model Accuracy (Adjusted)'\cf0 \strokec4 )\cb1 \
-\cb3 main_ax.set_xlim(\cf8 \strokec8 0\cf0 \strokec4 , \cf8 \strokec8 0.6\cf0 \strokec4 )\cb1 \
-\cb3 main_ax.set_ylim(\cf8 \strokec8 0\cf0 \strokec4 , \cf8 \strokec8 0.6\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Grid\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 main_ax.grid(\cf7 \strokec7 True\cf0 \strokec4 , linestyle=\cf6 \strokec6 '--'\cf0 \strokec4 , alpha=\cf8 \strokec8 0.3\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Model family legend - Keep in original position\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 model_legend = [\cb1 \
-\cb3     Line2D([\cf8 \strokec8 0\cf0 \strokec4 ], [\cf8 \strokec8 0\cf0 \strokec4 ], marker=\cf6 \strokec6 'o'\cf0 \strokec4 , color=family[\cf6 \strokec6 'color'\cf0 \strokec4 ], label=family[\cf6 \strokec6 'name'\cf0 \strokec4 ],\cb1 \
-\cb3            linestyle=\cf6 \strokec6 ''\cf0 \strokec4 , markersize=\cf8 \strokec8 8\cf0 \strokec4 ) \cf2 \strokec2 for\cf0 \strokec4  family \cf7 \strokec7 in\cf0 \strokec4  model_families\cb1 \
-\cb3 ]\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Task legend (preserve order and uniqueness)\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 ordered_tasks = [\cb1 \
-\cb3     \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_english_filler'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_latin_filler'\cf0 \cb1 \strokec4 \
-\cb3 ]\cb1 \
-\cb3 seen_labels = \cf9 \strokec9 set\cf0 \strokec4 ()\cb1 \
-\cb3 task_legend = []\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Helper to add a legend entry from a task key\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 def\cf0 \strokec4  \cf10 \strokec10 add_task_legend_entry\cf0 \strokec4 (\cf11 \strokec11 task_key\cf0 \strokec4 , \cf11 \strokec11 label_override\cf0 \strokec4 =\cf7 \strokec7 None\cf0 \strokec4 ):\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     style = task_styles[task_key]\cb1 \
-\cb3     label = label_override \cf2 \strokec2 if\cf0 \strokec4  label_override \cf2 \strokec2 else\cf0 \strokec4  style[\cf6 \strokec6 'label'\cf0 \strokec4 ]\cb1 \
-\cb3     \cf2 \strokec2 if\cf0 \strokec4  label \cf7 \strokec7 in\cf0 \strokec4  seen_labels:\cb1 \
-\cb3         \cf2 \strokec2 return\cf0 \cb1 \strokec4 \
-\cb3     seen_labels.add(label)\cb1 \
-\cb3     is_highlight = style.get(\cf6 \strokec6 'highlight'\cf0 \strokec4 , \cf7 \strokec7 False\cf0 \strokec4 )\cb1 \
-\cb3     facecolor = \cf6 \strokec6 'white'\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf6 \strokec6 '#999999'\cf0 \cb1 \strokec4 \
-\cb3     edgecolor = \cf6 \strokec6 'black'\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf6 \strokec6 '#999999'\cf0 \cb1 \strokec4 \
-\cb3     linewidth = \cf8 \strokec8 2.5\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf8 \strokec8 1.5\cf0 \cb1 \strokec4 \
-\
-\cb3     task_legend.append(\cb1 \
-\cb3         Line2D(\cb1 \
-\cb3             [\cf8 \strokec8 0\cf0 \strokec4 ], [\cf8 \strokec8 0\cf0 \strokec4 ],\cb1 \
-\cb3             marker=style[\cf6 \strokec6 'marker'\cf0 \strokec4 ],\cb1 \
-\cb3             markerfacecolor=facecolor \cf2 \strokec2 if\cf0 \strokec4  \cf7 \strokec7 not\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf6 \strokec6 'white'\cf0 \strokec4 ,\cb1 \
-\cb3             markeredgecolor=edgecolor,\cb1 \
-\cb3             markeredgewidth=linewidth,\cb1 \
-\cb3             linestyle=\cf6 \strokec6 ''\cf0 \strokec4 ,\cb1 \
-\cb3             markersize=\cf8 \strokec8 10\cf0 \strokec4 ,\cb1 \
-\cb3             label=label\cb1 \
-\cb3         )\cb1 \
-\cb3     )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Add legend items in the requested order\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 add_task_legend_entry(\cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 )  \cf5 \strokec5 # MMLU\cf0 \cb1 \strokec4 \
-\cb3 add_task_legend_entry(\cf6 \strokec6 'wmdp_bio'\cf0 \strokec4 )  \cf5 \strokec5 # Base prompt\cf0 \cb1 \strokec4 \
-\cb3 add_task_legend_entry(\cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \strokec4 , label_override=\cf6 \strokec6 'Knowledge retrieval'\cf0 \strokec4 )  \cf5 \strokec5 # Highlighted\cf0 \cb1 \strokec4 \
-\cb3 add_task_legend_entry(\cf6 \strokec6 'wmdp_bio_rephrased_english_filler'\cf0 \strokec4 )  \cf5 \strokec5 # Filler text\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Add remaining task types not already seen\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  task_key, style \cf7 \strokec7 in\cf0 \strokec4  task_styles.items():\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     label = \cf6 \strokec6 'Knowledge retrieval'\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  task_key == \cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \strokec4  \cf2 \strokec2 else\cf0 \strokec4  style[\cf6 \strokec6 'label'\cf0 \strokec4 ]\cb1 \
-\cb3     \cf2 \strokec2 if\cf0 \strokec4  label \cf7 \strokec7 not\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  seen_labels:\cb1 \
-\cb3         task_legend.append(\cb1 \
-\cb3             Line2D(\cb1 \
-\cb3                 [\cf8 \strokec8 0\cf0 \strokec4 ], [\cf8 \strokec8 0\cf0 \strokec4 ],\cb1 \
-\cb3                 marker=style[\cf6 \strokec6 'marker'\cf0 \strokec4 ],\cb1 \
-\cb3                 markerfacecolor=\cf6 \strokec6 'none'\cf0 \strokec4 ,\cb1 \
-\cb3                 markeredgecolor=\cf6 \strokec6 '#999999'\cf0 \strokec4 ,\cb1 \
-\cb3                 markeredgewidth=\cf8 \strokec8 1.5\cf0 \strokec4 ,\cb1 \
-\cb3                 linestyle=\cf6 \strokec6 ''\cf0 \strokec4 ,\cb1 \
-\cb3                 markersize=\cf8 \strokec8 10\cf0 \strokec4 ,\cb1 \
-\cb3                 label=label\cb1 \
-\cb3             )\cb1 \
-\cb3         )\cb1 \
-\cb3         seen_labels.add(label)\cb1 \
-\
-\cb3 legend1 = model_legend_ax.legend(\cb1 \
-\cb3     handles=model_legend, \cb1 \
-\cb3     title=\cf6 \strokec6 'Models'\cf0 \strokec4 , \cb1 \
-\cb3     loc=\cf6 \strokec6 'upper left'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf5 \strokec5 # bbox_to_anchor=(0.0, 1),  \cf0 \cb1 \strokec4 \
-\cb3     columnspacing=\cf8 \strokec8 0.5\cf0 \strokec4 ,\cb1 \
-\cb3     handletextpad=\cf8 \strokec8 0.3\cf0 \strokec4 ,\cb1 \
-\cb3     handlelength=\cf8 \strokec8 1.2\cf0 \strokec4 ,\cb1 \
-\cb3     borderaxespad=\cf8 \strokec8 0.2\cf0 \strokec4 ,\cb1 \
-\cb3 )\cb1 \
-\
-\cb3 legend2 = task_legend_ax.legend(\cb1 \
-\cb3     handles=task_legend,\cb1 \
-\cb3     title=\cf6 \strokec6 'Tasks'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf5 \strokec5 # loc='lower right',\cf0 \cb1 \strokec4 \
-\cb3     loc=\cf6 \strokec6 'center'\cf0 \strokec4 ,\cb1 \
-\cb3     ncol=\cf8 \strokec8 2\cf0 \strokec4 ,\cb1 \
-\cb3     frameon=\cf7 \strokec7 True\cf0 \strokec4 ,\cb1 \
-\cb3     columnspacing=\cf8 \strokec8 0.5\cf0 \strokec4 ,      \cf5 \strokec5 # Reduce column gap\cf0 \cb1 \strokec4 \
-\cb3     handletextpad=\cf8 \strokec8 0.3\cf0 \strokec4 ,      \cf5 \strokec5 # Reduce gap between marker and label\cf0 \cb1 \strokec4 \
-\cb3     handlelength=\cf8 \strokec8 1.2\cf0 \strokec4 ,       \cf5 \strokec5 # Shorter marker length\cf0 \cb1 \strokec4 \
-\cb3     borderaxespad=\cf8 \strokec8 0.2\cf0 \strokec4  \cb1 \
-\cb3 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # # Save figure\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # plt.savefig('model_performance_comparison.pdf', bbox_inches='tight', dpi=300)\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # plt.show()\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # print('Saved as: model_performance_comparison.pdf')\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # Read CSV from file\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 df = pd.read_csv(\cf6 \strokec6 'unlearning_method_comparison.csv'\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Define method name mapping\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 method_name_map = \{\cb1 \
-\cb3     \cf6 \strokec6 'tar'\cf0 \strokec4 : \cf6 \strokec6 'TAR'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'graddiff'\cf0 \strokec4 : \cf6 \strokec6 'GradDiff'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'repnoise'\cf0 \strokec4 : \cf6 \strokec6 'RepNoise'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'elm'\cf0 \strokec4 : \cf6 \strokec6 'ELM'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'rmu-lat'\cf0 \strokec4 : \cf6 \strokec6 'RMU+LAT'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'rmu'\cf0 \strokec4 : \cf6 \strokec6 'RMU'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'pbj'\cf0 \strokec4 : \cf6 \strokec6 'PBJ'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'rr'\cf0 \strokec4 : \cf6 \strokec6 'RR'\cf0 \cb1 \strokec4 \
-\cb3 \}\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Extract base model data\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 base_model_data = df[df[\cf6 \strokec6 'model'\cf0 \strokec4 ] == \cf6 \strokec6 'Llama3-8B-Instruct'\cf0 \strokec4 ]\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Process unlearning models data\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 unlearning_models = []\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  method_key, method_name \cf7 \strokec7 in\cf0 \strokec4  method_name_map.items():\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     model_name = \cf7 \strokec7 f\cf6 \strokec6 "LLM-GAT__llama-3-8b-instruct-\cf0 \strokec4 \{method_key\}\cf6 \strokec6 -checkpoint-8"\cf0 \cb1 \strokec4 \
-\cb3     \cf2 \strokec2 if\cf0 \strokec4  model_name \cf7 \strokec7 in\cf0 \strokec4  df[\cf6 \strokec6 'model'\cf0 \strokec4 ].values:\cb1 \
-\cb3         unlearning_models.append(\{\cb1 \
-\cb3             \cf6 \strokec6 'name'\cf0 \strokec4 : method_name,\cb1 \
-\cb3             \cf6 \strokec6 'model'\cf0 \strokec4 : model_name,\cb1 \
-\cb3             \cf6 \strokec6 'color'\cf0 \strokec4 : \cf7 \strokec7 None\cf0 \strokec4   \cf5 \strokec5 # Will be assigned later\cf0 \cb1 \strokec4 \
-\cb3         \})\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Wong's colorblind-friendly palette\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 colors = [\cb1 \
-\cb3     \cf6 \strokec6 '#882255'\cf0 \strokec4 ,  \cf5 \strokec5 # Burgundy\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#56B4E9'\cf0 \strokec4 ,  \cf5 \strokec5 # Sky Blue\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#E69F00'\cf0 \strokec4 ,  \cf5 \strokec5 # Orange\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#009E73'\cf0 \strokec4 ,  \cf5 \strokec5 # Teal\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#332288'\cf0 \strokec4 ,  \cf5 \strokec5 # Indigo\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#AA7700'\cf0 \strokec4 ,  \cf5 \strokec5 # Dark Gold\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#555555'\cf0 \strokec4 ,  \cf5 \strokec5 # Dark Gray\cf0 \cb1 \strokec4 \
-\cb3     \cf6 \strokec6 '#CC79A7'\cf0 \strokec4 ,  \cf5 \strokec5 # Violet\cf0 \cb1 \strokec4 \
-\cb3 ]\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Assign colors to models\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  i, model \cf7 \strokec7 in\cf0 \strokec4  \cf10 \strokec10 enumerate\cf0 \strokec4 (unlearning_models):\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     model[\cf6 \strokec6 'color'\cf0 \strokec4 ] = colors[i % \cf10 \strokec10 len\cf0 \strokec4 (colors)]\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Define task styles\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 task_styles = \{\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 's'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Base prompt'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 '*'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 200\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_english_filler'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'o'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Filler text'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_hindi_filler'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'o'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Filler text'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_latin_filler'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'o'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Filler text'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_conversation'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 '^'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Rephrased as conversation'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_poem'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'v'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Rephrased as poem'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_replace_with_variables'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'P'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Replaced with variables'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_technical_terms_removed_1'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'X'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Technical terms removed'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_translated_farsi'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'd'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Translated'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_translated_german'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'd'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Translated'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio_rephrased_translated_korean'\cf0 \strokec4 : \{\cf6 \strokec6 'marker'\cf0 \strokec4 : \cf6 \strokec6 'd'\cf0 \strokec4 , \cf6 \strokec6 'label'\cf0 \strokec4 : \cf6 \strokec6 'Translated'\cf0 \strokec4 , \cf6 \strokec6 'size'\cf0 \strokec4 : \cf8 \strokec8 150\cf0 \strokec4 , \cf6 \strokec6 'highlight'\cf0 \strokec4 : \cf7 \strokec7 False\cf0 \strokec4 \},\cb1 \
-\cb3 \}\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  style \cf7 \strokec7 in\cf0 \strokec4  task_styles.values():\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     style[\cf6 \strokec6 'size'\cf0 \strokec4 ] = style[\cf6 \strokec6 'size'\cf0 \strokec4 ] / \cf8 \strokec8 3\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Define filled tasks\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 filled_tasks = \{\cb1 \
-\cb3     \cf6 \strokec6 'wmdp_bio'\cf0 \strokec4 ,\cb1 \
-\cb3     \cf6 \strokec6 'tinyMMLU'\cf0 \strokec4 ,\cb1 \
-\cb3 \}\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Create figure with space for stacked legends and plot\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # fig = plt.figure(figsize=(5.4, 6))\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # fig = plt.figure(figsize=(5.4, 5.4))\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # Create a gridspec layout with space for legends above\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # gs = fig.add_gridspec(3, 1, height_ratios=[1, 1, 6])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_ax = fig.add_subplot(gs[0])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # method_legend_ax = fig.add_subplot(gs[1])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # ax = fig.add_subplot(gs[2])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # gs = fig.add_gridspec(2, 1, height_ratios=[1, 4])\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_ax = fig.add_subplot(gs[0])\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 ax = fig.add_subplot(gs[\cf8 \strokec8 1\cf0 \strokec4 ,\cf8 \strokec8 1\cf0 \strokec4 ])\cb1 \
-\cb3 method_legend_ax = fig.add_subplot(gs[\cf8 \strokec8 1\cf0 \strokec4 ,\cf8 \strokec8 1\cf0 \strokec4 ])\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Hide the legend axes frames\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_ax.axis('off')\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 method_legend_ax.axis(\cf6 \strokec6 'off'\cf0 \strokec4 )\cb1 \
-\cb3 plt.subplots_adjust(hspace=\cf8 \strokec8 0.03\cf0 \strokec4 )  \cf5 \strokec5 # tighten vertical spacing\cf0 \cb1 \strokec4 \
-\
-\cb3 adjustment_factor = \cf8 \strokec8 0.25\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Plot points\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 for\cf0 \strokec4  model \cf7 \strokec7 in\cf0 \strokec4  unlearning_models:\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     model_data = df[df[\cf6 \strokec6 'model'\cf0 \strokec4 ] == model[\cf6 \strokec6 'model'\cf0 \strokec4 ]]\cb1 \
-\cb3     \cb1 \
-\cb3     \cf2 \strokec2 for\cf0 \strokec4  _, model_row \cf7 \strokec7 in\cf0 \strokec4  model_data.iterrows():\cb1 \
-\cb3         task = model_row[\cf6 \strokec6 'task'\cf0 \strokec4 ]\cb1 \
-\cb3         \cf2 \strokec2 if\cf0 \strokec4  task \cf7 \strokec7 not\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  task_styles:\cb1 \
-\cb3             \cf2 \strokec2 continue\cf0 \cb1 \strokec4 \
-\cb3             \cb1 \
-\cb3         \cf5 \strokec5 # Find corresponding base model accuracy for this task\cf0 \cb1 \strokec4 \
-\cb3         base_row = base_model_data[base_model_data[\cf6 \strokec6 'task'\cf0 \strokec4 ] == task]\cb1 \
-\cb3         \cf2 \strokec2 if\cf0 \strokec4  \cf10 \strokec10 len\cf0 \strokec4 (base_row) == \cf8 \strokec8 0\cf0 \strokec4 :\cb1 \
-\cb3             \cf2 \strokec2 continue\cf0 \cb1 \strokec4 \
-\cb3             \cb1 \
-\cb3         base_accuracy = base_row[\cf6 \strokec6 'accuracy'\cf0 \strokec4 ].values[\cf8 \strokec8 0\cf0 \strokec4 ] - adjustment_factor\cb1 \
-\cb3         model_accuracy = model_row[\cf6 \strokec6 'accuracy'\cf0 \strokec4 ] - adjustment_factor\cb1 \
-\cb3         \cb1 \
-\cb3         \cf5 \strokec5 # Skip if adjusted accuracy is negative\cf0 \cb1 \strokec4 \
-\cb3         \cf2 \strokec2 if\cf0 \strokec4  base_accuracy <= \cf8 \strokec8 0\cf0 \strokec4  \cf7 \strokec7 or\cf0 \strokec4  model_accuracy <= \cf8 \strokec8 0\cf0 \strokec4 :\cb1 \
-\cb3             \cf2 \strokec2 continue\cf0 \cb1 \strokec4 \
-\cb3             \cb1 \
-\cb3         style = task_styles[task]\cb1 \
-\cb3         is_filled = task \cf7 \strokec7 in\cf0 \strokec4  filled_tasks\cb1 \
-\cb3         is_highlight = style.get(\cf6 \strokec6 'highlight'\cf0 \strokec4 , \cf7 \strokec7 False\cf0 \strokec4 )\cb1 \
-\cb3         \cb1 \
-\cb3         facecolor = model[\cf6 \strokec6 'color'\cf0 \strokec4 ] \cf2 \strokec2 if\cf0 \strokec4  is_filled \cf2 \strokec2 else\cf0 \strokec4  \cf6 \strokec6 'none'\cf0 \cb1 \strokec4 \
-\cb3         edgecolor = \cf6 \strokec6 'black'\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  model[\cf6 \strokec6 'color'\cf0 \strokec4 ]\cb1 \
-\cb3         linewidth = \cf8 \strokec8 1\cf0 \cb1 \strokec4 \
-\cb3         \cb1 \
-\cb3         \cf5 \strokec5 # Add scatter point\cf0 \cb1 \strokec4 \
-\cb3         ax.scatter(\cb1 \
-\cb3             base_accuracy,\cb1 \
-\cb3             model_accuracy,\cb1 \
-\cb3             facecolor=facecolor,\cb1 \
-\cb3             edgecolor=edgecolor,\cb1 \
-\cb3             marker=style[\cf6 \strokec6 'marker'\cf0 \strokec4 ],\cb1 \
-\cb3             s=style[\cf6 \strokec6 'size'\cf0 \strokec4 ],\cb1 \
-\cb3             linewidth=linewidth,\cb1 \
-\cb3             alpha=\cf8 \strokec8 0.9\cf0 \strokec4 ,\cb1 \
-\cb3             zorder=\cf8 \strokec8 5\cf0 \strokec4  \cf2 \strokec2 if\cf0 \strokec4  is_highlight \cf2 \strokec2 else\cf0 \strokec4  \cf8 \strokec8 4\cf0 \cb1 \strokec4 \
-\cb3         )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Add diagonal reference line\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 ax.plot([\cf8 \strokec8 -.01\cf0 \strokec4 , \cf8 \strokec8 1\cf0 \strokec4 ], [\cf8 \strokec8 -.01\cf0 \strokec4 , \cf8 \strokec8 1\cf0 \strokec4 ], \cf6 \strokec6 'k--'\cf0 \strokec4 , alpha=\cf8 \strokec8 0.3\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Set labels and title\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 ax.set_xlabel(\cf6 \strokec6 'Base Model (Llama3-8B-Instruct) Accuracy (Adjusted)'\cf0 \strokec4 )\cb1 \
-\cb3 ax.set_ylabel(\cf6 \strokec6 'Unlearned Model Accuracy (Adjusted)'\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Set axis limits to 0.75 for both axes\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 ax.set_xlim(\cf8 \strokec8 -.01\cf0 \strokec4 , \cf8 \strokec8 0.5\cf0 \strokec4 )\cb1 \
-\cb3 ax.set_ylim(\cf8 \strokec8 -.01\cf0 \strokec4 , \cf8 \strokec8 0.5\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Add grid\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 ax.grid(\cf7 \strokec7 True\cf0 \strokec4 , linestyle=\cf6 \strokec6 '--'\cf0 \strokec4 , alpha=\cf8 \strokec8 0.3\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Create model legend\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 model_legend_handles = [\cb1 \
-\cb3     Line2D([\cf8 \strokec8 0\cf0 \strokec4 ], [\cf8 \strokec8 0\cf0 \strokec4 ], marker=\cf6 \strokec6 'o'\cf0 \strokec4 , color=model[\cf6 \strokec6 'color'\cf0 \strokec4 ], label=model[\cf6 \strokec6 'name'\cf0 \strokec4 ],\cb1 \
-\cb3            linestyle=\cf6 \strokec6 ''\cf0 \strokec4 , markersize=\cf8 \strokec8 8\cf0 \strokec4 ) \cf2 \strokec2 for\cf0 \strokec4  model \cf7 \strokec7 in\cf0 \strokec4  unlearning_models\cb1 \
-\cb3 ]\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # # Create task legend with priority for tinyMMLU\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_handles = []\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # # First add tinyMMLU to legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # tinyMMLU_style = task_styles['tinyMMLU']\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend_handles.append(\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     Line2D(\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         [0], [0],\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         marker=tinyMMLU_style['marker'],\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         markerfacecolor='#999999' if 'tinyMMLU' in filled_tasks else 'none',\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         markeredgecolor='black' if tinyMMLU_style.get('highlight', False) else '#999999',\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         markeredgewidth=1.5,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         linestyle='',\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         markersize=10,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         label=tinyMMLU_style['label']\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     )\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # )\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # # Add all other task styles to legend\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # seen_labels = \{tinyMMLU_style['label']\}  # Initialize with tinyMMLU already added\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # for key, style in task_styles.items():\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     if key == 'tinyMMLU':  # Skip tinyMMLU as it's already added\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         continue\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3         \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 #     label = style['label']\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     if label not in seen_labels:\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         seen_labels.add(label)\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         is_highlight = style.get('highlight', False)\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3         \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 #         # Use proper styling for legend items\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         facecolor = 'none'  # Most markers are not filled\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         if key in filled_tasks:\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #             facecolor = '#999999'  # Use gray for filled markers in legend\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3         \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 #         edgecolor = 'black' if is_highlight else '#999999'\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         linewidth = 1.5\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3         \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 #         task_legend_handles.append(\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #             Line2D(\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 [0], [0],\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 marker=style['marker'],\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 markerfacecolor=facecolor,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 markeredgecolor=edgecolor,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 markeredgewidth=linewidth,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 linestyle='',\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 markersize=10,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #                 label=label\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #             )\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #         )\cf0 \cb1 \strokec4 \
-\
-\cf5 \cb3 \strokec5 # # Add legends with Tasks on top and Unlearning Methods below\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # task_legend = task_legend_ax.legend(\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     handles=task_legend_handles,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     title='Tasks',\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     loc='lower right',\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     ncol=2,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     frameon=True,\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     columnspacing=0.5,      # Reduce column gap\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     handletextpad=0.3,      # Reduce gap between marker and label\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     handlelength=1.2,       # Shorter marker length\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 #     borderaxespad=0.2       # Reduce padding to axes\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # )\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 method_legend = method_legend_ax.legend(\cb1 \
-\cb3     handles=model_legend_handles,\cb1 \
-\cb3     title=\cf6 \strokec6 'Unlearning Methods'\cf0 \strokec4 ,\cb1 \
-\cb3     loc=\cf6 \strokec6 'upper left'\cf0 \strokec4 ,\cb1 \
-\cb3     ncol=\cf8 \strokec8 2\cf0 \strokec4 ,\cb1 \
-\cb3     frameon=\cf7 \strokec7 True\cf0 \strokec4 ,\cb1 \
-\cb3     columnspacing=\cf8 \strokec8 0.5\cf0 \strokec4 ,\cb1 \
-\cb3     handletextpad=\cf8 \strokec8 0.3\cf0 \strokec4 ,\cb1 \
-\cb3     handlelength=\cf8 \strokec8 1.2\cf0 \strokec4 ,\cb1 \
-\cb3     borderaxespad=\cf8 \strokec8 0.2\cf0 \strokec4 ,\cb1 \
-\cb3     \cf5 \strokec5 # bbox_to_anchor=(-.1, 0),  # x = 0 (left), y > 1 = above plot\cf0 \cb1 \strokec4 \
-\cb3 )\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 # Save figure as PDF\cf0 \cb1 \strokec4 \
-\cf5 \cb3 \strokec5 # plt.tight_layout()\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 plt.savefig(\cf6 \strokec6 'horizontal.pdf'\cf0 \strokec4 , bbox_inches=\cf6 \strokec6 'tight'\cf0 \strokec4 , dpi=\cf8 \strokec8 300\cf0 \strokec4 )\cb1 \
-\cb3 plt.close()\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf10 \cb3 \strokec10 print\cf0 \strokec4 (\cf6 \strokec6 'Visualization saved'\cf0 \strokec4 )\cb1 \
+# Adjusted font sizes for better readability
+plt.rcParams.update({
+    "text.usetex": False,
+    "font.family": "serif",
+    "font.serif": ["Computer Modern Roman"],
+    "font.size": 12,
+    "axes.titlesize": 14,
+    "axes.labelsize": 14,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+    "legend.fontsize": 12
+})
+
+# Read CSV from external file
+df = pd.read_csv('models.csv')
+
+# Adjust accuracy
+df['adjusted_accuracy'] = df['accuracy'] - 0.25
+df['adjusted_accuracy'] = df['adjusted_accuracy'].clip(lower=0)
+
+# Define model families
+model_families = [
+    {'name': 'Zephyr', 'base': 'Zephyr_7B_Beta', 'elm': 'Zephyr-7B-ELM', 'color': '#0072B2'},
+    {'name': 'Mistral', 'base': 'Mistral-7B-v0.1', 'elm': 'Mistral-7B-ELM', 'color': '#D55E00'},
+    {'name': 'Llama3-8B', 'base': 'Llama3-8B', 'elm': 'Llama3-8B-ELM', 'color': '#009E73'},
+    {'name': 'Llama3-8B-Instruct', 'base': 'Llama3-8B-Instruct', 'elm': 'Llama3-8B-Instruct-ELM', 'color': '#CC79A7'},
+]
+
+task_styles = {
+    'wmdp_bio': {'marker': 's', 'label': 'Base prompt', 'size': 300, 'highlight': False},
+    'tinyMMLU': {'marker': '*', 'label': 'tinyMMLU', 'size': 375, 'highlight': False},
+    'wmdp_bio_rephrased_english_filler': {'marker': 'o', 'label': 'Filler text', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_hindi_filler': {'marker': 'o', 'label': 'Filler text', 'size': 200, 'highlight': True},
+    'wmdp_bio_rephrased_latin_filler': {'marker': 'o', 'label': 'Filler text', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_conversation': {'marker': '^', 'label': 'Rephrased as conversation', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_poem': {'marker': 'v', 'label': 'Rephrased as poem', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_replace_with_variables': {'marker': 'P', 'label': 'Replaced with variables', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_technical_terms_removed_1': {'marker': 'X', 'label': 'Technical terms removed', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_translated_farsi': {'marker': 'd', 'label': 'Translated', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_translated_german': {'marker': 'd', 'label': 'Translated', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_translated_korean': {'marker': 'd', 'label': 'Translated', 'size': 200, 'highlight': False},
 }
+for style in task_styles.values():
+    style['size'] = style['size'] / 3
+
+# Define filled tasks
+filled_tasks = {
+    'wmdp_bio',
+    'tinyMMLU',
+    'wmdp_bio_rephrased_english_filler',
+    'wmdp_bio_rephrased_hindi_filler'
+}
+
+# Create figure with additional space at the top for the task legend
+# fig = plt.figure(figsize=(5.4, 12))
+
+# # # Add the main plot with enough space at the top for the legend
+# # # This uses a percentage of the figure - bottom 80%, leaving 20% at top for legend
+# # main_ax = plt.axes([0.1, 0.1, 0.8, 0.8])
+
+# gs = fig.add_gridspec(4, 1, height_ratios=[1, 4, .8, 4])
+# task_legend_ax = fig.add_subplot(gs[0])
+# main_ax = fig.add_subplot(gs[1])
+# model_legend_ax = fig.add_subplot(gs[1])
+
+# ax2 = fig.add_subplot(gs[2])
+# ax2.axis("off")  # This is just for spacing
+
+# # Hide the legend axes frames
+# task_legend_ax.axis('off')
+# model_legend_ax.axis('off')
+# plt.subplots_adjust(hspace=0.03)  # tighten vertical spacing
+
+fig = plt.figure(figsize=(14, 10))
+
+# # Add the main plot with enough space at the top for the legend
+# # This uses a percentage of the figure - bottom 80%, leaving 20% at top for legend
+# main_ax = plt.axes([0.1, 0.1, 0.8, 0.8])
+
+gs = fig.add_gridspec(2, 2, height_ratios=[1, 4])
+task_legend_ax = fig.add_subplot(gs[0,:])
+main_ax = fig.add_subplot(gs[1,0])
+model_legend_ax = fig.add_subplot(gs[1,0])
+
+# ax2 = fig.add_subplot(gs[2])
+# ax2.axis("off")  # This is just for spacing
+
+# Hide the legend axes frames
+task_legend_ax.axis('off')
+model_legend_ax.axis('off')
+plt.subplots_adjust(hspace=0.03)  # tighten vertical spacing
+
+# Diagonal reference line
+main_ax.plot([0, 1], [0, 1], 'k--', alpha=0.3)
+
+# Plot points
+for family in model_families:
+    base_data = df[df['model'] == family['base']]
+    elm_data = df[df['model'] == family['elm']]
+    merged = pd.merge(base_data, elm_data, on='task', suffixes=('_base', '_elm'))
+
+    for _, row in merged.iterrows():
+        task = row['task']
+        if task not in task_styles:
+            continue
+
+        style = task_styles[task]
+        is_filled = task in filled_tasks
+        is_highlight = style.get('highlight', False)
+
+        facecolor = family['color'] if is_filled else 'none'
+        edgecolor = 'black' if is_highlight else family['color']
+        linewidth = 2 if is_highlight else 1
+
+        main_ax.scatter(
+            row['adjusted_accuracy_base'],
+            row['adjusted_accuracy_elm'],
+            facecolor=facecolor,
+            edgecolor=edgecolor,
+            marker=style['marker'],
+            s=style.get('size', 100),
+            linewidth=linewidth,
+            alpha=0.9,
+            zorder=5 if is_highlight else 4
+        )
+
+        if task == 'wmdp_bio_rephrased_hindi_filler':
+            if family['name'] == 'Zephyr':
+                main_ax.text(
+                row['adjusted_accuracy_base'] + 0.006,
+                row['adjusted_accuracy_elm'] + 0.01,
+                'Hindi filler',
+                fontsize=11,
+                alpha=0.85
+            )
+            else:
+                main_ax.text(
+                    row['adjusted_accuracy_base'] + 0.011,
+                    row['adjusted_accuracy_elm'] + 0.003,
+                    'Hindi filler',
+                    fontsize=11,
+                    alpha=0.85
+                )
+
+# Axis labels
+main_ax.set_xlabel(r'Base Model Accuracy (Adjusted)')
+main_ax.set_ylabel(r'Unlearned (ELM) Model Accuracy (Adjusted)')
+main_ax.set_xlim(0, 0.6)
+main_ax.set_ylim(0, 0.6)
+
+# Grid
+main_ax.grid(True, linestyle='--', alpha=0.3)
+
+# Model family legend - Keep in original position
+model_legend = [
+    Line2D([0], [0], marker='o', color=family['color'], label=family['name'],
+           linestyle='', markersize=8) for family in model_families
+]
+
+# Task legend (preserve order and uniqueness)
+ordered_tasks = [
+    'tinyMMLU',
+    'wmdp_bio',
+    'wmdp_bio_rephrased_english_filler',
+    'wmdp_bio_rephrased_hindi_filler',
+    'wmdp_bio_rephrased_latin_filler'
+]
+seen_labels = set()
+task_legend = []
+
+# Helper to add a legend entry from a task key
+def add_task_legend_entry(task_key, label_override=None):
+    style = task_styles[task_key]
+    label = label_override if label_override else style['label']
+    if label in seen_labels:
+        return
+    seen_labels.add(label)
+    is_highlight = style.get('highlight', False)
+    facecolor = 'white' if is_highlight else '#999999'
+    edgecolor = 'black' if is_highlight else '#999999'
+    linewidth = 2.5 if is_highlight else 1.5
+
+    task_legend.append(
+        Line2D(
+            [0], [0],
+            marker=style['marker'],
+            markerfacecolor=facecolor if not is_highlight else 'white',
+            markeredgecolor=edgecolor,
+            markeredgewidth=linewidth,
+            linestyle='',
+            markersize=10,
+            label=label
+        )
+    )
+
+# Add legend items in the requested order
+add_task_legend_entry('tinyMMLU')  # MMLU
+add_task_legend_entry('wmdp_bio')  # Base prompt
+add_task_legend_entry('wmdp_bio_rephrased_hindi_filler', label_override='Knowledge retrieval')  # Highlighted
+add_task_legend_entry('wmdp_bio_rephrased_english_filler')  # Filler text
+
+# Add remaining task types not already seen
+for task_key, style in task_styles.items():
+    label = 'Knowledge retrieval' if task_key == 'wmdp_bio_rephrased_hindi_filler' else style['label']
+    if label not in seen_labels:
+        task_legend.append(
+            Line2D(
+                [0], [0],
+                marker=style['marker'],
+                markerfacecolor='none',
+                markeredgecolor='#999999',
+                markeredgewidth=1.5,
+                linestyle='',
+                markersize=10,
+                label=label
+            )
+        )
+        seen_labels.add(label)
+
+legend1 = model_legend_ax.legend(
+    handles=model_legend, 
+    title='Models', 
+    loc='upper left',
+    # bbox_to_anchor=(0.0, 1),  
+    columnspacing=0.5,
+    handletextpad=0.3,
+    handlelength=1.2,
+    borderaxespad=0.2,
+)
+
+legend2 = task_legend_ax.legend(
+    handles=task_legend,
+    title='Tasks',
+    # loc='lower right',
+    loc='center',
+    ncol=2,
+    frameon=True,
+    columnspacing=0.5,      # Reduce column gap
+    handletextpad=0.3,      # Reduce gap between marker and label
+    handlelength=1.2,       # Shorter marker length
+    borderaxespad=0.2 
+)
+
+# # Save figure
+# plt.savefig('model_performance_comparison.pdf', bbox_inches='tight', dpi=300)
+# plt.show()
+
+# print('Saved as: model_performance_comparison.pdf')
+
+# Read CSV from file
+df = pd.read_csv('unlearning_method_comparison.csv')
+
+# Define method name mapping
+method_name_map = {
+    'tar': 'TAR',
+    'graddiff': 'GradDiff',
+    'repnoise': 'RepNoise',
+    'elm': 'ELM',
+    'rmu-lat': 'RMU+LAT',
+    'rmu': 'RMU',
+    'pbj': 'PBJ',
+    'rr': 'RR'
+}
+
+# Extract base model data
+base_model_data = df[df['model'] == 'Llama3-8B-Instruct']
+
+# Process unlearning models data
+unlearning_models = []
+for method_key, method_name in method_name_map.items():
+    model_name = f"LLM-GAT__llama-3-8b-instruct-{method_key}-checkpoint-8"
+    if model_name in df['model'].values:
+        unlearning_models.append({
+            'name': method_name,
+            'model': model_name,
+            'color': None  # Will be assigned later
+        })
+
+# Wong's colorblind-friendly palette
+colors = [
+    '#882255',  # Burgundy
+    '#56B4E9',  # Sky Blue
+    '#E69F00',  # Orange
+    '#009E73',  # Teal
+    '#332288',  # Indigo
+    '#AA7700',  # Dark Gold
+    '#555555',  # Dark Gray
+    '#CC79A7',  # Violet
+]
+
+# Assign colors to models
+for i, model in enumerate(unlearning_models):
+    model['color'] = colors[i % len(colors)]
+
+# Define task styles
+task_styles = {
+    'wmdp_bio': {'marker': 's', 'label': 'Base prompt', 'size': 150, 'highlight': False},
+    'tinyMMLU': {'marker': '*', 'label': 'tinyMMLU', 'size': 200, 'highlight': False},
+    'wmdp_bio_rephrased_english_filler': {'marker': 'o', 'label': 'Filler text', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_hindi_filler': {'marker': 'o', 'label': 'Filler text', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_latin_filler': {'marker': 'o', 'label': 'Filler text', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_conversation': {'marker': '^', 'label': 'Rephrased as conversation', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_poem': {'marker': 'v', 'label': 'Rephrased as poem', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_replace_with_variables': {'marker': 'P', 'label': 'Replaced with variables', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_technical_terms_removed_1': {'marker': 'X', 'label': 'Technical terms removed', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_translated_farsi': {'marker': 'd', 'label': 'Translated', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_translated_german': {'marker': 'd', 'label': 'Translated', 'size': 150, 'highlight': False},
+    'wmdp_bio_rephrased_translated_korean': {'marker': 'd', 'label': 'Translated', 'size': 150, 'highlight': False},
+}
+for style in task_styles.values():
+    style['size'] = style['size'] / 3
+
+# Define filled tasks
+filled_tasks = {
+    'wmdp_bio',
+    'tinyMMLU',
+}
+
+# Create figure with space for stacked legends and plot
+# fig = plt.figure(figsize=(5.4, 6))
+# fig = plt.figure(figsize=(5.4, 5.4))
+
+# Create a gridspec layout with space for legends above
+# gs = fig.add_gridspec(3, 1, height_ratios=[1, 1, 6])
+# task_legend_ax = fig.add_subplot(gs[0])
+# method_legend_ax = fig.add_subplot(gs[1])
+# ax = fig.add_subplot(gs[2])
+# gs = fig.add_gridspec(2, 1, height_ratios=[1, 4])
+# task_legend_ax = fig.add_subplot(gs[0])
+ax = fig.add_subplot(gs[1,1])
+method_legend_ax = fig.add_subplot(gs[1,1])
+
+# Hide the legend axes frames
+# task_legend_ax.axis('off')
+method_legend_ax.axis('off')
+plt.subplots_adjust(hspace=0.03)  # tighten vertical spacing
+
+adjustment_factor = 0.25
+
+# Plot points
+for model in unlearning_models:
+    model_data = df[df['model'] == model['model']]
+    
+    for _, model_row in model_data.iterrows():
+        task = model_row['task']
+        if task not in task_styles:
+            continue
+            
+        # Find corresponding base model accuracy for this task
+        base_row = base_model_data[base_model_data['task'] == task]
+        if len(base_row) == 0:
+            continue
+            
+        base_accuracy = base_row['accuracy'].values[0] - adjustment_factor
+        model_accuracy = model_row['accuracy'] - adjustment_factor
+        
+        # Skip if adjusted accuracy is negative
+        if base_accuracy <= 0 or model_accuracy <= 0:
+            continue
+            
+        style = task_styles[task]
+        is_filled = task in filled_tasks
+        is_highlight = style.get('highlight', False)
+        
+        facecolor = model['color'] if is_filled else 'none'
+        edgecolor = 'black' if is_highlight else model['color']
+        linewidth = 1
+        
+        # Add scatter point
+        ax.scatter(
+            base_accuracy,
+            model_accuracy,
+            facecolor=facecolor,
+            edgecolor=edgecolor,
+            marker=style['marker'],
+            s=style['size'],
+            linewidth=linewidth,
+            alpha=0.9,
+            zorder=5 if is_highlight else 4
+        )
+
+# Add diagonal reference line
+ax.plot([-.01, 1], [-.01, 1], 'k--', alpha=0.3)
+
+# Set labels and title
+ax.set_xlabel('Base Model (Llama3-8B-Instruct) Accuracy (Adjusted)')
+ax.set_ylabel('Unlearned Model Accuracy (Adjusted)')
+
+# Set axis limits to 0.75 for both axes
+ax.set_xlim(-.01, 0.5)
+ax.set_ylim(-.01, 0.5)
+
+# Add grid
+ax.grid(True, linestyle='--', alpha=0.3)
+
+# Create model legend
+model_legend_handles = [
+    Line2D([0], [0], marker='o', color=model['color'], label=model['name'],
+           linestyle='', markersize=8) for model in unlearning_models
+]
+
+# # Create task legend with priority for tinyMMLU
+# task_legend_handles = []
+
+# # First add tinyMMLU to legend
+# tinyMMLU_style = task_styles['tinyMMLU']
+# task_legend_handles.append(
+#     Line2D(
+#         [0], [0],
+#         marker=tinyMMLU_style['marker'],
+#         markerfacecolor='#999999' if 'tinyMMLU' in filled_tasks else 'none',
+#         markeredgecolor='black' if tinyMMLU_style.get('highlight', False) else '#999999',
+#         markeredgewidth=1.5,
+#         linestyle='',
+#         markersize=10,
+#         label=tinyMMLU_style['label']
+#     )
+# )
+
+# # Add all other task styles to legend
+# seen_labels = {tinyMMLU_style['label']}  # Initialize with tinyMMLU already added
+# for key, style in task_styles.items():
+#     if key == 'tinyMMLU':  # Skip tinyMMLU as it's already added
+#         continue
+        
+#     label = style['label']
+#     if label not in seen_labels:
+#         seen_labels.add(label)
+#         is_highlight = style.get('highlight', False)
+        
+#         # Use proper styling for legend items
+#         facecolor = 'none'  # Most markers are not filled
+#         if key in filled_tasks:
+#             facecolor = '#999999'  # Use gray for filled markers in legend
+        
+#         edgecolor = 'black' if is_highlight else '#999999'
+#         linewidth = 1.5
+        
+#         task_legend_handles.append(
+#             Line2D(
+#                 [0], [0],
+#                 marker=style['marker'],
+#                 markerfacecolor=facecolor,
+#                 markeredgecolor=edgecolor,
+#                 markeredgewidth=linewidth,
+#                 linestyle='',
+#                 markersize=10,
+#                 label=label
+#             )
+#         )
+
+# # Add legends with Tasks on top and Unlearning Methods below
+# task_legend = task_legend_ax.legend(
+#     handles=task_legend_handles,
+#     title='Tasks',
+#     loc='lower right',
+#     ncol=2,
+#     frameon=True,
+#     columnspacing=0.5,      # Reduce column gap
+#     handletextpad=0.3,      # Reduce gap between marker and label
+#     handlelength=1.2,       # Shorter marker length
+#     borderaxespad=0.2       # Reduce padding to axes
+# )
+
+method_legend = method_legend_ax.legend(
+    handles=model_legend_handles,
+    title='Unlearning Methods',
+    loc='upper left',
+    ncol=2,
+    frameon=True,
+    columnspacing=0.5,
+    handletextpad=0.3,
+    handlelength=1.2,
+    borderaxespad=0.2,
+    # bbox_to_anchor=(-.1, 0),  # x = 0 (left), y > 1 = above plot
+)
+
+
+# Save figure as PDF
+# plt.tight_layout()
+plt.savefig('horizontal.pdf', bbox_inches='tight', dpi=300)
+plt.close()
+
+print('Visualization saved')
